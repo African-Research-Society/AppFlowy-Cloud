@@ -1,4 +1,5 @@
 pub mod access_request;
+pub mod admin;
 pub mod ai;
 pub mod chat;
 pub mod data_import;
