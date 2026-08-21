@@ -1,0 +1,35 @@
+# Supabase-as-auth deployment override.
+#
+# Fork-local file; docker compose merges it with docker-compose.yml
+# automatically (requires compose v2.24.4+ for the !override tag). See
+# doc/SUPABASE_AUTH.md for the full setup, including required env vars.
+#
+# Auth is delegated to the hosted Supabase project (see
+# nginx/nginx.supabase.conf), so the bundled gotrue container — and the
+# admin_frontend, which can only authenticate against it — are not started.
+
+services:
+  gotrue:
+    profiles: ["disabled"]
+
+  admin_frontend:
+    profiles: ["disabled"]
+
+  appflowy_cloud:
+    # Base depends_on waits for gotrue (disabled above); postgres was only
+    # reached transitively through it. APPFLOWY_GOTRUE_BASE_URL points at the
+    # nginx internal listener (http://nginx:81/gotrue), hence nginx here.
+    depends_on: !override
+      postgres:
+        condition: service_healthy
+      nginx:
+        condition: service_started
+
+  nginx:
+    volumes:
+      # Same container target as the base nginx.conf mount — this one wins.
+      - ./nginx/nginx.supabase.conf:/etc/nginx/nginx.conf
+
+  postgres:
+    volumes:
+      - ./docker/supabase-shim/00-auth-shim.sql:/docker-entrypoint-initdb.d/00-auth-shim.sql:ro
