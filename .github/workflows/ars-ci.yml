@@ -1,0 +1,59 @@
+# ARS CI for this fork.
+#
+# Deliberately a NEW file rather than an edit to the inherited workflows. Every
+# other file under .github/workflows/ belongs to upstream AppFlowy-Cloud, and
+# editing them would turn each upstream sync into a merge conflict. Those
+# workflows are disabled on this fork instead: several need secrets a fork does
+# not have, and one targets `self-hosted-appflowy3`, a runner label that does
+# not exist in this org and would leave jobs queued forever.
+name: ARS CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ars-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  # Rust builds are the heaviest thing this runner does, and actions/checkout
+  # cleans the workspace before every job, which would delete target/ and force
+  # a cold build every time. Keeping it outside the checkout makes the second
+  # run onwards incremental. Per-repo path so other projects cannot collide.
+  CARGO_TARGET_DIR: /home/runner/.cache/cargo-target/appflowy-cloud
+  # The sqlx query macros expand against .sqlx/ rather than a live database.
+  # Without this, anything touching a query! macro fails to compile in CI.
+  SQLX_OFFLINE: true
+  CARGO_TERM_COLOR: always
+
+jobs:
+  fmt:
+    runs-on: [self-hosted, Linux, X64, ARS]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      # rust-toolchain.toml pins 1.86.0; this honours it rather than restating
+      # the version somewhere it can drift.
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.86.0"
+          components: rustfmt
+      - run: cargo fmt --all --check
+
+  clippy:
+    runs-on: [self-hosted, Linux, X64, ARS]
+    # Generous: this is a large workspace and the first run builds every
+    # dependency from cold. Later runs reuse CARGO_TARGET_DIR and are far quicker.
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.86.0"
+          components: clippy
+      - run: cargo clippy --all-targets --no-deps -- -D warnings
