@@ -1,6 +1,7 @@
 use mailer::sender::Mailer;
 use std::collections::HashMap;
 
+pub const BRAND_NAME: &str = "ARS Workspace";
 pub const WORKSPACE_INVITE_TEMPLATE_NAME: &str = "workspace_invite";
 pub const WORKSPACE_ACCESS_REQUEST_TEMPLATE_NAME: &str = "workspace_access_request";
 pub const WORKSPACE_ACCESS_REQUEST_APPROVED_NOTIFICATION_TEMPLATE_NAME: &str =
@@ -21,8 +22,8 @@ impl AFCloudMailer {
     param: WorkspaceInviteMailerParam,
   ) -> Result<(), anyhow::Error> {
     let subject = format!(
-      "{} invited you to {} in AppFlowy",
-      param.username, param.workspace_name
+      "{} invited you to {} in {}",
+      param.username, param.workspace_name, BRAND_NAME
     );
     self
       .0
@@ -52,8 +53,8 @@ impl AFCloudMailer {
     param: WorkspaceAccessRequestMailerParam,
   ) -> Result<(), anyhow::Error> {
     let subject = format!(
-      "{} requested access to {} in AppFlowy",
-      param.username, param.workspace_name
+      "{} requested access to {} in {}",
+      param.username, param.workspace_name, BRAND_NAME
     );
     self
       .0
@@ -93,8 +94,8 @@ impl AFCloudMailer {
     param: &PageMentionNotificationMailerParam,
   ) -> Result<(), anyhow::Error> {
     let subject = format!(
-      "{} has mentioned you in {} in AppFlowy",
-      param.mentioner_name, param.mentioned_page_name
+      "{} has mentioned you in {} in {}",
+      param.mentioner_name, param.mentioned_page_name, BRAND_NAME
     );
     self
       .0

@@ -20,8 +20,7 @@ module.exports = {
     },
   },
   locals: {
-    cdnBaseUrl:
-      "https://raw.githubusercontent.com/AppFlowy-IO/AppFlowy-Cloud/main/assets/mailer_templates/build_production/",
+    cdnBaseUrl: "https://africanresearchsociety.org/email/",
     error: "{{ error }}",
     detailError: "{{ error_detail }}",
     userIconUrl: "{{ user_icon_url }}",

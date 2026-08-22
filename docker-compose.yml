@@ -72,7 +72,7 @@ services:
       # If the user already exists, the update will be skipped.
       - GOTRUE_ADMIN_PASSWORD=${GOTRUE_ADMIN_PASSWORD}
       - GOTRUE_DISABLE_SIGNUP=${GOTRUE_DISABLE_SIGNUP:-false}
-      - GOTRUE_SITE_URL=appflowy-flutter://                           # redirected to AppFlowy application
+      - GOTRUE_SITE_URL=ars-workspace://                           # redirected to the ARS Workspace application
       - GOTRUE_URI_ALLOW_LIST=** # adjust restrict if necessary
       - GOTRUE_JWT_SECRET=${GOTRUE_JWT_SECRET}                        # authentication secret
       - GOTRUE_JWT_EXP=${GOTRUE_JWT_EXP}
@@ -297,7 +297,12 @@ services:
 
   appflowy_web:
     restart: on-failure
-    image: appflowyinc/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
+    # ARS fork of AppFlowy-Web, built from source (see docker/web/Dockerfile)
+    build:
+      context: ./docker/web
+      args:
+        VERSION: ${APPFLOWY_WEB_VERSION:-main}
+    image: ars/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
     depends_on:
       appflowy_cloud:
         condition: service_healthy

@@ -105,7 +105,7 @@ async fn admin_create_sso_handler(
 /// A `Result` containing `HeaderMap` for HTTP redirection if successful, or `WebApiError` in case of failure.
 ///
 /// # Example URL Format
-/// `appflowy-flutter://login-callback#access_token=...&expires_at=...&expires_in=...&refresh_token=...&token_type=...`
+/// `ars-workspace://login-callback#access_token=...&expires_at=...&expires_in=...&refresh_token=...&token_type=...`
 ///
 /// The URL includes access token information and other relevant session details.
 ///
@@ -117,7 +117,7 @@ async fn open_app_handler(
   session: UserSession,
 ) -> Result<axum::response::Response, WebApiError<'static>> {
   let app_sign_in_url = format!(
-      "appflowy-flutter://login-callback#access_token={}&expires_at={}&expires_in={}&refresh_token={}&token_type={}",
+      "ars-workspace://login-callback#access_token={}&expires_at={}&expires_in={}&refresh_token={}&token_type={}",
         session.token.access_token,
         session.token.expires_at,
         session.token.expires_in,

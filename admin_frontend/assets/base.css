@@ -1,21 +1,24 @@
+/* ARS "Observatory" palette on the cosmic (dark) ground.
+   Variable names are load-bearing: components/message.html resolves
+   --af-dark-cyan / --af-dark-red by name via getComputedStyle. */
 :root {
-  --af-background: #1a202c;
-  --line-divider: #384967;
-  --af-purple: #9327ff;
-  --af-dark-purple: #8427e0;
-  --af-red: #fb006d;
-  --af-dark-red: #e3006d;
-  --af-cyan: #00c8ff;
-  --af-dark-cyan: #00b5ff;
-  --af-yellow: #ffce00;
-  --af-dark-yellow: #ffbd00;
-  --af-darker-yellow: #f7931e;
+  --af-background: #0b0c15;
+  --line-divider: rgba(220, 214, 255, 0.12);
+  --af-purple: #f6cf6b;
+  --af-dark-purple: #e8b23a;
+  --af-red: #a33227;
+  --af-dark-red: #e59a90;
+  --af-cyan: #2e9e6b;
+  --af-dark-cyan: #5cc493;
+  --af-yellow: #a99bf0;
+  --af-dark-yellow: #6d5ae0;
+  --af-darker-yellow: #5b46c4;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Archivo, "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   background-color: var(--af-background);
-  color: #e2e9f2;
+  color: #c9c8d6;
 }
 
 .button {
@@ -38,6 +41,7 @@ body {
 .yellow-table th {
   border: 1px solid var(--af-dark-yellow);
   background-color: var(--af-yellow);
+  color: #17161b;
 }
 
 .yellow-table td {
@@ -47,6 +51,7 @@ body {
 .red-table th {
   border: 1px solid var(--af-dark-red);
   background-color: var(--af-red);
+  color: #f2ede2;
 }
 
 .red-table td {
@@ -56,6 +61,7 @@ body {
 .cyan-table th {
   border: 1px solid var(--af-dark-cyan);
   background-color: var(--af-cyan);
+  color: #f2ede2;
 }
 
 .cyan-table td {
@@ -65,6 +71,7 @@ body {
 .purple-table th {
   border: 1px solid var(--af-dark-purple);
   background-color: var(--af-purple);
+  color: #221703;
 }
 
 .purple-table td {
@@ -77,6 +84,7 @@ body {
 
 .purple {
   background-color: var(--af-dark-purple);
+  color: #221703;
 }
 
 .purple:hover {
@@ -84,27 +92,33 @@ body {
 }
 
 .red {
-  background-color: var(--af-dark-red);
+  background-color: var(--af-red);
+  color: #f2ede2;
 }
 
 .red:hover {
-  background-color: var(--af-red);
+  background-color: var(--af-dark-red);
+  color: #2b0f0b;
 }
 
 .cyan {
   background-color: var(--af-dark-cyan);
+  color: #0b2317;
 }
 
 .cyan:hover {
   background-color: var(--af-cyan);
+  color: #f2ede2;
 }
 
 .yellow {
   background-color: var(--af-darker-yellow);
+  color: #efede4;
 }
 
 .yellow:hover {
   background-color: var(--af-yellow);
+  color: #17161b;
 }
 
 .input {

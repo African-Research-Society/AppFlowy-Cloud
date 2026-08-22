@@ -56,7 +56,7 @@ impl Default for GenerateLinkParams {
       new_email: String::default(),
       password: String::default(),
       data: BTreeMap::new(),
-      redirect_to: "appflowy-flutter://".to_string(),
+      redirect_to: "ars-workspace://".to_string(),
     }
   }
 }

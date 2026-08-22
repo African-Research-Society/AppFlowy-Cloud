@@ -1,9 +1,9 @@
 ---
-bodyClass: bg-[#EEEEFC]
+bodyClass: bg-[#f2ede2]
 ---
 
 <x-main>
-  <div class="bg-[#EEEEFC] font-helvetica px-4 py-12 text-black">
+  <div class="bg-[#f2ede2] font-helvetica px-4 py-12 text-black">
     <table align="center">
       <tr>
         <td
@@ -15,7 +15,7 @@ bodyClass: bg-[#EEEEFC]
               class="rounded-full"
               width="64"
               height="64"
-              alt="AppFlowy"
+              alt="ARS Workspace"
             />
           </p>
 
@@ -27,13 +27,13 @@ bodyClass: bg-[#EEEEFC]
 
           <p
             class="w-full text-center text-[16px]"
-            style="color: var(--Text-secondary, #6f748c)"
+            style="color: var(--Text-secondary, #666157)"
           >
             {{ mentionedAt }}
           </p>
           <p
             class="w-full text-center text-[16px] mb-8"
-            style="color: var(--Text-secondary, #6f748c)"
+            style="color: var(--Text-secondary, #666157)"
           >
             {{ workspaceName }} / ... / {{ mentionedPageName }}
           </p>
@@ -42,7 +42,7 @@ bodyClass: bg-[#EEEEFC]
             <x-button
               align="center"
               target="_blank"
-              class="hover:opacity-90 cursor-pointer !text-base !leading-[20px] !bg-[#9327FF] rounded-lg inline-block"
+              class="hover:opacity-90 cursor-pointer !text-base !leading-[20px] !bg-[#e8b23a] rounded-lg inline-block"
               style="padding: 12px 36px; font-weight: 500"
               href="{{ launchWorkspaceUrl }}"
             >
@@ -57,74 +57,17 @@ bodyClass: bg-[#EEEEFC]
           <div class="text-center">
             <p
               class="text-sm m-0 mb-6"
-              style="color: var(--Text-secondary, #6f748c)"
+              style="color: var(--Text-secondary, #666157)"
             >
-              Bring projects, knowledge, and teams together with the power of
-              AI.
+              Research for Africa, by Africa.
             </p>
 
-            <p class="m-0 mb-4">
-              <a
-                href="https://discord.gg/9Q2xaN37tV"
-                class="[text-decoration:none] mx-2"
-              >
-                <img
-                  src="{{ cdnBaseUrl }}images/discord.png"
-                  width="24"
-                  height="24"
-                  alt="Discord"
-                />
-              </a>
-              <a
-                href=" https://github.com/AppFlowy-IO/AppFlowy"
-                class="text-gray-600 [text-decoration:none] mx-2"
-              >
-                <img
-                  src="{{ cdnBaseUrl }}images/github.png"
-                  width="24"
-                  height="24"
-                  alt="GitHub"
-                />
-              </a>
-              <a
-                href=" https://www.reddit.com/r/AppFlowy"
-                class="text-gray-600 [text-decoration:none] mx-2"
-              >
-                <img
-                  src="{{ cdnBaseUrl }}images/reddit.png"
-                  width="24"
-                  height="24"
-                  alt="Reddit"
-                />
-              </a>
-              <a
-                href=" https://twitter.com/appflowy"
-                class="[text-decoration:none] mx-2"
-              >
-                <img
-                  src="{{ cdnBaseUrl }}images/twitter.png"
-                  width="24"
-                  height="24"
-                  alt="Twitter"
-                />
-              </a>
-              <a
-                href=" https://www.youtube.com/@appflowy"
-                class="text-gray-600 [text-decoration:none] mx-2"
-              >
-                <img
-                  src="{{ cdnBaseUrl }}images/youtube.png"
-                  width="24"
-                  height="24"
-                  alt="YouTube"
-                />
-              </a>
-            </p>
+            
 
             <p
               class="m-0"
               style="
-                color: var(--Text-secondary, #6f748c);
+                color: var(--Text-secondary, #666157);
                 font-size: 12px;
                 font-family:
                   SF Pro Text,
@@ -136,12 +79,12 @@ bodyClass: bg-[#EEEEFC]
                 word-wrap: break-word;
               "
             >
-              Copyright © 2025, AppFlowy Inc.
+              Copyright © 2026, African Research Society NPC · Registered NPO 294-803
             </p>
             <p
               class="m-0"
               style="
-                color: var(--Text-secondary, #6f748c);
+                color: var(--Text-secondary, #666157);
                 font-size: 12px;
                 font-family:
                   SF Pro Text,
@@ -155,9 +98,9 @@ bodyClass: bg-[#EEEEFC]
             >
               Need Help?
               <a
-                href="mailto:support@appflowy.io"
+                href="mailto:npo@africanresearchsociety.org"
                 style="
-                  color: var(--Text-secondary, #6f748c);
+                  color: var(--Text-secondary, #666157);
                   font-size: 12px;
                   font-family:
                     SF Pro Text,
@@ -167,7 +110,7 @@ bodyClass: bg-[#EEEEFC]
                   text-decoration: underline;
                 "
               >
-                support@appflowy.io
+                npo@africanresearchsociety.org
               </a>
             </p>
             <!-- Transparent timestamp to prevent email collapse -->

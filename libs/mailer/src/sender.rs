@@ -77,7 +77,7 @@ impl Mailer {
     let rendered = self.handlers.render(template_name, &param)?;
     let email = Message::builder()
       .from(lettre::message::Mailbox::new(
-        Some("AppFlowy Notification".to_string()),
+        Some("ARS Workspace Notification".to_string()),
         self.smtp_email.parse::<Address>()?,
       ))
       .to(lettre::message::Mailbox::new(

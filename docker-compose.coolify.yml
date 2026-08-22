@@ -158,7 +158,12 @@ services:
     - APPFLOWY_BASE_URL=${APPFLOWY_BASE_URL}
     - APPFLOWY_GOTRUE_BASE_URL=${APPFLOWY_BASE_URL}/gotrue
     - APPFLOWY_WS_BASE_URL=${APPFLOWY_WEBSOCKET_BASE_URL}
-    image: appflowyinc/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
+    # ARS fork of AppFlowy-Web, built from source (see docker/web/Dockerfile)
+    build:
+      context: ./docker/web
+      args:
+        VERSION: ${APPFLOWY_WEB_VERSION:-main}
+    image: ars/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
     restart: on-failure
   appflowy_worker:
     depends_on:
