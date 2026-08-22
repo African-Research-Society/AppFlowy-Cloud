@@ -150,6 +150,11 @@ services:
     volumes:
     - keyword_index_data:/var/lib/appflowy/keyword_index
   appflowy_web:
+    build:
+      args:
+        VERSION: ${APPFLOWY_WEB_BRANCH:-main}
+      context: ./docker/web
+      dockerfile: Dockerfile
     depends_on:
       appflowy_cloud:
         condition: service_healthy
@@ -158,11 +163,6 @@ services:
     - APPFLOWY_BASE_URL=${APPFLOWY_BASE_URL}
     - APPFLOWY_GOTRUE_BASE_URL=${APPFLOWY_BASE_URL}/gotrue
     - APPFLOWY_WS_BASE_URL=${APPFLOWY_WEBSOCKET_BASE_URL}
-    # ARS fork of AppFlowy-Web, built from source (see docker/web/Dockerfile)
-    build:
-      context: ./docker/web
-      args:
-        VERSION: ${APPFLOWY_WEB_VERSION:-main}
     image: ars/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
     restart: on-failure
   appflowy_worker:

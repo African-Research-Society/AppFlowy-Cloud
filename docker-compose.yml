@@ -301,7 +301,7 @@ services:
     build:
       context: ./docker/web
       args:
-        VERSION: ${APPFLOWY_WEB_VERSION:-main}
+        VERSION: ${APPFLOWY_WEB_BRANCH:-main}
     image: ars/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
     depends_on:
       appflowy_cloud:
