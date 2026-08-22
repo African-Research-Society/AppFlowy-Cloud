@@ -19,20 +19,37 @@ plus env vars, so updating from upstream is a plain merge:
 ## Hard constraint: HS256 must stay the current signing key
 
 AppFlowy-Cloud validates JWTs as **HS256 with a shared secret** (single choke
-point: `libs/gotrue-entity/src/gotrue_jwt.rs`). The Supabase project has both
-an ECC (P-256) key and the legacy HS256 shared secret — the **legacy HS256
-secret must remain the key that signs new access tokens** (Dashboard →
-Project Settings → JWT Keys). Do **not** complete a migration to the ECC key
-while this deployment exists, or all AppFlowy auth breaks (the closed-source
-`ai` / `appflowy_search` images can only validate HS256 either way).
+point: `libs/gotrue-entity/src/gotrue_jwt.rs`). The **legacy HS256 secret must
+remain the key that signs new access tokens** (Dashboard → Project Settings →
+JWT Keys). Do **not** complete a migration to the ECC key while this
+deployment exists, or all AppFlowy auth breaks (the closed-source `ai` /
+`appflowy_search` images can only validate HS256 either way).
+
+State as of 2026-08-22 (rotated for this integration):
+
+| Status | Key ID | Type |
+|---|---|---|
+| **Current** | `BF564DBB-A4ED-415A-8885-44F0DF6FB9A8` | Legacy HS256 (shared secret) |
+| Previously used | `9850EDDB-8498-4E8D-811E-6998D10F6386` | ECC P-256 — verify-only, was current until this rotation |
+| Revoked | `5F24A356-4650-46D0-BBF5-FC6CEAC8D375` | HS256 (shared secret) |
+
+**Gotcha — only the *legacy* HS256 key's secret is readable.** Supabase
+exposes a shared secret only for the legacy key (JWT Keys → *Legacy JWT
+Secret* tab). A non-legacy HS256 signing key created in the new signing-keys
+UI has no "reveal secret" action anywhere (its ⋮ menu offers only *Move to
+previously used* / *Revoke key*), so it can never be used for local
+validation — it is useless to AppFlowy, and less usable than the ECC key,
+whose public half at least ships in `/auth/v1/.well-known/jwks.json`. That is
+why the legacy key was promoted back to current and `5F24A356…` revoked.
 
 Check: decode the first segment of a fresh access token (`base64 -d`) — the
 header must read `"alg":"HS256"`.
 
 ## One-time Supabase dashboard setup
 
-1. **JWT Keys**: confirm the legacy HS256 secret is current (above). Copy the
-   legacy JWT secret, the anon key, and keep the service_role key handy.
+1. **JWT Keys**: confirm the legacy HS256 key is the *current* key (above).
+   Copy its secret from the **Legacy JWT Secret** tab — that value is
+   `GOTRUE_JWT_SECRET`. Also grab the anon key and keep service_role handy.
 2. **Auth → URL Configuration → Redirect URLs**: add
    - `https://<appflowy-domain>/**` (AppFlowy Web callback)
    - `appflowy-flutter://login-callback` (mobile deep link)
@@ -54,14 +71,34 @@ header must read `"alg":"HS256"`.
      own mailer) as in `deploy.env`. All `GOTRUE_*` container vars are dead —
      magic-link emails now come from Supabase's SMTP and templates.
 3. **Fresh Postgres volume required** on first deploy (the initdb shim only
-   runs when the data directory is initialised).
-4. Coolify: if its compose invocation does not auto-merge
-   `docker-compose.override.yml`, generate a merged file and point Coolify at
-   it (regenerate after each upstream merge):
+   runs when the data directory is initialised). Deploying onto an existing
+   volume instead? The `auth` schema is already there (the bundled gotrue
+   created it), so the FK migration is satisfied — run the trigger half of
+   `docker/supabase-shim/00-auth-shim.sql` by hand against the live database
+   (`CREATE OR REPLACE FUNCTION public.af_user_auth_shadow_fn` + `CREATE
+   TRIGGER af_user_auth_shadow`; the event trigger is only needed when
+   `af_user` does not exist yet). Note that users keep their old gotrue UUIDs
+   in `af_user` while their new Supabase identity is a different `sub`, so
+   pre-existing workspaces are not reachable from the new logins.
+4. **Coolify** reads exactly one compose file per application, so it never
+   picks up `docker-compose.override.yml`. Commit the flattened file and set
+   the app's **Docker Compose Location** to `/docker-compose.coolify.yml`.
+   Regenerate it after every upstream merge that touches `docker-compose.yml`:
 
    ```sh
-   docker compose -f docker-compose.yml -f docker-compose.override.yml config > docker-compose.coolify.yml
+   python3 script/gen_coolify_compose.py     # needs PyYAML + docker compose
    ```
+
+   The generator keeps `${VAR}` references intact (Coolify injects the
+   environment), drops the disabled `gotrue` / `admin_frontend` services
+   outright rather than trusting Coolify to honour compose profiles, and
+   strips the project-name prefix `docker compose config` stamps onto named
+   volumes — that prefix would otherwise point the deployment at a different
+   (empty) `postgres_data` volume than the one it is already running on.
+
+   The live deployment is app `gwyoyg55y0vtcys6qrgrnj7a` (`appflowy-cloud`)
+   on `coolify.dev3.studio`, tracking `main`, with the `nginx` service mapped
+   to `appflowy.africanresearchsociety.org` via `NGINX_PORT=18080`.
 
 ## How sign-in works
 
