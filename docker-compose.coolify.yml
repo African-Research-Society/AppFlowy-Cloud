@@ -47,6 +47,9 @@ services:
     restart: on-failure
   appflowy_cloud:
     depends_on:
+      minio:
+        condition: service_healthy
+        required: true
       nginx:
         condition: service_started
         required: true
@@ -194,14 +197,14 @@ services:
     - MINIO_ROOT_USER=${APPFLOWY_S3_ACCESS_KEY:-minioadmin}
     - MINIO_ROOT_PASSWORD=${APPFLOWY_S3_SECRET_KEY:-minioadmin}
     healthcheck:
-      interval: 30s
-      retries: 3
+      interval: 5s
+      retries: 12
       test:
       - CMD
       - curl
       - -f
       - http://localhost:9000/minio/health/live
-      timeout: 20s
+      timeout: 5s
     image: minio/minio
     restart: on-failure
     volumes:

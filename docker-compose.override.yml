@@ -19,11 +19,29 @@ services:
     # Base depends_on waits for gotrue (disabled above); postgres was only
     # reached transitively through it. APPFLOWY_GOTRUE_BASE_URL points at the
     # nginx internal listener (http://nginx:81/gotrue), hence nginx here.
+    #
+    # minio is listed because AppFlowy-Cloud creates its S3 bucket during
+    # startup (APPFLOWY_S3_CREATE_BUCKET) and aborts the whole process if that
+    # call fails — see src/application.rs:466. Upstream never declared the
+    # dependency: waiting on gotrue's health check happened to give minio
+    # ~30s of head start. Without gotrue, appflowy_cloud reached minio about
+    # six seconds after it started and exited immediately.
     depends_on: !override
       postgres:
         condition: service_healthy
+      minio:
+        condition: service_healthy
       nginx:
         condition: service_started
+
+  minio:
+    # Upstream's 30s interval means nothing depended on this healthcheck
+    # before; now that startup blocks on it, check often enough that a deploy
+    # is not held up for half a minute.
+    healthcheck:
+      interval: 5s
+      timeout: 5s
+      retries: 12
 
   # Both config files travel in images rather than bind mounts: Coolify turns
   # relative bind mounts into managed paths it creates itself, as empty
