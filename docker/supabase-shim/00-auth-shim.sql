@@ -35,18 +35,29 @@ BEGIN
   RETURN NEW;
 END $$;
 
+-- Every reference to public.af_user here must go through a *variable* holding
+-- its oid. A literal 'public.af_user'::regclass is constant-folded when the
+-- statement is planned, so it raises "relation public.af_user does not exist"
+-- even when guarded by to_regclass(...) IS NOT NULL in the same expression —
+-- and this trigger runs on the first CREATE TABLE of AppFlowy's migrations,
+-- long before af_user exists. That aborts the migration and the server with
+-- it. Same reason the CREATE TRIGGER goes through EXECUTE.
 CREATE OR REPLACE FUNCTION public.install_af_user_shadow_trigger() RETURNS event_trigger
 LANGUAGE plpgsql AS $$
+DECLARE
+  af_user oid := to_regclass('public.af_user');
 BEGIN
-  IF to_regclass('public.af_user') IS NOT NULL
-     AND NOT EXISTS (
-       SELECT 1 FROM pg_trigger
-       WHERE tgname = 'af_user_auth_shadow'
-         AND tgrelid = 'public.af_user'::regclass
-     ) THEN
-    CREATE TRIGGER af_user_auth_shadow
-      BEFORE INSERT ON public.af_user
-      FOR EACH ROW EXECUTE FUNCTION public.af_user_auth_shadow_fn();
+  IF af_user IS NULL THEN
+    RETURN;
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_trigger
+    WHERE tgname = 'af_user_auth_shadow' AND tgrelid = af_user
+  ) THEN
+    EXECUTE 'CREATE TRIGGER af_user_auth_shadow'
+      || ' BEFORE INSERT ON public.af_user'
+      || ' FOR EACH ROW EXECUTE FUNCTION public.af_user_auth_shadow_fn()';
   END IF;
 END $$;
 
