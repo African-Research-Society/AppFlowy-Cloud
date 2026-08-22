@@ -124,6 +124,18 @@ def main() -> int:
         if isinstance(volume, dict):
             volume.pop("name", None)
 
+    # Drop named volumes nothing mounts any more (the override swaps postgres
+    # onto a fresh volume); leaving them declared makes Coolify provision empty
+    # volumes and list storage the deployment never touches.
+    mounted = {
+        v.split(":", 1)[0]
+        for svc in services.values()
+        for v in svc.get("volumes", [])
+        if isinstance(v, str) and not v.startswith(".")
+    }
+    for name in set(config.get("volumes") or {}) - mounted:
+        del config["volumes"][name]
+
     OUT.write_text(HEADER + yaml.safe_dump(config, sort_keys=True, width=1000))
     print(f"wrote {OUT.relative_to(ROOT)} (dropped: {', '.join(sorted(dropped)) or 'none'})")
     return 0

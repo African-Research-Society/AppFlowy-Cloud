@@ -32,4 +32,14 @@ services:
 
   postgres:
     volumes:
+      # A different named volume at the same target replaces the base
+      # postgres_data mount. The initdb shim below only runs on an empty data
+      # directory, and the users in a bundled-gotrue database are a different
+      # identity pool anyway — so this deployment starts on a fresh volume and
+      # leaves the old one intact on disk, recoverable until deliberately
+      # removed (docker volume rm <project>_postgres-data).
+      - postgres_supabase_data:/var/lib/postgresql/data
       - ./docker/supabase-shim/00-auth-shim.sql:/docker-entrypoint-initdb.d/00-auth-shim.sql:ro
+
+volumes:
+  postgres_supabase_data:

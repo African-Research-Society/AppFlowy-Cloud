@@ -243,7 +243,7 @@ services:
     image: pgvector/pgvector:pg16
     restart: on-failure
     volumes:
-    - postgres_data:/var/lib/postgresql/data
+    - postgres_supabase_data:/var/lib/postgresql/data
     - ./docker/supabase-shim/00-auth-shim.sql:/docker-entrypoint-initdb.d/00-auth-shim.sql:ro
   redis:
     image: redis
@@ -251,4 +251,4 @@ services:
 volumes:
   keyword_index_data: {}
   minio_data: {}
-  postgres_data: {}
+  postgres_supabase_data: {}
