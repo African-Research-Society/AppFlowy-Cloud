@@ -25,21 +25,33 @@ services:
       nginx:
         condition: service_started
 
+  # Both config files travel in images rather than bind mounts: Coolify turns
+  # relative bind mounts into managed paths it creates itself, as empty
+  # directories, which either fails the container outright (nginx) or silently
+  # skips the file (postgres initdb). See the Dockerfiles for the details.
   nginx:
-    volumes:
-      # Same container target as the base nginx.conf mount — this one wins.
-      - ./nginx/nginx.supabase.conf:/etc/nginx/nginx.conf
+    build:
+      context: .
+      dockerfile: docker/supabase-nginx/Dockerfile
+    image: appflowy-supabase-nginx:local
+    volumes: !override
+      # Dropping the base nginx.conf mount; keeping the ssl ones, which are
+      # long-established Coolify file storages with real content behind them.
+      - ./nginx/ssl/certificate.crt:/etc/nginx/ssl/certificate.crt
+      - ./nginx/ssl/private_key.key:/etc/nginx/ssl/private_key.key
 
   postgres:
-    volumes:
-      # A different named volume at the same target replaces the base
-      # postgres_data mount. The initdb shim below only runs on an empty data
-      # directory, and the users in a bundled-gotrue database are a different
-      # identity pool anyway — so this deployment starts on a fresh volume and
-      # leaves the old one intact on disk, recoverable until deliberately
-      # removed (docker volume rm <project>_postgres-data).
-      - postgres_supabase_data:/var/lib/postgresql/data
-      - ./docker/supabase-shim/00-auth-shim.sql:/docker-entrypoint-initdb.d/00-auth-shim.sql:ro
+    build:
+      context: .
+      dockerfile: docker/supabase-shim/Dockerfile
+    image: appflowy-supabase-postgres:local
+    volumes: !override
+      # A fresh named volume: the initdb shim only runs on an empty data
+      # directory, and a bundled-gotrue database is a different identity pool
+      # anyway. Old volumes stay on disk, recoverable until deliberately
+      # removed (docker volume rm <project>_postgres-data, and _postgres-supabase-data
+      # from the deploy that initialised without the shim).
+      - postgres_shared_auth_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_supabase_data:
+  postgres_shared_auth_data:

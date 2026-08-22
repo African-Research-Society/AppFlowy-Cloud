@@ -70,17 +70,23 @@ def merged_config() -> dict:
     return yaml.safe_load(out.stdout)
 
 
+def relative(path) -> str:
+    """Re-anchor a path `docker compose config` expanded against the checkout."""
+    path = pathlib.Path(path)
+    try:
+        suffix = str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+    return "." if suffix == "." else "./" + suffix
+
+
 def shorten(volume):
     """Long-form mount -> "source:/target[:ro]", bind sources re-relativised."""
     if not isinstance(volume, dict):
         return volume
     source = volume.get("source")
     if volume.get("type") == "bind":
-        path = pathlib.Path(source)
-        try:
-            source = "./" + str(path.relative_to(ROOT))
-        except ValueError:
-            source = str(path)
+        source = relative(source)
     elif volume.get("type") != "volume" or not source:
         return volume
     spec = f"{source}:{volume['target']}"
@@ -106,6 +112,9 @@ def main() -> int:
         svc.pop("networks", None)
         if "volumes" in svc:
             svc["volumes"] = [shorten(v) for v in svc["volumes"]]
+        build = svc.get("build")
+        if isinstance(build, dict) and "context" in build:
+            build["context"] = relative(build["context"])
         depends = svc.get("depends_on")
         if isinstance(depends, dict):
             for name in dropped & set(depends):

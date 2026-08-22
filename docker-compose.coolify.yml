@@ -207,16 +207,21 @@ services:
     volumes:
     - minio_data:/data
   nginx:
-    image: nginx
+    build:
+      context: .
+      dockerfile: docker/supabase-nginx/Dockerfile
+    image: appflowy-supabase-nginx:local
     ports:
     - ${NGINX_PORT:-80}:80
     - ${NGINX_TLS_PORT:-443}:443
     restart: on-failure
     volumes:
-    - ./nginx/nginx.supabase.conf:/etc/nginx/nginx.conf
     - ./nginx/ssl/certificate.crt:/etc/nginx/ssl/certificate.crt
     - ./nginx/ssl/private_key.key:/etc/nginx/ssl/private_key.key
   postgres:
+    build:
+      context: .
+      dockerfile: docker/supabase-shim/Dockerfile
     command:
     - postgres
     - -c
@@ -240,15 +245,14 @@ services:
       - -p
       - ${POSTGRES_PORT:-5432}
       timeout: 5s
-    image: pgvector/pgvector:pg16
+    image: appflowy-supabase-postgres:local
     restart: on-failure
     volumes:
-    - postgres_supabase_data:/var/lib/postgresql/data
-    - ./docker/supabase-shim/00-auth-shim.sql:/docker-entrypoint-initdb.d/00-auth-shim.sql:ro
+    - postgres_shared_auth_data:/var/lib/postgresql/data
   redis:
     image: redis
     restart: on-failure
 volumes:
   keyword_index_data: {}
   minio_data: {}
-  postgres_supabase_data: {}
+  postgres_shared_auth_data: {}

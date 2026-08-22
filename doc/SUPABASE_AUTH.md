@@ -12,7 +12,7 @@ plus env vars, so updating from upstream is a plain merge:
 
 | File | Purpose |
 |---|---|
-| `nginx/nginx.supabase.conf` | Replaces `nginx/nginx.conf` at runtime; proxies `/gotrue/` to Supabase with the `apikey` header injected, plus an internal `:81` listener for the Rust server's own GoTrue calls. Blocks `DELETE /api/user` and public `/gotrue/admin/`. |
+| `nginx/nginx.supabase.conf` | Replaces `nginx/nginx.conf`; proxies `/gotrue/` to Supabase with the `apikey` header injected, plus an internal `:81` listener for the Rust server's own GoTrue calls. Blocks `DELETE /api/user` and public `/gotrue/admin/`. Baked into the nginx image by `docker/supabase-nginx/Dockerfile`. |
 | `docker-compose.override.yml` | Disables `gotrue` + `admin_frontend`, swaps the nginx config mount, mounts the DB shim, fixes `appflowy_cloud` dependencies. Auto-merged by `docker compose up` (compose v2.24.4+). |
 | `docker/supabase-shim/00-auth-shim.sql` | Postgres initdb script creating a minimal shadow `auth.users` so the upstream FK migration (`migrations/20231130150001_user_id_foreign_key.sql`) runs verbatim; a trigger keeps the shadow table in step with `af_user`. |
 
@@ -99,6 +99,18 @@ header must read `"alg":"HS256"`.
    The live deployment is app `gwyoyg55y0vtcys6qrgrnj7a` (`appflowy-cloud`)
    on `coolify.dev3.studio`, tracking `main`, with the `nginx` service mapped
    to `appflowy.africanresearchsociety.org` via `NGINX_PORT=18080`.
+
+   **Never add a relative bind mount for a new config file on Coolify.** It
+   rewrites them into managed "file storage" entries under
+   `/data/coolify/applications/<uuid>/` and creates the host path itself — as
+   an empty **directory** when it has no stored content for it. nginx then
+   dies at startup (`error mounting ... not a directory`), and postgres
+   quietly starts with `/docker-entrypoint-initdb.d/00-auth-shim.sql` as a
+   directory, initialising a database with no `auth` schema, which surfaces
+   much later as a failed FK migration. Both files therefore travel inside
+   images (`docker/supabase-nginx/Dockerfile`,
+   `docker/supabase-shim/Dockerfile`). The pre-existing `nginx/ssl/*` mounts
+   are fine — Coolify has real content stored for those paths.
 
 ## How sign-in works
 
