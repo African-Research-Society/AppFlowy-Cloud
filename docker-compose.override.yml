@@ -69,7 +69,7 @@ services:
       # anyway. Old volumes stay on disk, recoverable until deliberately
       # removed (docker volume rm <project>_postgres-data, and _postgres-supabase-data
       # from the deploy that initialised without the shim).
-      - postgres_shared_auth_data:/var/lib/postgresql/data
+      - postgres_auth_shim_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_shared_auth_data:
+  postgres_auth_shim_data:

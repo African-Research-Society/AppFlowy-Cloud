@@ -24,14 +24,39 @@
 
 CREATE SCHEMA IF NOT EXISTS auth;
 
+-- The column set is not arbitrary: AppFlowy both migrates and queries against
+-- gotrue's auth.users directly. Migration 20251123132148_system_admin.sql does
+--
+--   SELECT id FROM auth.users WHERE deleted_at IS NULL ORDER BY created_at ASC
+--
+-- and the server joins af_user to auth.users at runtime for au.email,
+-- au.raw_app_meta_data, au.is_super_admin and au.updated_at. Anything missing
+-- surfaces as a migration abort ('column "deleted_at" does not exist') or a
+-- failing query later, so this mirrors the subset gotrue exposes and AppFlowy
+-- actually reads. Re-check it after upstream bumps: the published image can
+-- carry migrations that are not in the public repository.
 CREATE TABLE IF NOT EXISTS auth.users (
-  id uuid PRIMARY KEY
+  id                uuid PRIMARY KEY,
+  email             text,
+  deleted_at        timestamptz,
+  created_at        timestamptz DEFAULT now(),
+  updated_at        timestamptz DEFAULT now(),
+  raw_app_meta_data jsonb DEFAULT '{}'::jsonb,
+  is_super_admin    boolean DEFAULT false
 );
 
+-- Nobody is flagged as a system admin here: that path expects the admin
+-- console, which this deployment does not run (doc/SUPABASE_AUTH.md), and
+-- AppFlowy refuses client-app sign-in for such accounts. The backfill
+-- migration finds the table empty at migration time and skips itself.
 CREATE OR REPLACE FUNCTION public.af_user_auth_shadow_fn() RETURNS trigger
 LANGUAGE plpgsql AS $$
 BEGIN
-  INSERT INTO auth.users (id) VALUES (NEW.uuid) ON CONFLICT DO NOTHING;
+  INSERT INTO auth.users (id, email, created_at, updated_at)
+  VALUES (NEW.uuid, NEW.email, now(), now())
+  ON CONFLICT (id) DO UPDATE
+    SET email = EXCLUDED.email,
+        updated_at = now();
   RETURN NEW;
 END $$;
 
@@ -56,7 +81,7 @@ BEGIN
     WHERE tgname = 'af_user_auth_shadow' AND tgrelid = af_user
   ) THEN
     EXECUTE 'CREATE TRIGGER af_user_auth_shadow'
-      || ' BEFORE INSERT ON public.af_user'
+      || ' BEFORE INSERT OR UPDATE OF uuid, email ON public.af_user'
       || ' FOR EACH ROW EXECUTE FUNCTION public.af_user_auth_shadow_fn()';
   END IF;
 END $$;

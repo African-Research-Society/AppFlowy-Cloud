@@ -14,7 +14,7 @@ plus env vars, so updating from upstream is a plain merge:
 |---|---|
 | `nginx/nginx.supabase.conf` | Replaces `nginx/nginx.conf`; proxies `/gotrue/` to Supabase with the `apikey` header injected, plus an internal `:81` listener for the Rust server's own GoTrue calls. Blocks `DELETE /api/user` and public `/gotrue/admin/`. Baked into the nginx image by `docker/supabase-nginx/Dockerfile`. |
 | `docker-compose.override.yml` | Disables `gotrue` + `admin_frontend`, swaps the nginx config mount, mounts the DB shim, fixes `appflowy_cloud` dependencies. Auto-merged by `docker compose up` (compose v2.24.4+). |
-| `docker/supabase-shim/00-auth-shim.sql` | Postgres initdb script creating a minimal shadow `auth.users` so the upstream FK migration (`migrations/20231130150001_user_id_foreign_key.sql`) runs verbatim; a trigger keeps the shadow table in step with `af_user`. |
+| `docker/supabase-shim/00-auth-shim.sql` | Postgres initdb script creating a shadow `auth.users` so AppFlowy's migrations run verbatim; a trigger keeps it in step with `af_user`. Baked into the postgres image by `docker/supabase-shim/Dockerfile`. |
 
 ## Hard constraint: HS256 must stay the current signing key
 
@@ -145,6 +145,30 @@ curl https://<appflowy-domain>/gotrue/admin/users               # 403 (nginx)
 Then: sign in on AppFlowy Web with an afrinexus account (Google + magic
 link), open one document in two sessions and type (WS auth), and walk the
 `/workspace` hand-off from afrinexus.
+
+## The shadow `auth.users` has to track what AppFlowy reads
+
+AppFlowy does not treat `auth.users` as opaque: migrations query it and the
+server joins against it at runtime, so the shadow table mirrors the columns it
+touches (`id`, `email`, `deleted_at`, `created_at`, `updated_at`,
+`raw_app_meta_data`, `is_super_admin`). A missing column is a hard failure —
+`20251123132148_system_admin.sql` aborted every deployment with
+`column "deleted_at" does not exist` until the table grew to match.
+
+**The published image can carry migrations that are not in the public
+repository.** That one exists in `appflowyinc/appflowy_cloud:latest` (0.17.12)
+while upstream `main` stops at `20250723072011`. To read what a new image
+actually runs, pull it and dig the SQL out of the binary:
+
+```sh
+cid=$(docker create appflowyinc/appflowy_cloud:latest)
+docker cp "$cid:/usr/local/bin/appflowy_cloud" /tmp/afc && docker rm "$cid"
+strings -n 8 /tmp/afc | grep -oE "auth\.users[^;]{0,200}"   # what it needs
+```
+
+After any upstream/image bump, re-run that check and the shim regression test
+against a **fresh** volume — the migration order on a new database is what
+exposes these, and an existing database will happily hide them.
 
 Log signatures: `appflowy_cloud` "fail to decode token" = JWT secret mismatch
 or the project silently moved to ES256; nginx 401 on `/gotrue/*` = apikey not

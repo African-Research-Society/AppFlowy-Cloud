@@ -251,11 +251,11 @@ services:
     image: appflowy-supabase-postgres:local
     restart: on-failure
     volumes:
-    - postgres_shared_auth_data:/var/lib/postgresql/data
+    - postgres_auth_shim_data:/var/lib/postgresql/data
   redis:
     image: redis
     restart: on-failure
 volumes:
   keyword_index_data: {}
   minio_data: {}
-  postgres_shared_auth_data: {}
+  postgres_auth_shim_data: {}
