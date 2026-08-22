@@ -124,7 +124,7 @@ pub struct Client {
 pub(crate) type RefreshTokenSender = tokio::sync::oneshot::Sender<Result<(), AppResponseError>>;
 
 /// Hardcoded schema in the frontend application. Do not change this value.
-const DESKTOP_CALLBACK_URL: &str = "appflowy-flutter://login-callback";
+const DESKTOP_CALLBACK_URL: &str = "ars-workspace://login-callback";
 
 impl Client {
   /// Constructs a new `Client` instance.
