@@ -46,6 +46,9 @@ services:
     image: appflowyinc/appflowy_ai:${APPFLOWY_AI_VERSION:-latest}
     restart: on-failure
   appflowy_cloud:
+    build:
+      context: .
+      dockerfile: Dockerfile
     depends_on:
       minio:
         condition: service_healthy
@@ -100,7 +103,7 @@ services:
       retries: 12
       test: curl --fail http://127.0.0.1:8000/api/health || exit 1
       timeout: 5s
-    image: appflowyinc/appflowy_cloud:${APPFLOWY_CLOUD_VERSION:-latest}
+    image: ars/appflowy_cloud:local
     restart: on-failure
   appflowy_search:
     depends_on:
@@ -155,7 +158,8 @@ services:
   appflowy_web:
     build:
       args:
-        VERSION: ${APPFLOWY_WEB_BRANCH:-main}
+      - VERSION=${APPFLOWY_WEB_BRANCH:-main}
+      - REVISION=${APPFLOWY_WEB_REVISION:-9d872b6c8bd8db71edf96149ed41c383ca986524}
       context: ./docker/web
       dockerfile: Dockerfile
     depends_on:
@@ -213,7 +217,7 @@ services:
       - -f
       - http://localhost:9000/minio/health/live
       timeout: 5s
-    image: minio/minio
+    image: quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
     restart: on-failure
     volumes:
     - minio_data:/data

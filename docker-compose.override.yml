@@ -16,6 +16,11 @@ services:
     profiles: ["disabled"]
 
   appflowy_cloud:
+    # Build the ARS fork so its membership gate is included in production.
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ars/appflowy_cloud:local
     environment:
       - ARS_MEMBERSHIP_RPC_URL=${ARS_MEMBERSHIP_RPC_URL:-}
       - ARS_MEMBERSHIP_SERVICE_KEY=${ARS_MEMBERSHIP_SERVICE_KEY:-}
@@ -38,7 +43,15 @@ services:
       nginx:
         condition: service_started
 
+  appflowy_web:
+    build:
+      args:
+        # Pin the embedding patch so Docker's cache cannot reuse an older main.
+        REVISION: ${APPFLOWY_WEB_REVISION:-9d872b6c8bd8db71edf96149ed41c383ca986524}
+
   minio:
+    # Docker Hub no longer serves this image. Pin the official multi-arch image.
+    image: quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
     # Upstream's 30s interval means nothing depended on this healthcheck
     # before; now that startup blocks on it, check often enough that a deploy
     # is not held up for half a minute.
