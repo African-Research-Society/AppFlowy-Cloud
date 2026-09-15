@@ -24,6 +24,7 @@ redis = { workspace = true, features = [
   "tokio-comp",
   "connection-manager",
 ] }
+reqwest = { workspace = true, features = ["json"] }
 serde_json = { version = "1.0" }
 sqlx = { workspace = true, default-features = false, features = ["postgres"] }
 tracing.workspace = true

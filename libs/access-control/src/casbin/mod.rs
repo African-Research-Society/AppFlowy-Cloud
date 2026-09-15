@@ -1,5 +1,6 @@
 pub mod access;
 mod adapter;
+mod ars_membership;
 pub mod collab;
 
 #[cfg(test)]

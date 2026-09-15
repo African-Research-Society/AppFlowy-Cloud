@@ -31,6 +31,7 @@ use tracing::trace;
 #[derive(Clone)]
 pub struct AccessControl {
   enforcer: Arc<AFEnforcerV2>,
+  ars_membership: Option<super::ars_membership::ArsMembership>,
   #[allow(dead_code)]
   access_control_metrics: Arc<AccessControlMetrics>,
 }
@@ -41,6 +42,7 @@ impl AccessControl {
     redis_uri: Option<&str>,
     access_control_metrics: Arc<AccessControlMetrics>,
   ) -> Result<Self, AppError> {
+    let ars_membership = super::ars_membership::ArsMembership::from_env(pg_pool.clone())?;
     let model = casbin_model().await?;
     let adapter = PgAdapter::new(pg_pool.clone(), access_control_metrics.clone());
     let mut enforcer = casbin::CachedEnforcer::new(model, adapter)
@@ -61,6 +63,7 @@ impl AccessControl {
     );
     Ok(Self {
       enforcer: Arc::new(enforcer),
+      ars_membership,
       access_control_metrics,
     })
   }
@@ -70,6 +73,7 @@ impl AccessControl {
     let access_control_metrics = Arc::new(AccessControlMetrics::init());
     Self {
       enforcer: Arc::new(enforcer),
+      ars_membership: None,
       access_control_metrics,
     }
   }
@@ -108,6 +112,11 @@ impl AccessControl {
   where
     T: Acts,
   {
+    if let Some(gate) = &self.ars_membership {
+      if !gate.allows(uid, &obj).await? {
+        return Ok(false);
+      }
+    }
     self.enforcer.enforce_policy(uid, obj, act).await
   }
 
@@ -127,6 +136,11 @@ impl AccessControl {
   where
     T: Acts,
   {
+    if let Some(gate) = &self.ars_membership {
+      if !gate.allows(uid, &obj).await? {
+        return Ok(false);
+      }
+    }
     self
       .enforcer
       .enforce_policy_with_consistency(uid, obj, act, ConsistencyMode::Strong)
@@ -137,6 +151,11 @@ impl AccessControl {
   where
     T: Acts,
   {
+    if let Some(gate) = &self.ars_membership {
+      if !gate.allows(uid, &obj).await? {
+        return Ok(false);
+      }
+    }
     self
       .enforcer
       .enforce_policy_with_consistency(uid, obj, act, ConsistencyMode::Eventual)

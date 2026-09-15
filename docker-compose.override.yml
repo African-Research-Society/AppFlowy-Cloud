@@ -16,6 +16,10 @@ services:
     profiles: ["disabled"]
 
   appflowy_cloud:
+    environment:
+      - ARS_MEMBERSHIP_RPC_URL=${ARS_MEMBERSHIP_RPC_URL:-}
+      - ARS_MEMBERSHIP_SERVICE_KEY=${ARS_MEMBERSHIP_SERVICE_KEY:-}
+      - ARS_WORKSPACE_OPERATOR_UUID=${ARS_WORKSPACE_OPERATOR_UUID:-}
     # Base depends_on waits for gotrue (disabled above); postgres was only
     # reached transitively through it. APPFLOWY_GOTRUE_BASE_URL points at the
     # nginx internal listener (http://nginx:81/gotrue), hence nginx here.
