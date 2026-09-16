@@ -21,6 +21,9 @@ services:
       context: .
       dockerfile: Dockerfile
     image: ars/appflowy_cloud:local
+    # This fork serves its internal health endpoint at /health.
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:8000/health"]
     environment:
       - ARS_MEMBERSHIP_RPC_URL=${ARS_MEMBERSHIP_RPC_URL:-}
       - ARS_MEMBERSHIP_SERVICE_KEY=${ARS_MEMBERSHIP_SERVICE_KEY:-}
