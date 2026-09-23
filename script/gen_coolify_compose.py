@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate docker-compose.coolify.yml from the base compose + Supabase override.
+"""Generate docker-compose.coolify.yml from the base compose + ARS override.
 
 Coolify's Docker Compose build pack reads exactly one compose file (the app's
 "Docker Compose Location"), so it never picks up docker-compose.override.yml.
@@ -44,7 +44,7 @@ HEADER = """# GENERATED FILE - DO NOT EDIT.
 #
 #     python3 script/gen_coolify_compose.py
 #
-# See doc/SUPABASE_AUTH.md.
+# See doc/ARS_AUTH.md.
 """
 
 

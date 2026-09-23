@@ -1,12 +1,4 @@
-# Supabase-as-auth deployment override.
-#
-# Fork-local file; docker compose merges it with docker-compose.yml
-# automatically (requires compose v2.24.4+ for the !override tag). See
-# doc/SUPABASE_AUTH.md for the full setup, including required env vars.
-#
-# Auth is delegated to the hosted Supabase project (see
-# nginx/nginx.supabase.conf), so the bundled gotrue container — and the
-# admin_frontend, which can only authenticate against it — are not started.
+# ARS Better Auth deployment override. Preserve all existing AppFlowy data volumes.
 
 services:
   gotrue:
@@ -25,32 +17,33 @@ services:
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://127.0.0.1:8000/health"]
     environment:
-      - ARS_MEMBERSHIP_RPC_URL=${ARS_MEMBERSHIP_RPC_URL:-}
-      - ARS_MEMBERSHIP_SERVICE_KEY=${ARS_MEMBERSHIP_SERVICE_KEY:-}
+      - ARS_MEMBERSHIP_API_URL=${ARS_INTERNAL_API_URL:?Required}/workspace-access
+      - ARS_INTERNAL_API_KEY=${ARS_INTERNAL_API_KEY:?Required}
+      - ARS_AUTH_ISSUER=${ARS_AUTH_ISSUER:?Required}
+      - APPFLOWY_GOTRUE_BASE_URL=${ARS_AUTH_API_URL:?Required}
+      - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
       - ARS_WORKSPACE_OPERATOR_UUID=${ARS_WORKSPACE_OPERATOR_UUID:-}
-    # Base depends_on waits for gotrue (disabled above); postgres was only
-    # reached transitively through it. APPFLOWY_GOTRUE_BASE_URL points at the
-    # nginx internal listener (http://nginx:81/gotrue), hence nginx here.
-    #
-    # minio is listed because AppFlowy-Cloud creates its S3 bucket during
-    # startup (APPFLOWY_S3_CREATE_BUCKET) and aborts the whole process if that
-    # call fails — see src/application.rs:466. Upstream never declared the
-    # dependency: waiting on gotrue's health check happened to give minio
-    # ~30s of head start. Without gotrue, appflowy_cloud reached minio about
-    # six seconds after it started and exited immediately.
     depends_on: !override
       postgres:
         condition: service_healthy
       minio:
         condition: service_healthy
-      nginx:
-        condition: service_started
 
   appflowy_web:
+    environment:
+      - ARS_AUTH_ORIGIN=${ARS_AUTH_ORIGIN:?Required}
     build:
       args:
         # Pin the embedding patch so Docker's cache cannot reuse an older main.
-        REVISION: ${APPFLOWY_WEB_REVISION:-9d872b6c8bd8db71edf96149ed41c383ca986524}
+        REVISION: ${APPFLOWY_WEB_REVISION:?Pin the reviewed ARS OAuth web commit}
+
+  ai:
+    environment:
+      - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
+
+  appflowy_search:
+    environment:
+      - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
 
   minio:
     # Docker Hub no longer serves this image. Pin the official multi-arch image.
@@ -70,8 +63,8 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: docker/supabase-nginx/Dockerfile
-    image: appflowy-supabase-nginx:local
+      dockerfile: docker/ars-nginx/Dockerfile
+    image: ars/appflowy-nginx:local
     volumes: !override
       # Dropping the base nginx.conf mount; keeping the ssl ones, which are
       # long-established Coolify file storages with real content behind them.
@@ -81,14 +74,10 @@ services:
   postgres:
     build:
       context: .
-      dockerfile: docker/supabase-shim/Dockerfile
-    image: appflowy-supabase-postgres:local
+      dockerfile: docker/postgres-auth-shim/Dockerfile
+    image: ars/appflowy-postgres:local
     volumes: !override
-      # A fresh named volume: the initdb shim only runs on an empty data
-      # directory, and a bundled-gotrue database is a different identity pool
-      # anyway. Old volumes stay on disk, recoverable until deliberately
-      # removed (docker volume rm <project>_postgres-data, and _postgres-supabase-data
-      # from the deploy that initialised without the shim).
+      # Keep the existing production database volume exactly as named.
       - postgres_auth_shim_data:/var/lib/postgresql/data
 
 volumes:

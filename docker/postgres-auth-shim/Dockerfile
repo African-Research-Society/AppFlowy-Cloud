@@ -1,6 +1,6 @@
 # Postgres with the shadow-auth initdb shim baked in.
 #
-# Same reason as docker/supabase-nginx/Dockerfile: a relative bind mount of
+# Same reason as docker/ars-nginx/Dockerfile: a relative bind mount of
 # 00-auth-shim.sql becomes a Coolify-managed path that is created as an empty
 # directory, and /docker-entrypoint-initdb.d/00-auth-shim.sql silently becomes
 # a directory inside the container — postgres initialises without ever running
@@ -12,4 +12,4 @@
 
 FROM pgvector/pgvector:pg16
 
-COPY docker/supabase-shim/00-auth-shim.sql /docker-entrypoint-initdb.d/00-auth-shim.sql
+COPY docker/postgres-auth-shim/00-auth-shim.sql /docker-entrypoint-initdb.d/00-auth-shim.sql

@@ -5,7 +5,7 @@
 #
 #     python3 script/gen_coolify_compose.py
 #
-# See doc/SUPABASE_AUTH.md.
+# See doc/ARS_AUTH.md.
 services:
   ai:
     depends_on:
@@ -32,7 +32,7 @@ services:
     - AI_USE_MINIO=${APPFLOWY_S3_USE_MINIO}
     - AI_MINIO_URL=${APPFLOWY_S3_MINIO_URL}
     - AI_APPFLOWY_HOST=${APPFLOWY_BASE_URL}
-    - APPFLOWY_GOTRUE_JWT_SECRET=${GOTRUE_JWT_SECRET}
+    - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
     healthcheck:
       interval: 30s
       retries: 3
@@ -53,9 +53,6 @@ services:
       minio:
         condition: service_healthy
         required: true
-      nginx:
-        condition: service_started
-        required: true
       postgres:
         condition: service_healthy
         required: true
@@ -64,8 +61,8 @@ services:
     - APPFLOWY_ENVIRONMENT=production
     - APPFLOWY_DATABASE_URL=${APPFLOWY_DATABASE_URL}
     - APPFLOWY_REDIS_URI=${APPFLOWY_REDIS_URI}
-    - APPFLOWY_GOTRUE_JWT_SECRET=${GOTRUE_JWT_SECRET}
-    - APPFLOWY_GOTRUE_BASE_URL=${APPFLOWY_GOTRUE_BASE_URL}
+    - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
+    - APPFLOWY_GOTRUE_BASE_URL=${ARS_AUTH_API_URL:?Required}
     - APPFLOWY_S3_CREATE_BUCKET=${APPFLOWY_S3_CREATE_BUCKET}
     - APPFLOWY_S3_USE_MINIO=${APPFLOWY_S3_USE_MINIO}
     - APPFLOWY_S3_MINIO_URL=${APPFLOWY_S3_MINIO_URL}
@@ -95,8 +92,9 @@ services:
     - AI_ENABLED=${AI_ENABLED:-true}
     - SIGNUP_WHITELIST_ENABLED=${SIGNUP_WHITELIST_ENABLED:-false}
     - GUEST_INVITES_REQUIRE_ADMIN_APPROVAL=${GUEST_INVITES_REQUIRE_ADMIN_APPROVAL:-false}
-    - ARS_MEMBERSHIP_RPC_URL=${ARS_MEMBERSHIP_RPC_URL:-}
-    - ARS_MEMBERSHIP_SERVICE_KEY=${ARS_MEMBERSHIP_SERVICE_KEY:-}
+    - ARS_MEMBERSHIP_API_URL=${ARS_INTERNAL_API_URL:?Required}/workspace-access
+    - ARS_INTERNAL_API_KEY=${ARS_INTERNAL_API_KEY:?Required}
+    - ARS_AUTH_ISSUER=${ARS_AUTH_ISSUER:?Required}
     - ARS_WORKSPACE_OPERATOR_UUID=${ARS_WORKSPACE_OPERATOR_UUID:-}
     healthcheck:
       interval: 5s
@@ -136,7 +134,7 @@ services:
     - APPFLOWY_KEYWORD_WORKER_ENABLED=true
     - APPFLOWY_KEYWORD_INDEX_MAP_SIZE_BYTES=${APPFLOWY_KEYWORD_INDEX_MAP_SIZE_BYTES:-2147483648}
     - APPFLOWY_KEYWORD_INDEX_DIR=${APPFLOWY_KEYWORD_INDEX_DIR:-/var/lib/appflowy/keyword_index}
-    - APPFLOWY_GOTRUE_JWT_SECRET=${GOTRUE_JWT_SECRET}
+    - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
     healthcheck:
       interval: 5s
       retries: 12
@@ -163,7 +161,7 @@ services:
     build:
       args:
       - VERSION=${APPFLOWY_WEB_BRANCH:-main}
-      - REVISION=${APPFLOWY_WEB_REVISION:-9d872b6c8bd8db71edf96149ed41c383ca986524}
+      - REVISION=${APPFLOWY_WEB_REVISION:?Pin the reviewed ARS OAuth web commit}
       context: ./docker/web
       dockerfile: Dockerfile
     depends_on:
@@ -174,6 +172,7 @@ services:
     - APPFLOWY_BASE_URL=${APPFLOWY_BASE_URL}
     - APPFLOWY_GOTRUE_BASE_URL=${APPFLOWY_BASE_URL}/gotrue
     - APPFLOWY_WS_BASE_URL=${APPFLOWY_WEBSOCKET_BASE_URL}
+    - ARS_AUTH_ORIGIN=${ARS_AUTH_ORIGIN:?Required}
     image: ars/appflowy_web:${APPFLOWY_WEB_VERSION:-latest}
     restart: on-failure
   appflowy_worker:
@@ -228,8 +227,8 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: docker/supabase-nginx/Dockerfile
-    image: appflowy-supabase-nginx:local
+      dockerfile: docker/ars-nginx/Dockerfile
+    image: ars/appflowy-nginx:local
     ports:
     - ${NGINX_PORT:-80}:80
     - ${NGINX_TLS_PORT:-443}:443
@@ -240,7 +239,7 @@ services:
   postgres:
     build:
       context: .
-      dockerfile: docker/supabase-shim/Dockerfile
+      dockerfile: docker/postgres-auth-shim/Dockerfile
     command:
     - postgres
     - -c
@@ -264,7 +263,7 @@ services:
       - -p
       - ${POSTGRES_PORT:-5432}
       timeout: 5s
-    image: appflowy-supabase-postgres:local
+    image: ars/appflowy-postgres:local
     restart: on-failure
     volumes:
     - postgres_auth_shim_data:/var/lib/postgresql/data
