@@ -19,8 +19,8 @@ pub(super) struct ArsMembership {
 
 impl ArsMembership {
   pub(super) fn from_env(pool: PgPool) -> Result<Option<Self>, AppError> {
-    let endpoint = std::env::var("ARS_MEMBERSHIP_RPC_URL").unwrap_or_default();
-    let key = std::env::var("ARS_MEMBERSHIP_SERVICE_KEY").unwrap_or_default();
+    let endpoint = std::env::var("ARS_MEMBERSHIP_API_URL").unwrap_or_default();
+    let key = std::env::var("ARS_INTERNAL_API_KEY").unwrap_or_default();
     if endpoint.is_empty() && key.is_empty() {
       return Ok(None);
     }
@@ -86,7 +86,6 @@ impl ArsMembership {
     let response = self
       .client
       .post(&self.endpoint)
-      .header("apikey", &self.key)
       .bearer_auth(&self.key)
       .json(&serde_json::json!({ "p_workspace": workspace, "p_user": user }))
       .send()

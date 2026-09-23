@@ -1,5 +1,9 @@
+use crate::state::AppState;
 use actix_http::Payload;
 use actix_web::{web::Data, FromRequest, HttpRequest};
+use std::future::Future;
+use std::pin::Pin;
+use std::time::Duration;
 
 use gotrue_entity::gotrue_jwt::GoTrueJWTClaims;
 use secrecy::{ExposeSecret, Secret};
@@ -44,17 +48,11 @@ impl Display for UserToken {
 impl FromRequest for UserUuid {
   type Error = actix_web::Error;
 
-  type Future = std::future::Ready<Result<Self, Self::Error>>;
+  type Future = Pin<Box<dyn Future<Output = Result<Self, Self::Error>>>>;
 
   fn from_request(req: &HttpRequest, _payload: &mut Payload) -> Self::Future {
-    let auth = get_auth_from_request(req);
-    match auth {
-      Ok(auth) => match UserUuid::from_auth(auth) {
-        Ok(uuid) => std::future::ready(Ok(uuid)),
-        Err(e) => std::future::ready(Err(e)),
-      },
-      Err(e) => std::future::ready(Err(e)),
-    }
+    let req = req.clone();
+    Box::pin(async move { UserUuid::from_auth(get_auth_from_request(&req).await?) })
   }
 }
 
@@ -65,17 +63,18 @@ pub struct OptionalUserUuid(Option<UserUuid>);
 impl FromRequest for OptionalUserUuid {
   type Error = actix_web::Error;
 
-  type Future = std::future::Ready<Result<Self, Self::Error>>;
+  type Future = Pin<Box<dyn Future<Output = Result<Self, Self::Error>>>>;
 
   fn from_request(req: &HttpRequest, _payload: &mut Payload) -> Self::Future {
-    let auth = get_auth_from_request(req);
-    match auth {
-      Ok(auth) => match UserUuid::from_auth(auth) {
-        Ok(uuid) => std::future::ready(Ok(OptionalUserUuid(Some(uuid)))),
-        Err(_) => std::future::ready(Ok(OptionalUserUuid(None))),
-      },
-      Err(_) => std::future::ready(Ok(OptionalUserUuid(None))),
-    }
+    let req = req.clone();
+    Box::pin(async move {
+      Ok(OptionalUserUuid(
+        get_auth_from_request(&req)
+          .await
+          .ok()
+          .and_then(|auth| UserUuid::from_auth(auth).ok()),
+      ))
+    })
   }
 }
 
@@ -112,18 +111,15 @@ impl Authorization {
 impl FromRequest for Authorization {
   type Error = actix_web::Error;
 
-  type Future = std::future::Ready<Result<Self, Self::Error>>;
+  type Future = Pin<Box<dyn Future<Output = Result<Self, Self::Error>>>>;
 
   fn from_request(req: &HttpRequest, _payload: &mut Payload) -> Self::Future {
-    let auth = get_auth_from_request(req);
-    match auth {
-      Ok(auth) => std::future::ready(Ok(auth)),
-      Err(e) => std::future::ready(Err(e)),
-    }
+    let req = req.clone();
+    Box::pin(async move { get_auth_from_request(&req).await })
   }
 }
 
-fn get_auth_from_request(req: &HttpRequest) -> Result<Authorization, actix_web::Error> {
+async fn get_auth_from_request(req: &HttpRequest) -> Result<Authorization, actix_web::Error> {
   let jwt_secret_data =
     req
       .app_data::<Data<Secret<String>>>()
@@ -141,21 +137,39 @@ fn get_auth_from_request(req: &HttpRequest) -> Result<Authorization, actix_web::
     .to_str()
     .map_err(actix_web::error::ErrorUnauthorized)?;
 
-  let (_, token) = bearer_str
-    .split_once("Bearer ")
+  let token = bearer_str
+    .strip_prefix("Bearer ")
     .ok_or(actix_web::error::ErrorUnauthorized(
       "Invalid Authorization header, missing Bearer",
     ))?;
 
-  authorization_from_token(token, jwt_secret_data)
+  let state =
+    req
+      .app_data::<Data<AppState>>()
+      .ok_or(actix_web::error::ErrorInternalServerError(
+        "Application state missing",
+      ))?;
+  authorization_from_token(token, jwt_secret_data, state).await
 }
 
 #[instrument(level = "trace", skip_all, err)]
-pub fn authorization_from_token(
+pub async fn authorization_from_token(
   token: &str,
   jwt_secret: &Data<Secret<String>>,
+  state: &Data<AppState>,
 ) -> Result<Authorization, actix_web::Error> {
   let claims = gotrue_jwt_claims_from_token(token, jwt_secret)?;
+  if std::env::var_os("ARS_AUTH_ISSUER").is_some() {
+    let user = tokio::time::timeout(Duration::from_secs(5), state.gotrue_client.user_info(token))
+      .await
+      .map_err(|_| actix_web::error::ErrorUnauthorized("Session validation unavailable"))?
+      .map_err(|_| actix_web::error::ErrorUnauthorized("Session expired or revoked"))?;
+    if Some(user.id.as_str()) != claims.sub.as_deref() {
+      return Err(actix_web::error::ErrorUnauthorized(
+        "Session identity mismatch",
+      ));
+    }
+  }
   Ok(Authorization {
     token: token.to_string(),
     claims,
@@ -172,4 +186,30 @@ fn gotrue_jwt_claims_from_token(
       actix_web::error::ErrorUnauthorized(format!("fail to decode token, error:{}", err))
     })?;
   Ok(claims)
+}
+
+/// No positive cache across WebSocket checks. A closed channel or ARS outage
+/// terminates the connection; the client must refresh and reconnect.
+pub fn monitor_ars_session(
+  state: &Data<AppState>,
+  token: String,
+) -> Option<tokio::sync::watch::Receiver<bool>> {
+  if std::env::var_os("ARS_AUTH_ISSUER").is_none() {
+    return None;
+  }
+  let client = state.gotrue_client.clone();
+  let (sender, receiver) = tokio::sync::watch::channel(true);
+  actix::spawn(async move {
+    let mut interval = tokio::time::interval(Duration::from_secs(10));
+    loop {
+      tokio::select! {
+        _ = sender.closed() => break,
+        _ = interval.tick() => {
+          let valid = matches!(tokio::time::timeout(Duration::from_secs(5), client.user_info(&token)).await, Ok(Ok(_)));
+          if sender.send(valid).is_err() || !valid { break; }
+        }
+      }
+    }
+  });
+  Some(receiver)
 }

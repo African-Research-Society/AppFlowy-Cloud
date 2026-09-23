@@ -54,6 +54,7 @@ pub struct WsSession {
   info: SessionInfo,
   server: Addr<WsServer>,
   hb: Instant,
+  pub ars_session: Option<tokio::sync::watch::Receiver<bool>>,
   buf: Option<BytesMut>,
   extra_message_rx: Option<ExtraMessageReceiver>,
 }
@@ -70,6 +71,7 @@ impl WsSession {
       server,
       current_workspace: workspace,
       hb: Instant::now(),
+      ars_session: None,
       buf: None,
       extra_message_rx: Some(extra_message_rx),
     }
@@ -86,6 +88,18 @@ impl WsSession {
 
   fn hb(&self, ctx: &mut ws::WebsocketContext<Self>) {
     ctx.run_interval(HEARTBEAT, |act, ctx| {
+      if act
+        .ars_session
+        .as_ref()
+        .is_some_and(|session| !*session.borrow() || session.has_changed().is_err())
+      {
+        ctx.close(Some(CloseReason {
+          code: CloseCode::Policy,
+          description: Some("ARS session expired or revoked".into()),
+        }));
+        ctx.stop();
+        return;
+      }
       if Instant::now().duration_since(act.hb) > CLIENT_TIMEOUT {
         tracing::trace!(
           "session `{}` failed to receive pong within {:?}",

@@ -37,6 +37,7 @@ type BinaryRateLimiter = RateLimiter<NotKeyed, InMemoryState, DefaultClock, NoOp
 pub struct RealtimeClient<S: RealtimeServer> {
   user: RealtimeUser,
   hb: Instant,
+  pub ars_session: Option<tokio::sync::watch::Receiver<bool>>,
   pub server: Addr<S>,
   heartbeat_interval: Duration,
   client_timeout: Duration,
@@ -67,6 +68,7 @@ where
     Self {
       user,
       hb: Instant::now(),
+      ars_session: None,
       server,
       heartbeat_interval,
       client_timeout,
@@ -78,6 +80,18 @@ where
 
   fn hb(&self, ctx: &mut ws::WebsocketContext<Self>) {
     ctx.run_interval(self.heartbeat_interval, move |act, ctx| {
+      if act
+        .ars_session
+        .as_ref()
+        .is_some_and(|session| !*session.borrow() || session.has_changed().is_err())
+      {
+        ctx.close(Some(CloseReason {
+          code: CloseCode::Policy,
+          description: Some("ARS session expired or revoked".into()),
+        }));
+        ctx.stop();
+        return;
+      }
       if Instant::now().duration_since(act.hb) > act.client_timeout {
         let user = act.user.clone();
         warn!(

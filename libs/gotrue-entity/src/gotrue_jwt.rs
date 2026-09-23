@@ -60,7 +60,20 @@ lazy_static::lazy_static! {
 
 impl GoTrueJWTClaims {
   pub fn decode(token: &str, secret: &[u8]) -> Result<Self, jsonwebtoken::errors::Error> {
-    let token_data = decode::<Self>(token, &DecodingKey::from_secret(secret), &VALIDATION)?;
+    let mut validation = VALIDATION.clone();
+    let ars_issuer = std::env::var("ARS_AUTH_ISSUER").ok();
+    if let Some(ref issuer) = ars_issuer {
+      validation.set_issuer(&[issuer]);
+      validation.set_audience(&["authenticated"]);
+      validation.set_required_spec_claims(&["exp", "sub", "iss", "aud"]);
+      validation.leeway = 0;
+    }
+    let token_data = decode::<Self>(token, &DecodingKey::from_secret(secret), &validation)?;
+    if ars_issuer.is_some()
+      && (token_data.claims.session_id.is_none() || token_data.claims.role != "authenticated")
+    {
+      return Err(jsonwebtoken::errors::ErrorKind::InvalidToken.into());
+    }
     Ok(token_data.claims)
   }
 }

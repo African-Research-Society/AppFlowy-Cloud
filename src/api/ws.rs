@@ -2,7 +2,7 @@ use std::borrow::Cow;
 use std::collections::HashMap;
 use std::time::Duration;
 
-use crate::biz::authentication::jwt::{authorization_from_token, UserUuid};
+use crate::biz::authentication::jwt::{authorization_from_token, monitor_ars_session, UserUuid};
 use crate::state::AppState;
 use actix::Addr;
 use actix_http::header::AUTHORIZATION;
@@ -116,7 +116,7 @@ pub async fn establish_ws_connection_v2(
   let workspace_id = path.into_inner();
   let ws_server = state.ws_server.clone();
   let params = WsConnectionV2Params::parse(&request)?;
-  let auth = authorization_from_token(params.access_token.as_str(), &jwt_secret)?;
+  let auth = authorization_from_token(params.access_token.as_str(), &jwt_secret, &state).await?;
   let user_uuid = UserUuid::from_auth(auth)?;
   let uid = state.user_cache.get_user_uid(&user_uuid).await?;
   let info = SessionInfo::new(
@@ -150,13 +150,11 @@ pub async fn establish_ws_connection_v2(
     }
   });
 
-  ws::WsResponseBuilder::new(
-    WsSession::new(workspace_id, info, ws_server, rx),
-    &request,
-    payload,
-  )
-  .frame_size(max_sync_message_size())
-  .start()
+  let mut session = WsSession::new(workspace_id, info, ws_server, rx);
+  session.ars_session = monitor_ars_session(&state, params.access_token);
+  ws::WsResponseBuilder::new(session, &request, payload)
+    .frame_size(max_sync_message_size())
+    .start()
 }
 
 #[allow(clippy::too_many_arguments)]
@@ -172,7 +170,7 @@ async fn start_connect(
   client_app_version: Version,
   connect_at: i64,
 ) -> Result<HttpResponse> {
-  let auth = authorization_from_token(access_token.as_str(), jwt_secret)?;
+  let auth = authorization_from_token(access_token.as_str(), jwt_secret, state).await?;
   let user_uuid = UserUuid::from_auth(auth)?;
   let result = state.user_cache.get_user_uid(&user_uuid).await;
 
@@ -192,7 +190,7 @@ async fn start_connect(
         client_app_version.to_string(),
       );
       let (tx, external_source) = mpsc::channel(100);
-      let client = RealtimeClient::new(
+      let mut client = RealtimeClient::new(
         realtime_user,
         server.get_ref().clone(),
         Duration::from_secs(state.config.websocket.heartbeat_interval as u64),
@@ -201,6 +199,8 @@ async fn start_connect(
         external_source,
         10,
       );
+
+      client.ars_session = monitor_ars_session(state, access_token);
 
       // Receive user change notifications and send them to the client.
       listen_on_user_change(state, uid, tx);
