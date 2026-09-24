@@ -354,65 +354,65 @@ email_template/.gitignore	reviewed	batch 247 last-line length matched; model sel
 email_template/.npmrc	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
 email_template/LICENSE	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
 email_template/README.md	doc	readme
-email_template/config.js	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/config.production.js	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/package.json	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/config.js	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/config.production.js	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/package.json	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
 email_template/pnpm-lock.yaml	generated	lockfile
-email_template/src/components/button.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/components/divider.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/components/footer.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/components/spacer.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/components/v-fill.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/components/v-image.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/css/resets.css	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/css/tailwind.css	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/css/utilities.css	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/components/button.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/components/divider.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/components/footer.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/components/spacer.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/components/v-fill.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/components/v-image.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/css/resets.css	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/css/tailwind.css	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/css/utilities.css	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
 email_template/src/images/appflowy-logo.png	asset	binary or font asset, not executable logic
 email_template/src/images/appflowy.png	asset	binary or font asset, not executable logic
-email_template/src/layouts/main.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/access_request.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/access_request_approved_notification.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/confirmation.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/import_data_fail.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/import_data_success.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/magic_link.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/page_mention_notification.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/recovery.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/src/templates/workspace_invitation.html	unreviewed	production-relevant until a pass-3 reviewer records it
-email_template/tailwind.config.js	unreviewed	production-relevant until a pass-3 reviewer records it
-env.deploy.secret.example	unreviewed	production-relevant until a pass-3 reviewer records it
-env.dev.secret.example	unreviewed	production-relevant until a pass-3 reviewer records it
-external_proxy_config/nginx/appflowy.site.conf	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/act.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/access.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/adapter.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/ars_membership.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/enforcer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/enforcer_v2.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/performance_comparison_tests.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/redis_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/casbin/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/entity.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/noops/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/noops/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/noops/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/access-control/src/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/app-error/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/app-error/src/gotrue.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/app-error/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-ai-client/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-ai-client/src/client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-ai-client/src/dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-ai-client/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-ai-client/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/layouts/main.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/templates/access_request.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/templates/access_request_approved_notification.html	reviewed	batch 248 last-line length matched; model self-reported composer, not tool-verified grok
+email_template/src/templates/confirmation.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/src/templates/import_data_fail.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/src/templates/import_data_success.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/src/templates/magic_link.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/src/templates/page_mention_notification.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/src/templates/recovery.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/src/templates/workspace_invitation.html	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+email_template/tailwind.config.js	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+env.deploy.secret.example	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+env.dev.secret.example	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+external_proxy_config/nginx/appflowy.site.conf	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/Cargo.toml	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/act.rs	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/access.rs	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/adapter.rs	reviewed	batch 249 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/ars_membership.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/collab.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/enforcer.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/enforcer_v2.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/mod.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/performance_comparison_tests.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/redis_cache.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/util.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/casbin/workspace.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/collab.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/entity.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/lib.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/metrics.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/noops/collab.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/noops/mod.rs	reviewed	batch 250 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/noops/workspace.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/request.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/access-control/src/workspace.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/app-error/Cargo.toml	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/app-error/src/gotrue.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/app-error/src/lib.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-ai-client/Cargo.toml	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-ai-client/src/client.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-ai-client/src/dto.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-ai-client/src/error.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-ai-client/src/lib.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
 libs/appflowy-ai-client/tests/chat_test/completion_test.rs	test-fixture	test or fixture path
 libs/appflowy-ai-client/tests/chat_test/context_test.rs	test-fixture	test or fixture path
 libs/appflowy-ai-client/tests/chat_test/mod.rs	test-fixture	test or fixture path
@@ -424,40 +424,40 @@ libs/appflowy-ai-client/tests/main.rs	test-fixture	test or fixture path
 libs/appflowy-ai-client/tests/row_test/mod.rs	test-fixture	test or fixture path
 libs/appflowy-ai-client/tests/row_test/summarize_test.rs	test-fixture	test or fixture path
 libs/appflowy-ai-client/tests/row_test/translate_test.rs	test-fixture	test or fixture path
-libs/appflowy-proto/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/build.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/proto/collab.proto	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/proto/messages.proto	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/proto/notification.proto	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/client_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/pb/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/pb/messages.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/pb/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/pb/notification.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/server_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/appflowy-proto/src/shared.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-entity/src/id.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/assertion_utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/async_utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/database_util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/log.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/test_client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/test_client_config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/test_client_v2.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api-test/src/workspace_ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/collab_sync/collab_sink.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/collab_sync/collab_stream.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/collab_sync/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/collab_sync/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/collab_sync/plugin.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/Cargo.toml	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/build.rs	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/proto/collab.proto	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/proto/messages.proto	reviewed	batch 251 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/proto/notification.proto	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/client_message.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/lib.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/pb/collab.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/pb/messages.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/pb/mod.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/pb/notification.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/server_message.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/appflowy-proto/src/shared.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-entity/Cargo.toml	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-entity/src/id.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-entity/src/lib.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/Cargo.toml	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/assertion_utils.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/async_utils.rs	reviewed	batch 252 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/client.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/database_util.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/lib.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/log.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/test_client.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/test_client_config.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/test_client_v2.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/user.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api-test/src/workspace_ops.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api/Cargo.toml	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api/src/collab_sync/collab_sink.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api/src/collab_sync/collab_stream.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api/src/collab_sync/error.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api/src/collab_sync/mod.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
+libs/client-api/src/collab_sync/plugin.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
 libs/client-api/src/collab_sync/sync_control.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/client-api/src/http.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/client-api/src/http_access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
