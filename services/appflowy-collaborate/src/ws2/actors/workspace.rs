@@ -299,7 +299,7 @@ impl Workspace {
       if session_handle
         .can_read_collab(&store, &update.object_id)
         .await
-        .is_err()
+        != Ok(true)
       {
         tracing::trace!(
           "user {} lack of permission. skip publish collab {}, client_id: {}",

@@ -109,3 +109,7 @@ Read the handlers and the client callers. Not compiled. Not deployed.
 - Cloud API areas opened: user verify, file storage GET, ws, access-control, nginx, compose.
 - Upstream subsystems excluded with a reason: CRDT, AI, admin UI.
 - Findings fixed in code: 1 (log). Protocol fixes: 0.
+
+## Pass 3 — stopped before completion
+
+Cloud ledger unreviewed is 0 of 958 rows after batches 240–286. That is wave-1 file coverage, not a finished audit. Local unpushed fixes include HttpOnly admin cookie, redacted token logs, bound quick-note search, password reset off the command line, and collab read/write denial when the permission check is not `Ok(true)`. A leftover publish-path check in `workspace.rs` uses the same `!= Ok(true)` test and was not compiled here. Waves 2 and 3 were not run.
