@@ -51,9 +51,19 @@ pub async fn select_quick_notes_with_one_more_than_limit<
   query_builder.push(" AND uid = ");
   query_builder.push_bind(uid);
   if let Some(search_term) = search_term.filter(|term| !term.is_empty()) {
+    let mut literal = String::with_capacity(search_term.len());
+    for ch in search_term.chars() {
+      if matches!(
+        ch,
+        '\\' | '"' | '.' | '*' | '+' | '?' | '|' | '(' | ')' | '[' | ']' | '{' | '}' | '^' | '$'
+      ) {
+        literal.push('\\');
+      }
+      literal.push(ch);
+    }
+    let json_path = format!("$.**.insert ? (@ like_regex \".*{literal}.*\")");
     query_builder.push(" AND data @? ");
-    let json_path_query = format!("'$.**.insert ? (@ like_regex \".*{}.*\")'", search_term);
-    query_builder.push(json_path_query);
+    query_builder.push_bind(json_path);
   }
   query_builder.push(" ORDER BY updated_at DESC");
   if let Some(limit) = limit {
