@@ -889,71 +889,71 @@ tests/collab/storage_test.rs	reviewed	batch 281 last-line length matched; model 
 tests/collab/stress_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
 tests/collab/util.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
 tests/collab/web_edit.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
-tests/collab_history/document_history.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab_history/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab_history/document_history.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/collab_history/mod.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
 tests/file_test/asset/16kb_logo.png	asset	binary or font asset, not executable logic
-tests/file_test/delete_dir_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/file_test/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/file_test/multiple_part_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/file_test/put_and_get.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/file_test/usage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/gotrue/admin.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/gotrue/health.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/gotrue/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/gotrue/settings.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/search/asset/appflowy_values.md	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/search/asset/kathryn_tennis_story.md	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/search/asset/the_five_dysfunctions_of_a_team.md	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/search/document_search.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/search/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/server_info/info.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/server_info/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/sql_test/chat_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/sql_test/collab_embed_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/sql_test/history_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/sql_test/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/sql_test/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/sql_test/workspace_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/file_test/delete_dir_test.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/file_test/mod.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/file_test/multiple_part_test.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/file_test/put_and_get.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/file_test/usage.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/gotrue/admin.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/gotrue/health.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/gotrue/mod.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/gotrue/settings.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/main.rs	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/search/asset/appflowy_values.md	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/search/asset/kathryn_tennis_story.md	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/search/asset/the_five_dysfunctions_of_a_team.md	reviewed	batch 282 last-line length matched; model not tool-verified grok
+tests/search/document_search.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/search/mod.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/server_info/info.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/server_info/mod.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/sql_test/chat_test.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/sql_test/collab_embed_test.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/sql_test/history_test.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/sql_test/mod.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/sql_test/util.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/sql_test/workspace_test.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
 tests/user/asset/avatar.png	asset	binary or font asset, not executable logic
-tests/user/delete.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/image.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/refresh.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/sign_in.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/sign_out.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/sign_up.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/update.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/user/user_awareness_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/websocket/actor_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/websocket/conn_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/websocket/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/asset/blog_post.zip	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/asset/project&task.zip	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/asset/read_me.json	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/default_user_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/edit_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/import_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/invitation_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/join_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/member_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/page_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/person.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/published_data.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/workspace_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/workspace_folder.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/workspace/workspace_settings.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/delete.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/user/image.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/user/mod.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/user/refresh.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/user/sign_in.rs	reviewed	batch 283 last-line length matched; model not tool-verified grok
+tests/user/sign_out.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/user/sign_up.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/user/update.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/user/user_awareness_test.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/websocket/actor_test.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/websocket/conn_test.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/websocket/mod.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/access_request.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/asset/blog_post.zip	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/asset/project&task.zip	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/asset/read_me.json	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/default_user_workspace.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/edit_workspace.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/import_test.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/invitation_crud.rs	reviewed	batch 284 last-line length matched; model not tool-verified grok
+tests/workspace/join_workspace.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/member_crud.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/mod.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/page_view.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/person.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/publish.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/published_data.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/quick_note.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/template.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/workspace_crud.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/workspace_folder.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/workspace/workspace_settings.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
 tests/yrs_version/README.md	doc	readme
-tests/yrs_version/document_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/yrs_version/files/folder_encode_collab_0172	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/yrs_version/files/get_started_encode_collab_0172	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/yrs_version/folder_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/yrs_version/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/yrs_version/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-xtask/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-xtask/src/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/document_test.rs	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/yrs_version/files/folder_encode_collab_0172	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/yrs_version/files/get_started_encode_collab_0172	reviewed	batch 285 last-line length matched; model not tool-verified grok
+tests/yrs_version/folder_test.rs	reviewed	batch 286 last-line length matched; model not tool-verified grok
+tests/yrs_version/mod.rs	reviewed	batch 286 last-line length matched; model not tool-verified grok
+tests/yrs_version/util.rs	reviewed	batch 286 last-line length matched; model not tool-verified grok
+xtask/Cargo.toml	reviewed	batch 286 last-line length matched; model not tool-verified grok
+xtask/src/main.rs	reviewed	batch 286 last-line length matched; model not tool-verified grok
