@@ -503,23 +503,23 @@ libs/client-websocket/src/web.rs	reviewed	batch 256 last-line length matched; mo
 libs/collab-rt-entity/.gitignore	reviewed	batch 256 last-line length matched; model not tool-verified grok
 libs/collab-rt-entity/Cargo.toml	reviewed	batch 256 last-line length matched; model not tool-verified grok
 libs/collab-rt-entity/build.rs	reviewed	batch 256 last-line length matched; model not tool-verified grok
-libs/collab-rt-entity/migration/0147/client_init	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/migration/0147/collab_update	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/migration/0149/client_collab_v1	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/migration/0149/client_init	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/migration/0149/collab_update	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/proto/collab.proto	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/proto/realtime.proto	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/client_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/collab_proto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/realtime_proto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/server_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/collab-rt-entity/src/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/migration/0147/client_init	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/migration/0147/collab_update	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/migration/0149/client_collab_v1	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/migration/0149/client_init	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/migration/0149/collab_update	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/proto/collab.proto	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/proto/realtime.proto	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/client_message.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/collab_proto.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/lib.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/message.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/realtime_proto.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/server_message.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
+libs/collab-rt-entity/src/user.rs	reviewed	batch 257 last-line length matched; model not tool-verified grok
 libs/collab-rt-entity/tests/main.rs	test-fixture	test or fixture path
 libs/collab-rt-entity/tests/serde_test.rs	test-fixture	test or fixture path
-libs/collab-rt-protocol/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-protocol/Cargo.toml	reviewed	batch 257 last-line length matched; model not tool-verified grok
 libs/collab-rt-protocol/src/data_validation.rs	reviewed	batch 258 last-line length matched; model not tool-verified grok
 libs/collab-rt-protocol/src/lib.rs	reviewed	batch 258 last-line length matched; model not tool-verified grok
 libs/collab-rt-protocol/src/message.rs	reviewed	batch 258 last-line length matched; model not tool-verified grok
@@ -641,53 +641,53 @@ libs/workspace-template/assets/mobile_guide.json	reviewed	batch 265 last-line le
 libs/workspace-template/assets/to-dos.json	reviewed	batch 265 last-line length matched; model not tool-verified grok
 libs/workspace-template/assets/vault_get_started.json	reviewed	batch 265 last-line length matched; model not tool-verified grok
 libs/workspace-template/assets/web_guide.json	reviewed	batch 265 last-line length matched; model not tool-verified grok
-libs/workspace-template/src/database/database_collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/database/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/document/getting_started.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/document/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/document/parser.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/document/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/document/vault_template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/hierarchy_builder.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/workspace-template/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/database/database_collab.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/database/mod.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/document/getting_started.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/document/mod.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/document/parser.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/document/util.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/document/vault_template.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/hierarchy_builder.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
+libs/workspace-template/src/lib.rs	reviewed	batch 266 last-line length matched; model not tool-verified grok
 libs/workspace-template/src/tests/getting_started_tests.rs	test-fixture	test or fixture path
 libs/workspace-template/src/tests/mod.rs	test-fixture	test or fixture path
-migrations/20230312043024_user.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20230906101032_permission.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20230906101223_workspace.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20230906101555_user_profile.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20230906102652_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20230926145155_blob_storage.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20231113074418_user_change.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20231130150001_user_id_foreign_key.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240123140707_workspace_owner_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240227000000_workspace_icon.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240303003711_collab_member_timestamp.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240304173938_workspace_invitation.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240306110000_workspace_invitation_2.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240412083446_history_init.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240510024506_chat_message.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240529054858_workspace_add_token_usage.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240531031836_chat_message_meta.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240604090043_add_workspace_settings.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240613112820_publish_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240614171931_collab_embeddings.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240617135926_af_workspace_foreign_key_indices.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240618035048_af_workspace_ai_usage.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240618173348_publish_collab_2.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240621105148_publish_collab_3.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240626184736_publish_collab_4.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240627525836_publish_collab_5.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240629035230_publish_collab_6.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240630010030_workspace_member_foreign_key.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240723090305_publish_view_comment.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240725065111_publish_view_reaction.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240729065107_publish_view_reaction_2.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240806054557_template_category.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240806103039_template_creator.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240813040905_template.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240910100000_af_collab_embeddings_indices.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20240924045045_access_request.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20230312043024_user.sql	reviewed	batch 266 last-line length matched; model not tool-verified grok
+migrations/20230906101032_permission.sql	reviewed	batch 266 last-line length matched; model not tool-verified grok
+migrations/20230906101223_workspace.sql	reviewed	batch 266 last-line length matched; model not tool-verified grok
+migrations/20230906101555_user_profile.sql	reviewed	batch 266 last-line length matched; model not tool-verified grok
+migrations/20230906102652_collab.sql	reviewed	batch 266 last-line length matched; model not tool-verified grok
+migrations/20230926145155_blob_storage.sql	reviewed	batch 266 last-line length matched; model not tool-verified grok
+migrations/20231113074418_user_change.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20231130150001_user_id_foreign_key.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240123140707_workspace_owner_trigger.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240227000000_workspace_icon.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240303003711_collab_member_timestamp.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240304173938_workspace_invitation.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240306110000_workspace_invitation_2.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240412083446_history_init.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240510024506_chat_message.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240529054858_workspace_add_token_usage.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240531031836_chat_message_meta.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240604090043_add_workspace_settings.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240613112820_publish_collab.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240614171931_collab_embeddings.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240617135926_af_workspace_foreign_key_indices.sql	reviewed	batch 267 last-line length matched; model not tool-verified grok
+migrations/20240618035048_af_workspace_ai_usage.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240618173348_publish_collab_2.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240621105148_publish_collab_3.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240626184736_publish_collab_4.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240627525836_publish_collab_5.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240629035230_publish_collab_6.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240630010030_workspace_member_foreign_key.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240723090305_publish_view_comment.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240725065111_publish_view_reaction.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240729065107_publish_view_reaction_2.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240806054557_template_category.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240806103039_template_creator.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240813040905_template.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240910100000_af_collab_embeddings_indices.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
+migrations/20240924045045_access_request.sql	reviewed	batch 268 last-line length matched; model not tool-verified grok
 migrations/20240930135712_import_data.sql	reviewed	batch 269 last-line length matched; model not tool-verified grok
 migrations/20241014153023_default_published_view.sql	reviewed	batch 269 last-line length matched; model not tool-verified grok
 migrations/20241025135939_import_task_add_uid_column.sql	reviewed	batch 269 last-line length matched; model not tool-verified grok
@@ -703,52 +703,52 @@ migrations/20241222152427_collab_add_indexed_at.sql	reviewed	batch 269 last-line
 migrations/20241230064618_collab_embedding_add_fragment_index.sql	reviewed	batch 269 last-line length matched; model not tool-verified grok
 migrations/20250109142738_blob_metadata_add_file_status.sql	reviewed	batch 269 last-line length matched; model not tool-verified grok
 migrations/20250113091708_publish_options.sql	reviewed	batch 269 last-line length matched; model not tool-verified grok
-migrations/20250217080054_drop_collab_member_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250226091933_blob_metadata_add_file_source.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250305082546_workspace_delete_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250318120849_departition_af_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250403021559_workspace_invite_code.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250405092732_af_collab_embeddings_upsert.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250414074846_drop_af_collab_set_updated_at_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250703030740_workspace_member_profile.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250714060306_page_mention.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250718033221_page_mention_notification.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250721084910_page_mention_view_name.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250723024109_workspace_profile_custom_image_url.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-migrations/20250723072011_page_mention_notification_status.sql	unreviewed	production-relevant until a pass-3 reviewer records it
-nginx/nginx.conf	unreviewed	production-relevant until a pass-3 reviewer records it
-nginx/nginx.supabase.conf	unreviewed	production-relevant until a pass-3 reviewer records it
-nginx/ssl/certificate.crt	unreviewed	production-relevant until a pass-3 reviewer records it
-nginx/ssl/private_key.key	unreviewed	production-relevant until a pass-3 reviewer records it
-rust-toolchain.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-rustfmt.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-script/client_api_deps_check.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/code_gen.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/diagnose_appflowy.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/gen_coolify_compose.py	unreviewed	production-relevant until a pass-3 reviewer records it
-script/generate_env.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250217080054_drop_collab_member_trigger.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250226091933_blob_metadata_add_file_source.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250305082546_workspace_delete_trigger.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250318120849_departition_af_collab.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250403021559_workspace_invite_code.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250405092732_af_collab_embeddings_upsert.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250414074846_drop_af_collab_set_updated_at_trigger.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250703030740_workspace_member_profile.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250714060306_page_mention.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250718033221_page_mention_notification.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250721084910_page_mention_view_name.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250723024109_workspace_profile_custom_image_url.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+migrations/20250723072011_page_mention_notification_status.sql	reviewed	batch 270 last-line length matched; model not tool-verified grok
+nginx/nginx.conf	reviewed	batch 270 last-line length matched; model not tool-verified grok
+nginx/nginx.supabase.conf	reviewed	batch 270 last-line length matched; model not tool-verified grok
+nginx/ssl/certificate.crt	reviewed	batch 271 last-line length matched; model not tool-verified grok
+nginx/ssl/private_key.key	reviewed	batch 271 last-line length matched; model not tool-verified grok
+rust-toolchain.toml	reviewed	batch 271 last-line length matched; model not tool-verified grok
+rustfmt.toml	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/client_api_deps_check.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/code_gen.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/diagnose_appflowy.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/gen_coolify_compose.py	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/generate_env.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
 script/lib/README.md	doc	readme
-script/lib/check_config.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/lib/check_containers.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/lib/check_functional.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/lib/check_health.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/lib/check_logs.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/lib/report.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/lib/utils.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/redis/remove_redis_stream_range.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/redis/show_redis_stream_values.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/reset-password-interactive.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/run_ci_server.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-script/run_local_server.sh	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/actix_ws/client/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/actix_ws/client/rt_client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/actix_ws/entities.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/actix_ws/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/actix_ws/server/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/actix_ws/server/rt_actor.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/client/client_msg_router.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/client/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/check_config.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok; main-session stopped the JWT fix text from printing the secret
+script/lib/check_containers.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/lib/check_functional.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/lib/check_health.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/lib/check_logs.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/lib/report.sh	reviewed	batch 271 last-line length matched; model not tool-verified grok
+script/lib/utils.sh	reviewed	batch 272 last-line length matched; model not tool-verified grok
+script/redis/remove_redis_stream_range.sh	reviewed	batch 272 last-line length matched; model not tool-verified grok
+script/redis/show_redis_stream_values.sh	reviewed	batch 272 last-line length matched; model not tool-verified grok
+script/reset-password-interactive.sh	reviewed	batch 272 last-line length matched; model not tool-verified grok; main-session hid the password prompt and bound the SQL values
+script/run_ci_server.sh	reviewed	batch 272 last-line length matched; model not tool-verified grok
+script/run_local_server.sh	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/Cargo.toml	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/actix_ws/client/mod.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/actix_ws/client/rt_client.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/actix_ws/entities.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/actix_ws/mod.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/actix_ws/server/mod.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/actix_ws/server/rt_actor.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/client/client_msg_router.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/client/mod.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
 services/appflowy-collaborate/src/collab/cache/collab_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 services/appflowy-collaborate/src/collab/cache/disk_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 services/appflowy-collaborate/src/collab/cache/mem_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it

@@ -266,7 +266,7 @@ echo ""
 
 # Prompt for new password
 while true; do
-    read -p "Enter new password: " password1
+    read -r -s -p "Enter new password: " password1
     echo ""
 
     if [ ${#password1} -lt 6 ]; then
@@ -274,7 +274,7 @@ while true; do
         continue
     fi
 
-    read -p "Confirm new password: " password2
+    read -r -s -p "Confirm new password: " password2
     echo ""
 
     if [ "$password1" != "$password2" ]; then
@@ -307,12 +307,13 @@ echo ""
 
 # Generate bcrypt hash
 echo "Step 1: Generating bcrypt hash..."
-BCRYPT_HASH=$(python3 << EOF
+BCRYPT_HASH=$(NEW_PASSWORD="$NEW_PASSWORD" python3 - << 'EOF'
+import os
 import bcrypt
-password = "$NEW_PASSWORD"
+password = os.environ["NEW_PASSWORD"]
 salt = bcrypt.gensalt(rounds=10)
-hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
-print(hashed.decode('utf-8'))
+hashed = bcrypt.hashpw(password.encode("utf-8"), salt)
+print(hashed.decode("utf-8"))
 EOF
 )
 
@@ -327,13 +328,10 @@ echo ""
 
 # Update password in database
 echo "Step 2: Updating password in database..."
-RESULT=$(docker exec "$SELECTED_CONTAINER" psql -U "$PGUSER" -d "$PGDATABASE" -t -c "
-UPDATE auth.users
-SET encrypted_password = '$BCRYPT_HASH',
-    updated_at = now()
-WHERE email = '$SELECTED_EMAIL'
-RETURNING email;
-" 2>&1)
+RESULT=$(docker exec "$SELECTED_CONTAINER" psql -U "$PGUSER" -d "$PGDATABASE" -t \
+  -v "email=${SELECTED_EMAIL}" \
+  -v "hash=${BCRYPT_HASH}" \
+  -c "UPDATE auth.users SET encrypted_password = :'hash', updated_at = now() WHERE email = :'email' RETURNING email;" 2>&1)
 
 if [ $? -ne 0 ]; then
     echo -e "${RED}ERROR: Failed to update password in database${NC}"
