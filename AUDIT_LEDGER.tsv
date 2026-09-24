@@ -1,0 +1,959 @@
+path	status	reason
+.dockerignore	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/FUNDING.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/ISSUE_TEMPLATE/bug_report.md	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/ISSUE_TEMPLATE/feature_request.md	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/audit.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/build_test_docker_image.yaml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/client_api_check.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/commitlint.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/integration_test.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/push_latest_docker.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/rustlint.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/stress_test.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok; main-session removed cat .env before marking reviewed
+.github/workflows/wasm_publish.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.github/workflows/web_docker.yml	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.gitignore	reviewed	batch 240 last-line length matched; model self-reported composer, not tool-verified grok
+.sqlx/query-0389af6b225125d09c5a75b443561dba4d97b786d040e5b8d5a76de36716beb2.json	generated	sqlx query cache
+.sqlx/query-05e89f62ff993fa2e4b0002c0022bba9706359e402b07b15ccdeb67492625064.json	generated	sqlx query cache
+.sqlx/query-06096ba1131e78d3da5df25a4b0a1193f11c9782abaf91faf263a116f90e51af.json	generated	sqlx query cache
+.sqlx/query-075b89cfe2572d28e7adfc29bbe52fef4afdd5013686f7294efd966739886f0d.json	generated	sqlx query cache
+.sqlx/query-0781735c56d22370302beec06863dccbbb9e664b212de93e5073508a82b91609.json	generated	sqlx query cache
+.sqlx/query-081abcd7f80664e8acd205833b0f9ca43bc1ccc03d992e7b1c45c3e401a6007a.json	generated	sqlx query cache
+.sqlx/query-084655c4e26f78c9c0924ea39a099dc9c00ee73dc6ade2dcff27c03042ebe8c3.json	generated	sqlx query cache
+.sqlx/query-09cf032adce81ba99362b3df50ba104f4e1eb2d538350c65cf615ea13f1c37f0.json	generated	sqlx query cache
+.sqlx/query-09ff850490eab213cfa0ad88ece9ce7baa39beabee19754fd993268d29552eb9.json	generated	sqlx query cache
+.sqlx/query-0affbd65859d6299c6ba736797f970b86552b83d95316ec3f54f93501e00b522.json	generated	sqlx query cache
+.sqlx/query-0d9c62acb33b96bb81536d1ad3121174403bcd40b777eb8d384fe8e81e1db3c4.json	generated	sqlx query cache
+.sqlx/query-0eeb2af3c6974c7e6d1c20bb4b08965eae9b0a291c7cef6451208b7740b9804c.json	generated	sqlx query cache
+.sqlx/query-12c52797d87c0ec56ffe6d8baf24501a276fdac4453399190dc221de89b611f8.json	generated	sqlx query cache
+.sqlx/query-1545a42d784a1a5fa8e9ed6128814608b9230b64ce23dcd85de444a7aa01bf9e.json	generated	sqlx query cache
+.sqlx/query-15613595695e2e722c45712931ce0eb8d2a3deb1bb665d1f091f354a3ad96b92.json	generated	sqlx query cache
+.sqlx/query-16208887bc2f2ca6b5f3df8062a12b482908f9f113c0474eeae75f6784b5e0fc.json	generated	sqlx query cache
+.sqlx/query-18207c125d5f974894576ee1dcfe406b221e9119f570403ec7a41ae1359b3f6c.json	generated	sqlx query cache
+.sqlx/query-1ae2809504bb6ea7dabcb5b5acfed09b0dd2e382e9fec3430680192df63876b8.json	generated	sqlx query cache
+.sqlx/query-1b1ff4352abb6dad982279ee99c8dccb3621b55a838998c1b9803982ae10f622.json	generated	sqlx query cache
+.sqlx/query-1bd79541a2b351b11ae94fe8a7aad408f9b563fd123099aa701a1e07ce797d2f.json	generated	sqlx query cache
+.sqlx/query-1c8f022ff5add11376dbbc17efd874dd31fd908c4f17be1bded18dbc689e3b36.json	generated	sqlx query cache
+.sqlx/query-1e36d9b3adf957524af88f997f12e5eeeaabda218c3709540e4a4c2df0180047.json	generated	sqlx query cache
+.sqlx/query-21195760ea7ed2dc4eda1dc2bd0eed9afcc63651ba6e67e7db675307e3b87821.json	generated	sqlx query cache
+.sqlx/query-2167ca10f5c560d8d4121d57d425c84482fa1dd52ee6f2cc7934e7d356b0dee6.json	generated	sqlx query cache
+.sqlx/query-21f66ca39be3377f8c5e4b218123e266fe8e03260ecd1891c644820892dda2b2.json	generated	sqlx query cache
+.sqlx/query-223e530f8605f6d00789344565666f57705151e3c2318519e877b22f8ffc871b.json	generated	sqlx query cache
+.sqlx/query-229a99b7a3a2f136babd5499c2a1047fe840903acf0d06e57fb78ca9b03e7008.json	generated	sqlx query cache
+.sqlx/query-2394226650959b34ae80b1948b7a111720b3ea5da48934d8d7e395ecc84e6985.json	generated	sqlx query cache
+.sqlx/query-24c5fb37a4391d590e83d2710e9a2ee7f4d06efcdd6034df1f67bb0d9db45716.json	generated	sqlx query cache
+.sqlx/query-2593b975fcf2dcf0129a1390fd8e2888d440e07c904d7eb3ca14957be8bc6069.json	generated	sqlx query cache
+.sqlx/query-2902fd3a9faa9481754d38b29abb543640c0b5564dca8f0141c7de2b8aab9551.json	generated	sqlx query cache
+.sqlx/query-291f0916b7868f3598b50f659689b9c77d34112c2a2fff9fc04775da9f97e46d.json	generated	sqlx query cache
+.sqlx/query-29279a0a97beb08aea84d588374c7534c28bd9c4da24b1ee20245109f5c33880.json	generated	sqlx query cache
+.sqlx/query-2b0754f55889a20c294d2a77ba8d3fa34c8174856abfdede34797851183a177a.json	generated	sqlx query cache
+.sqlx/query-2c0a776a787bc748857873b682d2fa3c549ffeaf767aa8ee05b09b3857505ded.json	generated	sqlx query cache
+.sqlx/query-2c496e29533dd27117fbb688ba2324f04d7cc306181fcf3f82079d5639f632c4.json	generated	sqlx query cache
+.sqlx/query-2d6d00669ea7d598d69d848d143f33e8c144d35b3d4c5293f98344b2c62fe6c8.json	generated	sqlx query cache
+.sqlx/query-2dda0bc4d9486a49c0af00d8ee4408c970a2ba3533217c130281e7db5a4e3d6b.json	generated	sqlx query cache
+.sqlx/query-30a592588fe20bb1444178b7ee9e73e37d1d55572f936988528178bfa10158e5.json	generated	sqlx query cache
+.sqlx/query-315840e0657ea0b8d162635b4cc21ce84a09fd7ea14ea07980869a80ee06900c.json	generated	sqlx query cache
+.sqlx/query-32fd3dcd1a3e02c32ddedb232b6af2e7f9ea160354528f3299cca62367af10f7.json	generated	sqlx query cache
+.sqlx/query-340b8cef5a7676541b86505cdf103fcb5b54c40a9d6e599dc1d9dc0a95e1e862.json	generated	sqlx query cache
+.sqlx/query-354166a6fa147dc6e17bfc14cb68d3a72a2e7c3aa2d115686deb12086786e034.json	generated	sqlx query cache
+.sqlx/query-35622d4ebede28dd28b613edcf3970ad258286f176ce86e88bd662a602e4ad58.json	generated	sqlx query cache
+.sqlx/query-36733444fc8fac851fb540105ea6c9dca785455ae44ae518b98d8b57082e11d8.json	generated	sqlx query cache
+.sqlx/query-3865d921d76ac0d0eb16065738cddf82cb71945504116b0a04da759209b9c250.json	generated	sqlx query cache
+.sqlx/query-3b2daf263b4022e69c819edb55d412da8ad3fe4377155d8485fbaf186069f389.json	generated	sqlx query cache
+.sqlx/query-3bb5b82d46c55bbfd51319310a3cd065c4b796462a1ddf3c17617ee65ce9961a.json	generated	sqlx query cache
+.sqlx/query-3c2c94b9ac0a329b92847d7176a7435f894c5ef3b3b11e3e2ae03a8ec454a6d8.json	generated	sqlx query cache
+.sqlx/query-3ca587826f0598e7786c765dcb2fcd6ae08d8aa404f02920307547c769a3f91b.json	generated	sqlx query cache
+.sqlx/query-3cfb0a6d9a798f29422bc4bf4a52d3c86c3aae98c173b83c60eb57504a3d2c7c.json	generated	sqlx query cache
+.sqlx/query-3d3309a4ae7a88b3f7c9608dd78a1c1dc9b237a37e29722bcd2910bd23f9d873.json	generated	sqlx query cache
+.sqlx/query-3fdd28c263edf5c91ab8b770e6106d4890ec4bae2ff3c20f80c40cb4042d9e03.json	generated	sqlx query cache
+.sqlx/query-40db0a61665bdb9f7e9d1ce2a6c0eb05703e36e83c87802a72630388588de8cd.json	generated	sqlx query cache
+.sqlx/query-4123fa8796e8b56225155f79c2ee4c4dacda5ef51e858ce7dcb9877c7d55bd53.json	generated	sqlx query cache
+.sqlx/query-425b0b5ffbe3f1b80aedf15b8df1640c879d8d45883eee8b1e2fbd64eaf283d6.json	generated	sqlx query cache
+.sqlx/query-441316f35ca8c24bf78167f9fec48e28c05969bbbbe3d0e3d9e1569a375de476.json	generated	sqlx query cache
+.sqlx/query-4476f271f4ea8c83428b4178c43ee2894e380a7c3ae3cbc782f438fabc45de8b.json	generated	sqlx query cache
+.sqlx/query-44e4be501db0375fbd8ad8ed923bef887e361fe466ab46bdd6663f6cf97413a8.json	generated	sqlx query cache
+.sqlx/query-4f5951e61713d04963524b84648c9ff8c7be05f0089f6fd26fc6e0e0afeae579.json	generated	sqlx query cache
+.sqlx/query-4fc0611c846f86be652d42eb8ae21a5da0353fe810856aaabe91d7963329d098.json	generated	sqlx query cache
+.sqlx/query-51a3a723b1825da7b9abd9cb36db0cf8220abf063098a73e4a6fc3f87352b395.json	generated	sqlx query cache
+.sqlx/query-523087b0101a35abfc70a561272acec7a357491a86901f7927b8242173b5c8c8.json	generated	sqlx query cache
+.sqlx/query-52b936c6adf43ec5c7e777ad9379dec30b750fefad73684e552481f709006d04.json	generated	sqlx query cache
+.sqlx/query-53d87db17bb9c1d002adc82ba9f2c07ff33ea987a1157d7f6fd2344091b98deb.json	generated	sqlx query cache
+.sqlx/query-594af4041e0778476a699536316007f0a264f7d3db9de6326ef8082a2a898995.json	generated	sqlx query cache
+.sqlx/query-598e731078fc6417039cc16772eb5bc6c74d24c1a8018a981d2175a483dc699c.json	generated	sqlx query cache
+.sqlx/query-59b2a7854bb8f0d7ee34b9dfa4e3db5cac8e25fdebe186ba2cbd65012eb91f5f.json	generated	sqlx query cache
+.sqlx/query-5c2d58bfdedbb1be71337a97d5ed5a2921f83dd549507b2834a4d2582d2c361b.json	generated	sqlx query cache
+.sqlx/query-5cce5f82c0fb9237f724478e2167243bc772c092910f07b8226431a6dd70a7da.json	generated	sqlx query cache
+.sqlx/query-5d408d36790ade4da1ceeb68b4a183aa7d9abc27b0ec42c2a3c5af26ad80f128.json	generated	sqlx query cache
+.sqlx/query-5d51aef40f7e0716338b406263240dbc5e4a64cec6f1be10a3676e4f86ce4557.json	generated	sqlx query cache
+.sqlx/query-5e0d58f612425e1cf36dfc7f56691cfb8f6def1a3d29645922cb437d11ce62ef.json	generated	sqlx query cache
+.sqlx/query-620167841bb2acdd1c9c6aadf8245e3a483d87dc006d4e361e994ce2c5d768cd.json	generated	sqlx query cache
+.sqlx/query-62ed61bcf92fc0c3756f57d0fe05cdd12e70072f5646fe48790ad189a6e96b12.json	generated	sqlx query cache
+.sqlx/query-6380f5a6ded2dab8f18de42541c9d77c2f3af512e3f66e1b731ca7c00c9ea8f8.json	generated	sqlx query cache
+.sqlx/query-63f0871525ed70bd980223de574d241c0b738cfb7b0ea1fc808f02c0e05b9a2f.json	generated	sqlx query cache
+.sqlx/query-66218110851919b05b95b008a17547547d23f6baeeff8a5521b2b246126adc34.json	generated	sqlx query cache
+.sqlx/query-6716ec4787f7155af97a4890730f4b3fe564ead8d99f8355ac249f9b39316238.json	generated	sqlx query cache
+.sqlx/query-67b381fdcd20f8cfe782d939e56bf94f105cdb23a59fefb846afe8105d91d129.json	generated	sqlx query cache
+.sqlx/query-6821f1e02da2c71cdf0566a163c85ff185bf0ba89c770254c9c15880ba76a553.json	generated	sqlx query cache
+.sqlx/query-6935572cb23700243fbbd3dc382cdbf56edaadc4aab7855c237bce68e29414c0.json	generated	sqlx query cache
+.sqlx/query-6aca3fde126cb1761c0a5ce1fbfa793bdbac4aed137cdf60eb3f277f36d7bf7a.json	generated	sqlx query cache
+.sqlx/query-6ca2a2fa10d5334183d98176998d41f36948fe5624e290a32d0b50bc9fb256bf.json	generated	sqlx query cache
+.sqlx/query-6cc4a7da11a37413c9951983ee3f30de933cc6357a66c8e10366fde27acaefea.json	generated	sqlx query cache
+.sqlx/query-6f5d6d79587d7f7a52c920acccfe338a8c001ea30b722d3a6a1a60259d47913c.json	generated	sqlx query cache
+.sqlx/query-6fbcd1c32c638530461c74f8c8195a5b1e1e6f7a389a6a60d889c88c5f47302a.json	generated	sqlx query cache
+.sqlx/query-71c15686124c05a4fdef066738eadd0ab17d6af1bfeffc480c8fe52a4e6edab8.json	generated	sqlx query cache
+.sqlx/query-74de473589a405c3ab567e72a881869321095e2de497b2c1866c547f939c359c.json	generated	sqlx query cache
+.sqlx/query-75dc8578510ae696bf4bcdd780f7cefc666b4436cf53edf30a98dd2ff7926799.json	generated	sqlx query cache
+.sqlx/query-770a4979e137ca08c5ea625259221f9d397a56defb8e498eb92da7b3a8af612b.json	generated	sqlx query cache
+.sqlx/query-786a59b28265397658aecf0318beeedece2a7f5bea80b9189f3989721035c593.json	generated	sqlx query cache
+.sqlx/query-78a191e21a7e7a07eee88ed02c7fbf7035f908b8e4057f7ace1b3b5d433424fe.json	generated	sqlx query cache
+.sqlx/query-794c4ced16801b3e98a62eb44c18c14137dd09b11be73442a7f46b2f938b8445.json	generated	sqlx query cache
+.sqlx/query-7a4c7da16e99ff3875bdd7e0d189e26c3c1ab49672bace41992aecc446061850.json	generated	sqlx query cache
+.sqlx/query-7a86f93afe6e77d4481920b08ed38926446f6473107d68dfcd82ffecddcee890.json	generated	sqlx query cache
+.sqlx/query-7aa6e41c80f0b2906d46e73ae05e8e70e133b7edd450b102715b8a487d6055ac.json	generated	sqlx query cache
+.sqlx/query-7f6b1db5fd7b4e235f1e04d9d990fa2d47edfed23e692fbab778d387b2861a22.json	generated	sqlx query cache
+.sqlx/query-811b6b01de4fdb06ad58185a5c49dfaa31aef8ea30ab3421d4afc13822fc0a9c.json	generated	sqlx query cache
+.sqlx/query-816a026ca4c25329b2fb24d59efde9ab71798ff8b31ce7320e02344d4e8b3e42.json	generated	sqlx query cache
+.sqlx/query-834638eb3c38eb2c220aa23ac928874d87606b47ef3bb80540614ce2f8453936.json	generated	sqlx query cache
+.sqlx/query-842243ea6ca59135ae539060ff37b80791e76aa268a44642ede515f315e80c01.json	generated	sqlx query cache
+.sqlx/query-84c224af99f654e2e0ba11a411376794855483eedb0c30b1873ed660ca8d10cd.json	generated	sqlx query cache
+.sqlx/query-84e600f13d61c56a45133e7458d5152e68dec72030e5789bf4149a333b6ebdf5.json	generated	sqlx query cache
+.sqlx/query-852c729791d5b5eb2dde5772ccbcd24579486e43886d95a11481991fdf28efa8.json	generated	sqlx query cache
+.sqlx/query-85e9688218913dee85480932273ff6cf75d29af45638b195e73d73b6048806bf.json	generated	sqlx query cache
+.sqlx/query-865fe86df6d04f8abb6d477af13f8a2392a742f4027d99c290f0f156df48be07.json	generated	sqlx query cache
+.sqlx/query-87628d6739441a22229d08832d09cbf4598c36204a6885b2e279c848cedcfa75.json	generated	sqlx query cache
+.sqlx/query-88516b9a2a424bc7697337d6f16b0d6e94b919597d709f930467423c5b4c0ec2.json	generated	sqlx query cache
+.sqlx/query-8cd79c307813a509119230c7673f86471463a06ad9a84764da8d5bb1e6168e1c.json	generated	sqlx query cache
+.sqlx/query-90a302af791eeb5c5f60c3f95145e0e73c2a1652c5b547e4118bac1d005300de.json	generated	sqlx query cache
+.sqlx/query-90afca9cc8b6d4ca31e8ddf1ce466411b5034639df91b739f5cbe2af0ffb6811.json	generated	sqlx query cache
+.sqlx/query-92c4d0e22b1f6f117c9f19589832f5f89cb5b903eee3c12f5e5fc0f70f3236e1.json	generated	sqlx query cache
+.sqlx/query-936faba4e3c8fc3685d68f561a2c2d4f386c77cffde6f25702c19758a12669ce.json	generated	sqlx query cache
+.sqlx/query-93f6a59171d7cd08d321c777f24255621280fbcf6a2c009afd601eac16c9ba3a.json	generated	sqlx query cache
+.sqlx/query-94555a25b986992bd3cfb67bd36ff015d39bdd78ac20d56570306616bf10faf3.json	generated	sqlx query cache
+.sqlx/query-95b1b405028c45c074121110d046f42f8229f150c2384671802ee7c1ef9e376d.json	generated	sqlx query cache
+.sqlx/query-95b4d7508569cac38c78d21a0a471772d3703e5678ee7ca0cd32d60f5343be91.json	generated	sqlx query cache
+.sqlx/query-95c00cd1ce7cdb8f5c8f45d5262d371b1b3c3f903f4eab9c0070d9916e3f8c12.json	generated	sqlx query cache
+.sqlx/query-9ab1ff2abc6d51bc5a48a1dc6c294bbfdbe0d5f11a5e2ffc8c1973217b80307b.json	generated	sqlx query cache
+.sqlx/query-9b2a8297fa991418b255fc5cb6ad70d695c4dceed20bdc557bfedfc820511126.json	generated	sqlx query cache
+.sqlx/query-a18d0c9536dba734715903c8e8f0b7be30d3e7a477c4ddd03533b781df2fb2c7.json	generated	sqlx query cache
+.sqlx/query-a3ab30d48e4a10aff1fbfa9dbc5d275a06598610bc471893c8c0febfc36c4737.json	generated	sqlx query cache
+.sqlx/query-a3c235bd5df50f80ec93c3d9f6da8db7e17e89788f30c5b6432c582992b6a009.json	generated	sqlx query cache
+.sqlx/query-a527a90fcb69c58a5e711555b6ee56e7b92ceabe746279eccd7ae3e9fa918e96.json	generated	sqlx query cache
+.sqlx/query-a75bf8b11d832d154716d4618595b117da583a31b51baaf7b84e9ee0d0e3109c.json	generated	sqlx query cache
+.sqlx/query-a7c03becdf9954611ac7ad96e1f5bb5e8364f095f1cc4dc23719b218eb032973.json	generated	sqlx query cache
+.sqlx/query-aa75996ca6aa12f0bcaa5fb092ac279f8a94aadcc29d0e2b652dc420506835e7.json	generated	sqlx query cache
+.sqlx/query-b16f38d563d4d0b35f06978a8b2c76dc5121b0e59f8b5992c9dad05dd101c8ad.json	generated	sqlx query cache
+.sqlx/query-b5024138772e13557df973c1c021daf74aab97b5874d7366c478c18ae2e89e58.json	generated	sqlx query cache
+.sqlx/query-b509712055858af398fd12ddd1a8c3da54280cf55f0c53f340bddbf4bf09b3e0.json	generated	sqlx query cache
+.sqlx/query-ba815f67aab3f302a2982225b72c6113bbd9bc87326e4f0a3b44dadbb5f47920.json	generated	sqlx query cache
+.sqlx/query-bbb3c31ea7e9c0a3bdabbc23b2730ee0254f38a7c1457f917c8f37f1e1aefa12.json	generated	sqlx query cache
+.sqlx/query-bd34e351ea1adc0d12d4f1cce5a855089b7f39a431dea2903c3e0b9a220640b8.json	generated	sqlx query cache
+.sqlx/query-bde2b88ffb1b59362c7ae82369892c79131c175924f95e5d48d75931fb846f41.json	generated	sqlx query cache
+.sqlx/query-bf9bff5c65ba051329ed2b694eff62808f971a8262b6e1649d91526ab3a3870d.json	generated	sqlx query cache
+.sqlx/query-c335b73ad499b67100e4ce3131a526ddf1745488597c3392ae05e4b398a8715e.json	generated	sqlx query cache
+.sqlx/query-c360ec37792d567535ccd2a5011d92c7a201f516e92e204db855167f381c58b1.json	generated	sqlx query cache
+.sqlx/query-c43d414f6fcaed34e059f55abaaa0bd1343cacf4d04e98481a4787a4b965ce94.json	generated	sqlx query cache
+.sqlx/query-c81848346ed2ff85f1d5fb8041fba648137a927762b385b97054552c00793a50.json	generated	sqlx query cache
+.sqlx/query-c843fb8517b1e364016b85a9e94927673bf8311bfbf723b610d59ecfef3fafce.json	generated	sqlx query cache
+.sqlx/query-c8b1f57c5ddce8006a8e137be07f13b455f59657f5fcef67d69905ecec4cb063.json	generated	sqlx query cache
+.sqlx/query-ca2a21db67716e3f12b9f9240c1dba1b7cbe0bec1f59ef132fed53942ebad317.json	generated	sqlx query cache
+.sqlx/query-cb2375ad0094baefed417645b781f40dcabfbfe4a4738c99bb4efff649e6a0e6.json	generated	sqlx query cache
+.sqlx/query-cbe8402053d42529dce158b446d09a00982e1d7cdc33835776bfbefb4b4c1854.json	generated	sqlx query cache
+.sqlx/query-cbf1d3d9fdeb672eacd4b008879787bc1f0b22a554fb249d4e12a665d9767cbd.json	generated	sqlx query cache
+.sqlx/query-cce2abeed3399ad0b8867901735c5883c8d35fa82d6e0596c56eaf02c36a7e4f.json	generated	sqlx query cache
+.sqlx/query-d0a24b554fe420d7ebf856ae7f1525aff3695fc97e2f43041dc54a4e62a88746.json	generated	sqlx query cache
+.sqlx/query-d0e5f5097b35a15f19e9e7faf2c62336d5f130e939331e84c7d834f6028ea673.json	generated	sqlx query cache
+.sqlx/query-d1ab621e0b6e8bc24f8fa8cbb975ae3b7f9f366cac02d66b5291d7207295ca29.json	generated	sqlx query cache
+.sqlx/query-d1f845717b19636e61d1d96d7a5629754f3ded9bda9116953bd1b40bd80551ae.json	generated	sqlx query cache
+.sqlx/query-d2e87c077e5702cd57a88e23e1eabe4b0badd98ef99da1b185bffa8d5c9ed298.json	generated	sqlx query cache
+.sqlx/query-d366aca6b187f086e5a8281081adec190bbb3cd5256c5a77ed321b99cd34bbbc.json	generated	sqlx query cache
+.sqlx/query-d388782f755f0b164ef36c168af142baeb9bbd3cc2b8b7cd736b346580be8790.json	generated	sqlx query cache
+.sqlx/query-d492c20dec54c7335744dcc139b95f30a80f06d9fd48de644630adf183e1ac34.json	generated	sqlx query cache
+.sqlx/query-d4fa2c5f3c455be4694235009e82efdd99d366e3b0374f78efec8dd560f88d95.json	generated	sqlx query cache
+.sqlx/query-d61523de25986b47a382d36a1f18e590420f1b1285d024f5554cc02c375d6476.json	generated	sqlx query cache
+.sqlx/query-d756ec630d5b75dd0dc7df2339847e28bdf07a790e65fd40a64d7f9022f430bd.json	generated	sqlx query cache
+.sqlx/query-d84ab58e78653688e7c392ffad00d6e039be5ccb9c5b99b7088cc41cfe981873.json	generated	sqlx query cache
+.sqlx/query-d90e7efaca54b92de038b6eef20a7bd36be747dc38f7943fe299799c623038be.json	generated	sqlx query cache
+.sqlx/query-d921f52e4bc3fef72c810e19455a2fa4fbd52f5a1f3a1838b146d001eadabd47.json	generated	sqlx query cache
+.sqlx/query-da1434fe116cbb48bc5aac0b6905dd748f096bf78d3cdcfea3a576b4aaeba5fc.json	generated	sqlx query cache
+.sqlx/query-dbc31936b3e79632f9c8bae449182274d9d75766bd9a5c383b96bd60e9c5c866.json	generated	sqlx query cache
+.sqlx/query-dc600fc160b55be22fb77e285fd7e5e646ef359fdbca9b62c6aefede5ebff606.json	generated	sqlx query cache
+.sqlx/query-e219696c80f1d4c38260ebeb50ec78e344975eef6760951dbf6201c01b8ceef0.json	generated	sqlx query cache
+.sqlx/query-e2b4d66736962d1e3d0b9cf687ce5c5e653b465462f53433a28cf314e5c87d6c.json	generated	sqlx query cache
+.sqlx/query-e38e66d89806471f358b317778de35a68da4b9e6ca6e4b6a7c437ca7493b858c.json	generated	sqlx query cache
+.sqlx/query-e6159a03f1521b44de59858cd95c48e62cabefba6cac629c104eec75d2868bf3.json	generated	sqlx query cache
+.sqlx/query-e6a0e771ffacfdec95ef8c36de769448384fda4350aa630becebd0e5add632f4.json	generated	sqlx query cache
+.sqlx/query-ea239353f73904400915ec89640ac71985a8d5b39037f567a3e2ac1c5eea8f64.json	generated	sqlx query cache
+.sqlx/query-eb142b33bd6d0d9f3ceb597be9251eac710a463d1052ba10c41b207dbf63efe1.json	generated	sqlx query cache
+.sqlx/query-ed9bce7f35c4dd8d41427bc56db67adf175044a8d31149b3745ceb8f9b3c82fa.json	generated	sqlx query cache
+.sqlx/query-ef947984b00fdd32271e7e76d8b5d035cd4ca211b600787fda18d62a34b4c04b.json	generated	sqlx query cache
+.sqlx/query-f05042dd22f862603e63f63d47b93e579545c79cabe15d32304a47ca7665a55f.json	generated	sqlx query cache
+.sqlx/query-f18d6e075a522b0ce5935351dd57ab0dda4d8b4ed3881c2ad0bc09c07c43e6fe.json	generated	sqlx query cache
+.sqlx/query-f409626142553d4496d15b5dfa7da8a5a238da86f56c930c09a261f2efa1f55c.json	generated	sqlx query cache
+.sqlx/query-f54ced785b4fdd22c9236b566996d5d9d4a8c91902e4029fe8f8f30f3af39b39.json	generated	sqlx query cache
+.sqlx/query-f58a2f05efbda0698d27d83be5c6816fc46e3de33f926c6343bcbfa90a387b07.json	generated	sqlx query cache
+.sqlx/query-f68cc2042d6aa78feeb33640e9ef13f46c5e10ee269ea0bd965b0e57dee6cf94.json	generated	sqlx query cache
+.sqlx/query-f78c2c56568dcee0b93e759ee517fb87d6d115a02856a756d481ea4c863c0327.json	generated	sqlx query cache
+.sqlx/query-f9c28d0fa124ef543259c6869d7c517deabda3af9a67c6e59d8e15c0245c83a0.json	generated	sqlx query cache
+.sqlx/query-fa92aff963d9a0c69fb203f76f54728c67d52a68eada59ba3bd445c4b8aeceef.json	generated	sqlx query cache
+.sqlx/query-faf37892741717680e9a8d8e7d8decaba571d0dd129b57334aad7c63e2a2ef59.json	generated	sqlx query cache
+.sqlx/query-fb21df2827de97055cdc1c493b079b29667f75b18169c909c4c8341697fd0105.json	generated	sqlx query cache
+.sqlx/query-fd2a37dd917717a9bb5e1db84f03f0e84e32d2fd081955389561c6567896ea9f.json	generated	sqlx query cache
+.sqlx/query-fffe6f01abf0e5d8649a49b5793ccb92a9f823f07c363341357ea74bf4f4a16d.json	generated	sqlx query cache
+AUDIT_SUMMARY.md	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+Cargo.lock	generated	lockfile
+Cargo.toml	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+Dockerfile	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+LICENSE	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+Makefile	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+README.md	doc	readme
+SELF_HOST_LICENSE_AGREEMENT.md	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/Cargo.toml	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/Dockerfile	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/README.md	doc	readme
+admin_frontend/assets/README.md	doc	readme
+admin_frontend/assets/apple/logo.html	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/base.css	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/discord/README.md	doc	readme
+admin_frontend/assets/discord/logo.html	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/favicon.ico	asset	binary or font asset, not executable logic
+admin_frontend/assets/github/README.md	doc	readme
+admin_frontend/assets/github/logo.html	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/google/README.md	doc	readme
+admin_frontend/assets/google/logo.css	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/google/logo.html	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/home.css	reviewed	batch 241 last-line length matched; model self-reported composer, not tool-verified grok
+admin_frontend/assets/login.css	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/login/Apple.svg	asset	binary or font asset, not executable logic
+admin_frontend/assets/login/Discord.svg	asset	binary or font asset, not executable logic
+admin_frontend/assets/login/Github.svg	asset	binary or font asset, not executable logic
+admin_frontend/assets/login/Google.svg	asset	binary or font asset, not executable logic
+admin_frontend/assets/logo.html	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/message.css	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/minio/logo.html	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/navigate.css	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/postgres/logo.html	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/sidebar.css	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/assets/top_menu_bar.css	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/dev.env	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/askama_entities.rs	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/config.rs	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/error.rs	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/ext/api.rs	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/ext/entities.rs	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/ext/error.rs	reviewed	batch 242 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/ext/mod.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/lib.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/main.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/models.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/response.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/session.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok; main-session set HttpOnly and SameSite=Lax before marking reviewed
+admin_frontend/src/templates.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/web_api.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/src/web_app.rs	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_navigate.html	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_sidebar.html	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_sso_create.html	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_sso_detail.html	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_sso_list.html	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_top_menu_bar.html	reviewed	batch 243 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_user_details.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/admin_users.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/change_password.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/create_user.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/invite.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/message.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok; main-session switched toast to textContent before marking reviewed
+admin_frontend/templates/components/navigate.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/shared_workspaces.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/sidebar.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/top_menu_bar.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/user_details.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/user_usage.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/components/workspace_usage.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/layouts/base.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/admin_home.html	reviewed	batch 244 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/home.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/login.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/login_callback.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/login_v2.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/open_appflowy_or_download.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/payment_success_redirect.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/templates/pages/redirect.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+admin_frontend/tests/main.rs	test-fixture	test or fixture path
+admin_frontend/tests/oauth/mod.rs	test-fixture	test or fixture path
+admin_frontend/tests/utils/mod.rs	test-fixture	test or fixture path
+admin_frontend/tests/utils/test_config.rs	test-fixture	test or fixture path
+assets/images/check_disk_usage.png	asset	binary or font asset, not executable logic
+assets/images/comment_out_admin_frontend.png	asset	binary or font asset, not executable logic
+assets/images/comment_out_deps_on_admin_frontend.png	asset	binary or font asset, not executable logic
+assets/images/comment_out_tunnel.png	asset	binary or font asset, not executable logic
+assets/images/create_google_credentials.png	asset	binary or font asset, not executable logic
+assets/images/create_google_oauth_client_id.png	asset	binary or font asset, not executable logic
+assets/images/deployment_arch.png	asset	binary or font asset, not executable logic
+assets/images/edit_google_env.png	asset	binary or font asset, not executable logic
+assets/images/env_self_host.png	asset	binary or font asset, not executable logic
+assets/images/google_callback_url.png	asset	binary or font asset, not executable logic
+assets/images/google_client_id.png	asset	binary or font asset, not executable logic
+assets/images/google_ec2_public_ip.png	asset	binary or font asset, not executable logic
+assets/images/ipv4_ec2.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/app_general_settings.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/appflowy_click_admin.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/appflowy_create_sso.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/appflowy_list_sso.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/assign_appflowy.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/choose_saml_then_next.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/click_on_admin.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/click_on_applications.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/configure_saml.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/copy_metadata_url.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/create_app_integration.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/open_appflowy.png	asset	binary or font asset, not executable logic
+assets/images/okta_integration/saml_integration_feedback.png	asset	binary or font asset, not executable logic
+assets/images/security_group.png	asset	binary or font asset, not executable logic
+assets/logos/appflowy_logo_black.svg	asset	binary or font asset, not executable logic
+assets/logos/appflowy_logo_white.svg	asset	binary or font asset, not executable logic
+assets/mailer_templates/build_production/access_request.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/access_request_approved_notification.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/confirmation.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/images/appflowy-logo.png	asset	binary or font asset, not executable logic
+assets/mailer_templates/build_production/images/appflowy.png	asset	binary or font asset, not executable logic
+assets/mailer_templates/build_production/import_data_fail.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/import_data_success.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/magic_link.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/page_mention_notification.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/recovery.html	reviewed	batch 245 last-line length matched; model self-reported heading only, not tool-verified grok
+assets/mailer_templates/build_production/workspace_invitation.html	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+deny.toml	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+deploy.env	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+dev.env	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/AUTHENTICATION.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/CONTRIBUTING.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/DEPLOYMENT.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/EC2_SELF_HOST_GUIDE.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/GUIDE.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/LOCAL_BUILD.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/OKTA_SAML.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+doc/README.md	doc	readme
+doc/SUPABASE_AUTH.md	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+docker-compose-ci.yml	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+docker-compose-dev.yml	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+docker-compose-extras.yml	reviewed	batch 246 last-line length matched; model self-reported heading only, not tool-verified grok
+docker-compose.coolify.yml	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker-compose.override.yml	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker-compose.yml	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/gotrue/Dockerfile	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/gotrue/start.sh	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/pgadmin/servers.json	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/supabase-nginx/Dockerfile	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/supabase-shim/00-auth-shim.sql	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/supabase-shim/Dockerfile	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/web/Dockerfile	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+docker/web/nginx.conf	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+email_template/.editorconfig	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+email_template/.gitignore	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+email_template/.npmrc	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+email_template/LICENSE	reviewed	batch 247 last-line length matched; model self-reported heading only, not tool-verified grok
+email_template/README.md	doc	readme
+email_template/config.js	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/config.production.js	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/package.json	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/pnpm-lock.yaml	generated	lockfile
+email_template/src/components/button.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/components/divider.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/components/footer.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/components/spacer.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/components/v-fill.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/components/v-image.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/css/resets.css	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/css/tailwind.css	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/css/utilities.css	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/images/appflowy-logo.png	asset	binary or font asset, not executable logic
+email_template/src/images/appflowy.png	asset	binary or font asset, not executable logic
+email_template/src/layouts/main.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/access_request.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/access_request_approved_notification.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/confirmation.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/import_data_fail.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/import_data_success.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/magic_link.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/page_mention_notification.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/recovery.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/src/templates/workspace_invitation.html	unreviewed	production-relevant until a pass-3 reviewer records it
+email_template/tailwind.config.js	unreviewed	production-relevant until a pass-3 reviewer records it
+env.deploy.secret.example	unreviewed	production-relevant until a pass-3 reviewer records it
+env.dev.secret.example	unreviewed	production-relevant until a pass-3 reviewer records it
+external_proxy_config/nginx/appflowy.site.conf	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/act.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/access.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/adapter.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/ars_membership.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/enforcer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/enforcer_v2.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/performance_comparison_tests.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/redis_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/casbin/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/entity.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/noops/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/noops/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/noops/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/access-control/src/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/app-error/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/app-error/src/gotrue.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/app-error/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-ai-client/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-ai-client/src/client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-ai-client/src/dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-ai-client/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-ai-client/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-ai-client/tests/chat_test/completion_test.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/chat_test/context_test.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/chat_test/mod.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/chat_test/model_config_test.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/chat_test/qa_test.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/index_test/index_search_test.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/index_test/mod.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/main.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/row_test/mod.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/row_test/summarize_test.rs	test-fixture	test or fixture path
+libs/appflowy-ai-client/tests/row_test/translate_test.rs	test-fixture	test or fixture path
+libs/appflowy-proto/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/build.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/proto/collab.proto	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/proto/messages.proto	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/proto/notification.proto	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/client_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/pb/collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/pb/messages.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/pb/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/pb/notification.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/server_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/appflowy-proto/src/shared.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-entity/src/id.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/assertion_utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/async_utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/database_util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/log.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/test_client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/test_client_config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/test_client_v2.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api-test/src/workspace_ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/collab_sink.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/collab_stream.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/plugin.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/sync_control.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_ai.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_billing.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_blob.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_chat.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_file.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_guest.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_member.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_person.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_search.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_settings.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/http_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/log.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/notify.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ping.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/retry.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/PROTOCOL.md	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/actor.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/compactor.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/conn_retry.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/controller.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/db.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/v2/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ws/client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ws/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ws/handler.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ws/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ws/msg_queue.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/ws/state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-websocket/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-websocket/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-websocket/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-websocket/src/message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-websocket/src/native.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-websocket/src/web.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/.gitignore	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/build.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/migration/0147/client_init	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/migration/0147/collab_update	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/migration/0149/client_collab_v1	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/migration/0149/client_init	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/migration/0149/collab_update	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/proto/collab.proto	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/proto/realtime.proto	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/client_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/collab_proto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/realtime_proto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/server_message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/src/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-entity/tests/main.rs	test-fixture	test or fixture path
+libs/collab-rt-entity/tests/serde_test.rs	test-fixture	test or fixture path
+libs/collab-rt-protocol/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-protocol/src/data_validation.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-protocol/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-protocol/src/message.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-rt-protocol/src/protocol.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/awareness_gossip.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/collab_update_sink.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/lease.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/model.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/collab-stream/src/stream_router.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database-entity/src/dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database-entity/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database-entity/src/file_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/chat/chat_ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/chat/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/collab/collab_db_ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/collab/collab_storage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/file/file_storage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/file/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/file/s3_client_impl.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/file/utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/history/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/history/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/index/collab_embeddings_ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/index/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/index/search_ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/listener.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/notification.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/pg_row.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/resource_usage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/database/src/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue-entity/src/dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue-entity/src/gotrue_jwt.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue-entity/src/sso.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue/src/api.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue/src/grant.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue/src/params.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/README.md	doc	readme
+libs/indexer/src/collab_indexer/document_indexer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/collab_indexer/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/collab_indexer/provider.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/entity.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/queue.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/scheduler.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/unindexed_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/vector/embedder.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/vector/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/vector/open_ai.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/env_util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/file_util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/reqwest.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/thread_pool.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/tokio_runtime.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/validate.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/llm-client/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/llm-client/src/chat.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/llm-client/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/mailer/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/mailer/src/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/mailer/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/mailer/src/sender.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/access_request_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/ai_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/auth_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/billing_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/chat_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/file_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/guest_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/history_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/import_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/publish_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/search_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/server_info_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/dto/workspace_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/response.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/response_actix.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/shared-entity/src/response_stream.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/snowflake/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/snowflake/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/tonic-proto/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/tonic-proto/build.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/tonic-proto/proto/history.proto	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/tonic-proto/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/default_space.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/desktop_guide.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/getting_started.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/inbox.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/initial_document.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/mobile_guide.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/to-dos.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/vault_get_started.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/assets/web_guide.json	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/database/database_collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/database/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/document/getting_started.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/document/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/document/parser.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/document/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/document/vault_template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/hierarchy_builder.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/workspace-template/src/tests/getting_started_tests.rs	test-fixture	test or fixture path
+libs/workspace-template/src/tests/mod.rs	test-fixture	test or fixture path
+migrations/20230312043024_user.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20230906101032_permission.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20230906101223_workspace.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20230906101555_user_profile.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20230906102652_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20230926145155_blob_storage.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20231113074418_user_change.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20231130150001_user_id_foreign_key.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240123140707_workspace_owner_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240227000000_workspace_icon.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240303003711_collab_member_timestamp.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240304173938_workspace_invitation.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240306110000_workspace_invitation_2.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240412083446_history_init.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240510024506_chat_message.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240529054858_workspace_add_token_usage.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240531031836_chat_message_meta.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240604090043_add_workspace_settings.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240613112820_publish_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240614171931_collab_embeddings.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240617135926_af_workspace_foreign_key_indices.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240618035048_af_workspace_ai_usage.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240618173348_publish_collab_2.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240621105148_publish_collab_3.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240626184736_publish_collab_4.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240627525836_publish_collab_5.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240629035230_publish_collab_6.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240630010030_workspace_member_foreign_key.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240723090305_publish_view_comment.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240725065111_publish_view_reaction.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240729065107_publish_view_reaction_2.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240806054557_template_category.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240806103039_template_creator.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240813040905_template.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240910100000_af_collab_embeddings_indices.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240924045045_access_request.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20240930135712_import_data.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241014153023_default_published_view.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241025135939_import_task_add_uid_column.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241031094508_af_uuid_indexes.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241101063559_af_workspace_namespace.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241108155841_unpublished_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241124212630_af_collab_updated_at.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241126175909_af_collab_stored_procedures.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241211034455_stop_writing_to_collab_member.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241216080018_quick_notes.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241218090459_collab_embedding_add_metadata.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241222152427_collab_add_indexed_at.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20241230064618_collab_embedding_add_fragment_index.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250109142738_blob_metadata_add_file_status.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250113091708_publish_options.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250217080054_drop_collab_member_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250226091933_blob_metadata_add_file_source.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250305082546_workspace_delete_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250318120849_departition_af_collab.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250403021559_workspace_invite_code.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250405092732_af_collab_embeddings_upsert.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250414074846_drop_af_collab_set_updated_at_trigger.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250703030740_workspace_member_profile.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250714060306_page_mention.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250718033221_page_mention_notification.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250721084910_page_mention_view_name.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250723024109_workspace_profile_custom_image_url.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+migrations/20250723072011_page_mention_notification_status.sql	unreviewed	production-relevant until a pass-3 reviewer records it
+nginx/nginx.conf	unreviewed	production-relevant until a pass-3 reviewer records it
+nginx/nginx.supabase.conf	unreviewed	production-relevant until a pass-3 reviewer records it
+nginx/ssl/certificate.crt	unreviewed	production-relevant until a pass-3 reviewer records it
+nginx/ssl/private_key.key	unreviewed	production-relevant until a pass-3 reviewer records it
+rust-toolchain.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+rustfmt.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+script/client_api_deps_check.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/code_gen.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/diagnose_appflowy.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/gen_coolify_compose.py	unreviewed	production-relevant until a pass-3 reviewer records it
+script/generate_env.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/README.md	doc	readme
+script/lib/check_config.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/check_containers.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/check_functional.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/check_health.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/check_logs.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/report.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/lib/utils.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/redis/remove_redis_stream_range.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/redis/show_redis_stream_values.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/reset-password-interactive.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/run_ci_server.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+script/run_local_server.sh	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/actix_ws/client/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/actix_ws/client/rt_client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/actix_ws/entities.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/actix_ws/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/actix_ws/server/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/actix_ws/server/rt_actor.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/client/client_msg_router.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/client/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/cache/collab_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/cache/disk_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/cache/mem_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/cache/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/collab_manager.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/collab_store.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/snapshot_scheduler.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/compression.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/connect_state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/group/cmd.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/group/group_init.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/group/manager.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/group/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/group/null_sender.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/group/state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/permission.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/rt_server.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/snapshot/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/snapshot/snapshot_control.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/util/channel_ext.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/util/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/ws2/actors/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/ws2/actors/server.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/ws2/actors/session.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/ws2/actors/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/ws2/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/tests/indexer_test.rs	test-fixture	test or fixture path
+services/appflowy-collaborate/tests/main.rs	test-fixture	test or fixture path
+services/appflowy-worker/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/Dockerfile	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/README.md	doc	readme
+services/appflowy-worker/deploy.env	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/application.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/import_worker/email_notifier.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/import_worker/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/import_worker/report.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/import_worker/worker.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/indexer_worker/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/indexer_worker/worker.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/mailer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/metric.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/src/s3_client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/tests/import_test.rs	test-fixture	test or fixture path
+services/appflowy-worker/tests/main.rs	test-fixture	test or fixture path
+src/api/access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/ai.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/chat.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/data_import.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/file_storage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/guest.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/invite_code.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/search.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/server_info.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/ws.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/application.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/access_request/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/access_request/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/authentication/jwt.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/authentication/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/chat/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/chat/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/chat/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/collab/database.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/collab/folder_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/collab/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/collab/publish_outline.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/collab/utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/data_import/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/notification/email.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/notification/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/pg_listener.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/search/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/search/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/template/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/template/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/user/image_asset.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/user/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/user/user_delete.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/user/user_info.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/user/user_init.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/user/user_verify.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/duplicate.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/invite.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/page_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/publish_dup.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/biz/workspace/quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/config/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/config/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/domain/compression.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/domain/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/mailer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/middleware/metrics_mw.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/middleware/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/middleware/request_id.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/telemetry.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/asset/my_profile.txt	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/chat_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/chat_with_selected_doc_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/completion_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/summarize_row.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/summary_search_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/ai_test/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/asset/automerge-paper.json.gz	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/awareness_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/collab_curd_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/collab_embedding_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/database_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/missing_update_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/multi_devices_edit.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/permission_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/single_device_edit.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/storage_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/stress_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab/web_edit.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab_history/document_history.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/collab_history/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/file_test/asset/16kb_logo.png	asset	binary or font asset, not executable logic
+tests/file_test/delete_dir_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/file_test/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/file_test/multiple_part_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/file_test/put_and_get.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/file_test/usage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/gotrue/admin.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/gotrue/health.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/gotrue/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/gotrue/settings.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/search/asset/appflowy_values.md	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/search/asset/kathryn_tennis_story.md	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/search/asset/the_five_dysfunctions_of_a_team.md	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/search/document_search.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/search/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/server_info/info.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/server_info/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/sql_test/chat_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/sql_test/collab_embed_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/sql_test/history_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/sql_test/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/sql_test/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/sql_test/workspace_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/asset/avatar.png	asset	binary or font asset, not executable logic
+tests/user/delete.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/image.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/refresh.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/sign_in.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/sign_out.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/sign_up.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/update.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/user/user_awareness_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/websocket/actor_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/websocket/conn_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/websocket/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/asset/blog_post.zip	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/asset/project&task.zip	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/asset/read_me.json	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/default_user_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/edit_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/import_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/invitation_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/join_workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/member_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/page_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/person.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/published_data.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/workspace_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/workspace_folder.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/workspace/workspace_settings.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/README.md	doc	readme
+tests/yrs_version/document_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/files/folder_encode_collab_0172	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/files/get_started_encode_collab_0172	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/folder_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+tests/yrs_version/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+xtask/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+xtask/src/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
