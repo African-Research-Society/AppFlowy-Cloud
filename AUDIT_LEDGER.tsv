@@ -458,21 +458,21 @@ libs/client-api/src/collab_sync/collab_stream.rs	reviewed	batch 253 last-line le
 libs/client-api/src/collab_sync/error.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
 libs/client-api/src/collab_sync/mod.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
 libs/client-api/src/collab_sync/plugin.rs	reviewed	batch 253 last-line length matched; model self-reported heading, not tool-verified grok
-libs/client-api/src/collab_sync/sync_control.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_ai.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_billing.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_blob.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_chat.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_collab.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_file.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_guest.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_member.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_person.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/client-api/src/http_search.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/client-api/src/collab_sync/sync_control.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok; main-session stopped restore_token from logging the token body
+libs/client-api/src/http_access_request.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_ai.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_billing.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_blob.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_chat.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_collab.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_file.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_guest.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_member.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_person.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_publish.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_quick_note.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
+libs/client-api/src/http_search.rs	reviewed	batch 254 last-line length matched; model self-reported composer, not tool-verified grok
 libs/client-api/src/http_settings.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/client-api/src/http_template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/client-api/src/http_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
@@ -565,22 +565,22 @@ libs/database/src/resource_usage.rs	unreviewed	production-relevant until a pass-
 libs/database/src/template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/database/src/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/database/src/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue-entity/src/dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue-entity/src/gotrue_jwt.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue-entity/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue-entity/src/sso.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue/src/api.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue/src/grant.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/gotrue/src/params.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/indexer/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/gotrue-entity/Cargo.toml	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue-entity/src/dto.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue-entity/src/gotrue_jwt.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue-entity/src/lib.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue-entity/src/sso.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue/Cargo.toml	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue/src/api.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue/src/grant.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue/src/lib.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/gotrue/src/params.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/indexer/Cargo.toml	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
 libs/indexer/README.md	doc	readme
-libs/indexer/src/collab_indexer/document_indexer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/indexer/src/collab_indexer/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/indexer/src/collab_indexer/provider.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/indexer/src/entity.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/indexer/src/collab_indexer/document_indexer.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/indexer/src/collab_indexer/mod.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/indexer/src/collab_indexer/provider.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
+libs/indexer/src/entity.rs	reviewed	batch 261 last-line length matched; model self-reported heading, not tool-verified grok
 libs/indexer/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/indexer/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/indexer/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
@@ -596,21 +596,21 @@ libs/infra/src/file_util.rs	unreviewed	production-relevant until a pass-3 review
 libs/infra/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/infra/src/reqwest.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/infra/src/thread_pool.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/infra/src/tokio_runtime.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/infra/src/validate.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/llm-client/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/llm-client/src/chat.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/llm-client/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/mailer/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/mailer/src/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/mailer/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/mailer/src/sender.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/shared-entity/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/shared-entity/src/dto/access_request_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/shared-entity/src/dto/ai_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/shared-entity/src/dto/auth_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/shared-entity/src/dto/billing_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-libs/shared-entity/src/dto/chat_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+libs/infra/src/tokio_runtime.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/infra/src/validate.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/llm-client/Cargo.toml	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/llm-client/src/chat.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/llm-client/src/lib.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/mailer/Cargo.toml	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/mailer/src/config.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/mailer/src/lib.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/mailer/src/sender.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/shared-entity/Cargo.toml	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/shared-entity/src/dto/access_request_dto.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/shared-entity/src/dto/ai_dto.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/shared-entity/src/dto/auth_dto.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok; main-session redacted Debug for sign-in and delete-user tokens
+libs/shared-entity/src/dto/billing_dto.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
+libs/shared-entity/src/dto/chat_dto.rs	reviewed	batch 263 last-line length matched; model self-reported heading, not tool-verified grok
 libs/shared-entity/src/dto/file_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/shared-entity/src/dto/guest_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 libs/shared-entity/src/dto/history_dto.rs	unreviewed	production-relevant until a pass-3 reviewer records it
