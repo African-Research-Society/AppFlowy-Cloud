@@ -749,146 +749,146 @@ services/appflowy-collaborate/src/actix_ws/server/mod.rs	reviewed	batch 272 last
 services/appflowy-collaborate/src/actix_ws/server/rt_actor.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
 services/appflowy-collaborate/src/client/client_msg_router.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
 services/appflowy-collaborate/src/client/mod.rs	reviewed	batch 272 last-line length matched; model not tool-verified grok
-services/appflowy-collaborate/src/collab/cache/collab_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/cache/disk_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/cache/mem_cache.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/cache/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/collab_manager.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/collab_store.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/collab/snapshot_scheduler.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/compression.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/connect_state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/group/cmd.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/group/group_init.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/group/manager.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/group/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/group/null_sender.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/group/state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/permission.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/rt_server.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/snapshot/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/snapshot/snapshot_control.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/util/channel_ext.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/util/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/ws2/actors/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/ws2/actors/server.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/ws2/actors/session.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/ws2/actors/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-collaborate/src/ws2/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-collaborate/src/collab/cache/collab_cache.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/cache/disk_cache.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/cache/mem_cache.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/cache/mod.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/collab_manager.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/collab_store.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/mod.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/collab/snapshot_scheduler.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/compression.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/config.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/connect_state.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/error.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/group/cmd.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/group/group_init.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/group/manager.rs	reviewed	batch 273 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/group/mod.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/group/null_sender.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/group/state.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/lib.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/metrics.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/permission.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/rt_server.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/snapshot/mod.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/snapshot/snapshot_control.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/util/channel_ext.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/util/mod.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/ws2/actors/mod.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/ws2/actors/server.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/ws2/actors/session.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok
+services/appflowy-collaborate/src/ws2/actors/workspace.rs	reviewed	batch 274 last-line length matched; model not tool-verified grok; main-session required Ok(true) from collab permission checks
+services/appflowy-collaborate/src/ws2/mod.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
 services/appflowy-collaborate/tests/indexer_test.rs	test-fixture	test or fixture path
 services/appflowy-collaborate/tests/main.rs	test-fixture	test or fixture path
-services/appflowy-worker/Cargo.toml	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/Dockerfile	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/Cargo.toml	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/Dockerfile	reviewed	batch 275 last-line length matched; model not tool-verified grok
 services/appflowy-worker/README.md	doc	readme
-services/appflowy-worker/deploy.env	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/application.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/error.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/import_worker/email_notifier.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/import_worker/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/import_worker/report.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/import_worker/worker.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/indexer_worker/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/indexer_worker/worker.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/mailer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/metric.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-services/appflowy-worker/src/s3_client.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+services/appflowy-worker/deploy.env	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/application.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/config.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/error.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/import_worker/email_notifier.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/import_worker/mod.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/import_worker/report.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/import_worker/worker.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/indexer_worker/mod.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/indexer_worker/worker.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/lib.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/mailer.rs	reviewed	batch 275 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/main.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/metric.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+services/appflowy-worker/src/s3_client.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
 services/appflowy-worker/tests/import_test.rs	test-fixture	test or fixture path
 services/appflowy-worker/tests/main.rs	test-fixture	test or fixture path
-src/api/access_request.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/ai.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/chat.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/data_import.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/file_storage.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/guest.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/invite_code.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/search.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/server_info.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/template.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/user.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/workspace.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/api/ws.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/application.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/access_request/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/access_request/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/authentication/jwt.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/authentication/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/chat/metrics.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/chat/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/chat/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/collab/database.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/collab/folder_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/collab/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/collab/publish_outline.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/collab/utils.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/data_import/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/notification/email.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/notification/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/pg_listener.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/search/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/search/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/template/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/template/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/user/image_asset.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/user/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/user/user_delete.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/user/user_info.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/user/user_init.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/user/user_verify.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/duplicate.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/invite.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/ops.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/page_view.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/publish.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/publish_dup.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/biz/workspace/quick_note.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/config/config.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/config/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/domain/compression.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/domain/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/lib.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/mailer.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/main.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/middleware/metrics_mw.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/middleware/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/middleware/request_id.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/state.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-src/telemetry.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/asset/my_profile.txt	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/chat_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/chat_with_selected_doc_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/completion_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/summarize_row.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/summary_search_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/ai_test/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/asset/automerge-paper.json.gz	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/awareness_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/collab_curd_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/collab_embedding_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/database_crud.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/missing_update_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/multi_devices_edit.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/permission_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/single_device_edit.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/storage_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/stress_test.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/util.rs	unreviewed	production-relevant until a pass-3 reviewer records it
-tests/collab/web_edit.rs	unreviewed	production-relevant until a pass-3 reviewer records it
+src/api/access_request.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/ai.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/chat.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/data_import.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/file_storage.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/guest.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/invite_code.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/metrics.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/mod.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/search.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/server_info.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/template.rs	reviewed	batch 276 last-line length matched; model not tool-verified grok
+src/api/user.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/api/util.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/api/workspace.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/api/ws.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/application.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/access_request/mod.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/access_request/ops.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/authentication/jwt.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/authentication/mod.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/chat/metrics.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/chat/mod.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/chat/ops.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/collab/database.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/collab/folder_view.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/collab/mod.rs	reviewed	batch 277 last-line length matched; model not tool-verified grok
+src/biz/collab/ops.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/collab/publish_outline.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/collab/utils.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/data_import/mod.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/mod.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/notification/email.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/notification/mod.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/pg_listener.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/search/mod.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/search/ops.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/template/mod.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/template/ops.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/user/image_asset.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/user/mod.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/user/user_delete.rs	reviewed	batch 278 last-line length matched; model not tool-verified grok
+src/biz/user/user_info.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/user/user_init.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/user/user_verify.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/duplicate.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/invite.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/mod.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/ops.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/page_view.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/publish.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/publish_dup.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/biz/workspace/quick_note.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/config/config.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/config/mod.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/domain/compression.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/domain/mod.rs	reviewed	batch 279 last-line length matched; model not tool-verified grok
+src/lib.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/mailer.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/main.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/middleware/metrics_mw.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/middleware/mod.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/middleware/request_id.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/state.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+src/telemetry.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/asset/my_profile.txt	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/chat_test.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/chat_with_selected_doc_test.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/completion_test.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/mod.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/summarize_row.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/summary_search_test.rs	reviewed	batch 280 last-line length matched; model not tool-verified grok
+tests/ai_test/util.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/asset/automerge-paper.json.gz	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/awareness_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/collab_curd_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/collab_embedding_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/database_crud.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/missing_update_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/mod.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/multi_devices_edit.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/permission_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/single_device_edit.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/storage_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/stress_test.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/util.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
+tests/collab/web_edit.rs	reviewed	batch 281 last-line length matched; model not tool-verified grok
 tests/collab_history/document_history.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 tests/collab_history/mod.rs	unreviewed	production-relevant until a pass-3 reviewer records it
 tests/file_test/asset/16kb_logo.png	asset	binary or font asset, not executable logic

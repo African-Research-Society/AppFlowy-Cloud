@@ -180,7 +180,7 @@ impl Workspace {
         if sender
           .can_write_collab(&store, &msg.object_id)
           .await
-          .is_err()
+          != Ok(true)
         {
           tracing::trace!(
             "user {} lack of permission to write to collab {}",
@@ -249,7 +249,7 @@ impl Workspace {
         if session_handle
           .can_read_collab(&store, &collab.object_id)
           .await
-          .is_err()
+          != Ok(true)
         {
           tracing::trace!(
             "user {} lack of permission. skip publish new collab {}",
@@ -434,7 +434,7 @@ impl StreamHandler<anyhow::Result<UpdateStreamMessage>> for Workspace {
           let store = Arc::clone(&store);
           let update = update.clone();
           async move {
-            if session.can_read_collab(&store, &object_id).await.is_ok() {
+            if session.can_read_collab(&store, &object_id).await == Ok(true) {
               session.conn.do_send(WsOutput {
                 message: ServerMessage::Update {
                   object_id,
