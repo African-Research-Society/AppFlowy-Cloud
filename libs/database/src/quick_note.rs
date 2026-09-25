@@ -51,17 +51,10 @@ pub async fn select_quick_notes_with_one_more_than_limit<
   query_builder.push(" AND uid = ");
   query_builder.push_bind(uid);
   if let Some(search_term) = search_term.filter(|term| !term.is_empty()) {
-    let mut literal = String::with_capacity(search_term.len());
-    for ch in search_term.chars() {
-      if matches!(
-        ch,
-        '\\' | '"' | '.' | '*' | '+' | '?' | '|' | '(' | ')' | '[' | ']' | '{' | '}' | '^' | '$'
-      ) {
-        literal.push('\\');
-      }
-      literal.push(ch);
-    }
-    let json_path = format!("$.**.insert ? (@ like_regex \".*{literal}.*\")");
+    let json_path = format!(
+      "$.**.insert ? (@ like_regex \".*{}.*\")",
+      quick_note_search_literal(&search_term)
+    );
     query_builder.push(" AND data @? ");
     query_builder.push_bind(json_path);
     query_builder.push("::jsonpath");
@@ -112,4 +105,41 @@ pub async fn delete_quick_note_by_id<'a, E: Executor<'a, Database = Postgres>>(
   .execute(executor)
   .await?;
   Ok(())
+}
+
+/// Turns user search text into the body of a jsonpath string literal holding a regex that matches
+/// the text literally. Two layers of escaping are needed: a backslash before each regex
+/// metacharacter, then jsonpath string escaping, because the jsonpath scanner turns an unknown
+/// escape such as `\.` into a bare `.` before the regex engine sees it.
+fn quick_note_search_literal(search_term: &str) -> String {
+  let mut literal = String::with_capacity(search_term.len() * 2);
+  for ch in search_term.chars() {
+    if matches!(
+      ch,
+      '\\' | '.' | '*' | '+' | '?' | '|' | '(' | ')' | '[' | ']' | '{' | '}' | '^' | '$'
+    ) {
+      // The regex escape backslash, written as `\\` inside the jsonpath string.
+      literal.push_str(r"\\");
+    }
+    match ch {
+      '\\' => literal.push_str(r"\\"),
+      '"' => literal.push_str(r#"\""#),
+      _ => literal.push(ch),
+    }
+  }
+  literal
+}
+
+#[cfg(test)]
+mod tests {
+  use super::quick_note_search_literal;
+
+  #[test]
+  fn search_literal_escapes_regex_then_jsonpath() {
+    assert_eq!(quick_note_search_literal("plain text"), "plain text");
+    assert_eq!(quick_note_search_literal("3.5"), r"3\\.5");
+    assert_eq!(quick_note_search_literal("(USD)"), r"\\(USD\\)");
+    assert_eq!(quick_note_search_literal(r#"say "hi""#), r#"say \"hi\""#);
+    assert_eq!(quick_note_search_literal(r"a\b"), r"a\\\\b");
+  }
 }
