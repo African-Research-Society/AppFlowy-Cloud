@@ -328,10 +328,14 @@ echo ""
 
 # Update password in database
 echo "Step 2: Updating password in database..."
-RESULT=$(docker exec "$SELECTED_CONTAINER" psql -U "$PGUSER" -d "$PGDATABASE" -t \
+# psql only interpolates :'var' in SQL it reads from a script or stdin, never in -c.
+RESULT=$(docker exec -i "$SELECTED_CONTAINER" psql -X -U "$PGUSER" -d "$PGDATABASE" -t \
+  -v ON_ERROR_STOP=1 \
   -v "email=${SELECTED_EMAIL}" \
-  -v "hash=${BCRYPT_HASH}" \
-  -c "UPDATE auth.users SET encrypted_password = :'hash', updated_at = now() WHERE email = :'email' RETURNING email;" 2>&1)
+  -v "hash=${BCRYPT_HASH}" 2>&1 <<'SQL'
+UPDATE auth.users SET encrypted_password = :'hash', updated_at = now() WHERE email = :'email' RETURNING email;
+SQL
+)
 
 if [ $? -ne 0 ]; then
     echo -e "${RED}ERROR: Failed to update password in database${NC}"
