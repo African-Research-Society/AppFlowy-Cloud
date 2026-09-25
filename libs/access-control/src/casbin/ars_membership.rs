@@ -22,6 +22,9 @@ impl ArsMembership {
     let endpoint = std::env::var("ARS_MEMBERSHIP_RPC_URL").unwrap_or_default();
     let key = std::env::var("ARS_MEMBERSHIP_SERVICE_KEY").unwrap_or_default();
     if endpoint.is_empty() && key.is_empty() {
+      tracing::warn!(
+        "ARS membership gate is off because ARS_MEMBERSHIP_RPC_URL and ARS_MEMBERSHIP_SERVICE_KEY are both unset"
+      );
       return Ok(None);
     }
     let url = reqwest::Url::parse(&endpoint)

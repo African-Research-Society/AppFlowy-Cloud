@@ -10,4 +10,5 @@ pub mod enforcer_v2;
 mod performance_comparison_tests;
 mod redis_cache;
 mod util;
+mod wiki;
 pub mod workspace;

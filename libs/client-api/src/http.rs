@@ -220,7 +220,7 @@ impl Client {
         Ok(())
       },
       Err(err) => {
-        error!("fail to deserialize token:{}, error:{}", token, err);
+        error!("fail to deserialize token: {}", err);
         Err(err.into())
       },
     }

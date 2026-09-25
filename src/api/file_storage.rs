@@ -20,7 +20,7 @@ use database_entity::file_dto::{
   UploadPartResponse,
 };
 
-use crate::biz::authentication::jwt::UserUuid;
+use crate::biz::authentication::jwt::{OptionalUserUuid, UserUuid};
 use crate::biz::data_import::LimitedPayload;
 use crate::state::AppState;
 use anyhow::anyhow;
@@ -114,6 +114,7 @@ async fn create_upload(
     parent_dir: req.parent_dir.clone(),
     file_id: req.file_id.clone(),
   };
+  require_wiki_blob_access(&state, &key, Some(*user_uuid), Action::Write).await?;
   let resp = state
     .bucket_storage
     .create_upload(key, req)
@@ -184,6 +185,7 @@ async fn upload_part_handler(
     parent_dir: path_params.parent_dir,
     file_id: path_params.file_id,
   };
+  require_wiki_blob_access(&state, &key, Some(*user_uuid), Action::Write).await?;
 
   let resp = state
     .bucket_storage
@@ -212,6 +214,7 @@ async fn complete_upload_handler(
     parent_dir: req.parent_dir.clone(),
     file_id: req.file_id.clone(),
   };
+  require_wiki_blob_access(&state, &key, Some(*user_uuid), Action::Write).await?;
   state
     .bucket_storage
     .complete_upload(key, req)
@@ -320,14 +323,42 @@ async fn delete_blob_handler(
   Ok(AppResponse::Ok().into())
 }
 
-#[instrument(level = "debug", skip(state), err)]
+#[instrument(level = "debug", skip(state, user), err)]
 async fn get_blob_v1_handler(
   state: Data<AppState>,
   path: web::Path<BlobPathV1>,
   req: HttpRequest,
+  user: OptionalUserUuid,
 ) -> Result<HttpResponse<BoxBody>> {
   let path = path.into_inner();
-  get_blob_by_object_key(state, &path, req).await
+  let restricted = require_wiki_blob_access(&state, &path, user.as_uuid(), Action::Read).await?;
+  get_blob_by_object_key(state, &path, req, restricted).await
+}
+
+async fn require_wiki_blob_access(
+  state: &Data<AppState>,
+  path: &BlobPathV1,
+  user: Option<Uuid>,
+  action: Action,
+) -> Result<bool, AppError> {
+  let Ok(page_id) = Uuid::parse_str(&path.parent_dir) else {
+    return Ok(false);
+  };
+  let registered: bool =
+    sqlx::query_scalar("SELECT EXISTS(SELECT 1 FROM ars_wiki_page WHERE page_id = $1)")
+      .bind(page_id)
+      .fetch_one(&state.pg_pool)
+      .await?;
+  if !registered {
+    return Ok(false);
+  }
+  let user = user.ok_or(AppError::NotEnoughPermissions)?;
+  let uid = state.user_cache.get_user_uid(&user).await?;
+  state
+    .collab_access_control
+    .enforce_action(&path.workspace_id, &uid, &page_id, action)
+    .await?;
+  Ok(true)
 }
 
 #[instrument(level = "debug", skip(state), err)]
@@ -343,6 +374,7 @@ async fn delete_blob_v1_handler(
     .workspace_access_control
     .enforce_action(&uid, &workspace_id, Action::Write)
     .await?;
+  require_wiki_blob_access(&state, &path, Some(*user_uuid), Action::Write).await?;
   state
     .bucket_storage
     .delete_blob(path)
@@ -356,6 +388,7 @@ async fn get_blob_by_object_key(
   state: Data<AppState>,
   key: &impl BlobKey,
   req: HttpRequest,
+  restricted: bool,
 ) -> Result<HttpResponse<BoxBody>> {
   // Get the metadata
   let result = state
@@ -423,12 +456,19 @@ async fn get_blob_by_object_key(
   match blob_result {
     Ok(blob) => {
       let response = HttpResponse::Ok()
-          .append_header((ETAG, key.e_tag()))
-          .append_header((CONTENT_TYPE, metadata.file_type))
-          .append_header((LAST_MODIFIED, metadata.modified_at.to_rfc2822()))
-          .append_header((CONTENT_LENGTH, blob.len()))
-          .append_header((CACHE_CONTROL, "public, immutable, max-age=31536000"))// 31536000 seconds = 1 year
-          .body(blob);
+        .append_header((ETAG, key.e_tag()))
+        .append_header((CONTENT_TYPE, metadata.file_type))
+        .append_header((LAST_MODIFIED, metadata.modified_at.to_rfc2822()))
+        .append_header((CONTENT_LENGTH, blob.len()))
+        .append_header((
+          CACHE_CONTROL,
+          if restricted {
+            "private, no-store"
+          } else {
+            "public, immutable, max-age=31536000"
+          },
+        ))
+        .body(blob);
 
       Ok(response)
     },
@@ -449,7 +489,7 @@ async fn get_blob_handler(
   req: HttpRequest,
 ) -> Result<HttpResponse<BoxBody>> {
   let blob_path = path.into_inner();
-  get_blob_by_object_key(state, &blob_path, req).await
+  get_blob_by_object_key(state, &blob_path, req, false).await
 }
 
 #[instrument(level = "debug", skip(state), err)]
@@ -476,12 +516,14 @@ async fn get_blob_metadata_handler(
   Ok(Json(AppResponse::Ok().with_data(metadata)))
 }
 
-#[instrument(level = "debug", skip(state), err)]
+#[instrument(level = "debug", skip(state, user), err)]
 async fn get_blob_metadata_v1_handler(
   state: Data<AppState>,
   path: web::Path<BlobPathV1>,
+  user: OptionalUserUuid,
 ) -> Result<JsonAppResponse<BlobMetadata>> {
   let path = path.into_inner();
+  require_wiki_blob_access(&state, &path, user.as_uuid(), Action::Read).await?;
 
   // Get the metadata
   let metadata = state
@@ -560,6 +602,17 @@ async fn put_blob_handler_v1(
     .workspace_access_control
     .enforce_action(&uid, &path.workspace_id, Action::Write)
     .await?;
+  require_wiki_blob_access(
+    &state,
+    &BlobPathV1 {
+      workspace_id: path.workspace_id,
+      parent_dir: path.parent_dir.clone(),
+      file_id: String::new(),
+    },
+    Some(*user_uuid),
+    Action::Write,
+  )
+  .await?;
 
   let content_length = content_length.into_inner().into_inner();
   let content_type = content_type.into_inner().to_string();
