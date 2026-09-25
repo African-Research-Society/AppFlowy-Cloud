@@ -300,7 +300,7 @@ check_jwt_secrets() {
         print_error "GOTRUE_JWT_SECRET is not set in .env (REQUIRED)"
         print_error "  GoTrue container requires this for authentication"
         print_error "  Fix: Add to .env file:"
-        print_error "    GOTRUE_JWT_SECRET=$appflowy_secret"
+        print_error "    GOTRUE_JWT_SECRET=<same value as APPFLOWY_GOTRUE_JWT_SECRET>"
         return 1
     fi
 
@@ -310,7 +310,7 @@ check_jwt_secrets() {
         print_error "  GOTRUE_JWT_SECRET: $(mask_sensitive "$gotrue_secret")"
         print_error "  APPFLOWY_GOTRUE_JWT_SECRET: $(mask_sensitive "$appflowy_secret")"
         print_error "  Fix: Ensure both match in .env:"
-        print_error "    GOTRUE_JWT_SECRET=$gotrue_secret"
+        print_error "    GOTRUE_JWT_SECRET=<set both values to the same secret>"
         print_error "    # APPFLOWY_GOTRUE_JWT_SECRET not needed (auto-set from GOTRUE_JWT_SECRET)"
         return 1
     fi
