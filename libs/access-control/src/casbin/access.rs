@@ -32,6 +32,7 @@ use tracing::trace;
 pub struct AccessControl {
   enforcer: Arc<AFEnforcerV2>,
   ars_membership: Option<super::ars_membership::ArsMembership>,
+  wiki_access: Option<super::wiki::WikiAccess>,
   #[allow(dead_code)]
   access_control_metrics: Arc<AccessControlMetrics>,
 }
@@ -43,6 +44,7 @@ impl AccessControl {
     access_control_metrics: Arc<AccessControlMetrics>,
   ) -> Result<Self, AppError> {
     let ars_membership = super::ars_membership::ArsMembership::from_env(pg_pool.clone())?;
+    let wiki_access = Some(super::wiki::WikiAccess::from_env(pg_pool.clone())?);
     let model = casbin_model().await?;
     let adapter = PgAdapter::new(pg_pool.clone(), access_control_metrics.clone());
     let mut enforcer = casbin::CachedEnforcer::new(model, adapter)
@@ -64,6 +66,7 @@ impl AccessControl {
     Ok(Self {
       enforcer: Arc::new(enforcer),
       ars_membership,
+      wiki_access,
       access_control_metrics,
     })
   }
@@ -74,6 +77,7 @@ impl AccessControl {
     Self {
       enforcer: Arc::new(enforcer),
       ars_membership: None,
+      wiki_access: None,
       access_control_metrics,
     }
   }
@@ -89,6 +93,18 @@ impl AccessControl {
   {
     self.enforcer.update_policy(sub, obj, act).await?;
     Ok(())
+  }
+
+  pub async fn allows_wiki(
+    &self,
+    uid: &i64,
+    workspace: &uuid::Uuid,
+    page: &uuid::Uuid,
+  ) -> Result<bool, AppError> {
+    match &self.wiki_access {
+      Some(gate) => gate.allows(uid, workspace, page).await,
+      None => Ok(true), // Test enforcer has no database; production always has a gate.
+    }
   }
 
   pub async fn remove_policy(&self, sub: SubjectType, obj: ObjectType) -> Result<(), AppError> {

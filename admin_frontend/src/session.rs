@@ -7,7 +7,8 @@ use axum::{
   http::request::Parts,
   response::{IntoResponse, Redirect},
 };
-use axum_extra::extract::{cookie::Cookie, CookieJar};
+use axum_extra::extract::cookie::{Cookie, SameSite};
+use axum_extra::extract::CookieJar;
 use gotrue::grant::{Grant, RefreshTokenGrant};
 use gotrue_entity::dto::GotrueTokenResponse;
 use jwt::{Claims, Header};
@@ -297,5 +298,7 @@ fn expect_redis_value_data(v: &redis::Value) -> redis::RedisResult<Option<&[u8]>
 pub fn new_session_cookie(id: uuid::Uuid) -> Cookie<'static> {
   let mut cookie = Cookie::new("session_id", id.to_string());
   cookie.set_path("/");
+  cookie.set_http_only(true);
+  cookie.set_same_site(SameSite::Lax);
   cookie
 }

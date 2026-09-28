@@ -177,10 +177,10 @@ impl Workspace {
         }
 
         // Check if the user has permission to write to the collab
-        if sender
+        if !sender
           .can_write_collab(&store, &msg.object_id)
           .await
-          .is_err()
+          .unwrap_or(false)
         {
           tracing::trace!(
             "user {} lack of permission to write to collab {}",
@@ -246,10 +246,10 @@ impl Workspace {
         since
       );
       for collab in new_collabs {
-        if session_handle
+        if !session_handle
           .can_read_collab(&store, &collab.object_id)
           .await
-          .is_err()
+          .unwrap_or(false)
         {
           tracing::trace!(
             "user {} lack of permission. skip publish new collab {}",
@@ -296,10 +296,10 @@ impl Workspace {
         update.update.len()
       );
 
-      if session_handle
+      if !session_handle
         .can_read_collab(&store, &update.object_id)
         .await
-        .is_err()
+        .unwrap_or(false)
       {
         tracing::trace!(
           "user {} lack of permission. skip publish collab {}, client_id: {}",
@@ -434,7 +434,11 @@ impl StreamHandler<anyhow::Result<UpdateStreamMessage>> for Workspace {
           let store = Arc::clone(&store);
           let update = update.clone();
           async move {
-            if session.can_read_collab(&store, &object_id).await.is_ok() {
+            if session
+              .can_read_collab(&store, &object_id)
+              .await
+              .unwrap_or(false)
+            {
               session.conn.do_send(WsOutput {
                 message: ServerMessage::Update {
                   object_id,
@@ -824,28 +828,31 @@ impl WorkspaceSessionHandle {
     let now = Instant::now();
     if let Some((permission, cached_at)) = self.permission_cache.read().await.get(object_id) {
       if now.duration_since(*cached_at) < self.cache_ttl {
-        return Ok(permission.can_write());
+        match permission {
+          PermissionType::Write => return Ok(true),
+          PermissionType::NoAccess => return Ok(false),
+          // A cached Read only records that a read check passed. It says nothing about write
+          // access, so fall through to a live write check instead of denying the update.
+          PermissionType::Read => {},
+        }
       }
     }
 
-    // Cache miss or expired, check permission and update cache
+    // Cache miss, expired, or only read access known: check write permission.
     let has_permission = store
       .enforce_write_collab(&self.workspace_id, &self.uid, object_id)
       .await
       .is_ok();
 
-    // Update cache with the actual permission state
-    let permission_type = if has_permission {
-      PermissionType::Write
-    } else {
-      PermissionType::NoAccess
-    };
-
-    self
-      .permission_cache
-      .write()
-      .await
-      .insert(*object_id, (permission_type, now));
+    // Only cache a granted write. A denied write must not overwrite a cached Read, otherwise a
+    // read-only session that attempts one write would also lose read access for the TTL.
+    if has_permission {
+      self
+        .permission_cache
+        .write()
+        .await
+        .insert(*object_id, (PermissionType::Write, now));
+    }
 
     Ok(has_permission)
   }

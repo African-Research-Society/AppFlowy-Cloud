@@ -1700,6 +1700,15 @@ async fn publish_page_handler(
     .workspace_access_control
     .enforce_role_weak(&uid, &workspace_id, AFRole::Member)
     .await?;
+  let restricted: bool =
+    sqlx::query_scalar("SELECT EXISTS(SELECT 1 FROM ars_wiki_page WHERE page_id = $1)")
+      .bind(view_id)
+      .fetch_one(&state.pg_pool)
+      .await
+      .map_err(AppError::from)?;
+  if restricted {
+    return Err(AppError::NotEnoughPermissions.into());
+  }
   let PublishPageParams {
     publish_name,
     visible_database_view_ids,
@@ -1871,6 +1880,11 @@ async fn get_page_view_handler(
     .get_user_uid(&user_uuid)
     .await
     .map_err(AppResponseError::from)?;
+
+  state
+    .collab_access_control
+    .enforce_action(&workspace_uuid, &uid, &view_id, Action::Read)
+    .await?;
 
   let page_collab = get_page_view_collab(
     &state.pg_pool,

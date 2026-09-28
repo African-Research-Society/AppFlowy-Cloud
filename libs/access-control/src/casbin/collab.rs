@@ -28,7 +28,7 @@ impl CollabAccessControl for CollabAccessControlImpl {
     &self,
     workspace_id: &Uuid,
     uid: &i64,
-    _oid: &Uuid,
+    oid: &Uuid,
     action: Action,
   ) -> Result<(), AppError> {
     // TODO: allow non workspace member to read a collab.
@@ -49,7 +49,14 @@ impl CollabAccessControl for CollabAccessControlImpl {
       )
       .await;
     match result {
-      Ok(true) => Ok(()),
+      Ok(true) => match self
+        .access_control
+        .allows_wiki(uid, workspace_id, oid)
+        .await?
+      {
+        true => Ok(()),
+        false => Err(AppError::NotEnoughPermissions),
+      },
       Ok(false) => Err(AppError::NotEnoughPermissions),
       Err(e) => Err(e),
     }
@@ -59,7 +66,7 @@ impl CollabAccessControl for CollabAccessControlImpl {
     &self,
     workspace_id: &Uuid,
     uid: &i64,
-    _oid: &Uuid,
+    oid: &Uuid,
     access_level: AFAccessLevel,
   ) -> Result<(), AppError> {
     // TODO: allow non workspace member to read a collab.
@@ -81,7 +88,14 @@ impl CollabAccessControl for CollabAccessControlImpl {
       )
       .await;
     match result {
-      Ok(true) => Ok(()),
+      Ok(true) => match self
+        .access_control
+        .allows_wiki(uid, workspace_id, oid)
+        .await?
+      {
+        true => Ok(()),
+        false => Err(AppError::NotEnoughPermissions),
+      },
       Ok(false) => Err(AppError::NotEnoughPermissions),
       Err(e) => Err(e),
     }
@@ -119,7 +133,7 @@ impl RealtimeCollabAccessControlImpl {
     &self,
     workspace_id: &Uuid,
     uid: &i64,
-    _oid: &Uuid,
+    oid: &Uuid,
     required_action: Action,
   ) -> Result<bool, AppError> {
     // TODO: allow non workspace member to read a collab.
@@ -131,14 +145,21 @@ impl RealtimeCollabAccessControlImpl {
       Action::Delete => Action::Write,
     };
 
-    self
+    let workspace_allowed = self
       .access_control
       .enforce_immediately(
         uid,
         ObjectType::Workspace(workspace_id.to_string()),
         workspace_action,
       )
-      .await
+      .await?;
+    Ok(
+      workspace_allowed
+        && self
+          .access_control
+          .allows_wiki(uid, workspace_id, oid)
+          .await?,
+    )
   }
 }
 

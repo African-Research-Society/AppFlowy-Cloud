@@ -55,10 +55,19 @@ impl UpdateUserParams {
   }
 }
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Clone, serde::Deserialize, serde::Serialize)]
 pub struct SignInPasswordResponse {
   pub gotrue_response: GotrueTokenResponse,
   pub is_new: bool,
+}
+
+impl std::fmt::Debug for SignInPasswordResponse {
+  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    f.debug_struct("SignInPasswordResponse")
+      .field("is_new", &self.is_new)
+      .field("gotrue_response", &"<redacted>")
+      .finish()
+  }
 }
 
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -66,8 +75,23 @@ pub struct SignInTokenResponse {
   pub is_new: bool,
 }
 
-#[derive(Debug, serde::Deserialize, serde::Serialize)]
+#[derive(serde::Deserialize, serde::Serialize)]
 pub struct DeleteUserQuery {
   pub provider_access_token: Option<String>,
   pub provider_refresh_token: Option<String>,
+}
+
+impl std::fmt::Debug for DeleteUserQuery {
+  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    f.debug_struct("DeleteUserQuery")
+      .field(
+        "provider_access_token",
+        &self.provider_access_token.as_ref().map(|_| "<redacted>"),
+      )
+      .field(
+        "provider_refresh_token",
+        &self.provider_refresh_token.as_ref().map(|_| "<redacted>"),
+      )
+      .finish()
+  }
 }
