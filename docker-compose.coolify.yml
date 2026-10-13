@@ -232,9 +232,6 @@ services:
     - ${NGINX_PORT:-80}:80
     - ${NGINX_TLS_PORT:-443}:443
     restart: on-failure
-    volumes:
-    - ./nginx/ssl/certificate.crt:/etc/nginx/ssl/certificate.crt
-    - ./nginx/ssl/private_key.key:/etc/nginx/ssl/private_key.key
   postgres:
     build:
       context: .

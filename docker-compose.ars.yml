@@ -260,9 +260,6 @@ services:
     - default
     pull_policy: never
     restart: on-failure
-    volumes:
-    - ${APPFLOWY_TLS_CERT_FILE:?Existing certificate file}:/etc/nginx/ssl/certificate.crt:ro
-    - ${APPFLOWY_TLS_KEY_FILE:?Existing private key file}:/etc/nginx/ssl/private_key.key:ro
   postgres:
     command:
     - postgres

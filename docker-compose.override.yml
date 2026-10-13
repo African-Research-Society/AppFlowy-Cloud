@@ -67,11 +67,8 @@ services:
       context: .
       dockerfile: docker/ars-nginx/Dockerfile
     image: ars/appflowy-nginx:local
-    volumes: !override
-      # Dropping the base nginx.conf mount; keeping the ssl ones, which are
-      # long-established Coolify file storages with real content behind them.
-      - ./nginx/ssl/certificate.crt:/etc/nginx/ssl/certificate.crt
-      - ./nginx/ssl/private_key.key:/etc/nginx/ssl/private_key.key
+    # TLS belongs to Coolify's edge. Existing certificate files stay for rollback.
+    volumes: !reset []
 
   postgres:
     build:

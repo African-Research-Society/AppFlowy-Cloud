@@ -166,10 +166,7 @@ def main() -> int:
     nginx = services["nginx"]
     nginx.pop("ports", None)
     nginx["expose"] = ["80"]
-    nginx["volumes"] = [
-        "${APPFLOWY_TLS_CERT_FILE:?Existing certificate file}:/etc/nginx/ssl/certificate.crt:ro",
-        "${APPFLOWY_TLS_KEY_FILE:?Existing private key file}:/etc/nginx/ssl/private_key.key:ro",
-    ]
+    nginx.pop("volumes", None)
     nginx["labels"] = [
         "traefik.enable=true",
         "traefik.docker.network=coolify",
