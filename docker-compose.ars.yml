@@ -298,7 +298,9 @@ services:
     pull_policy: never
     restart: on-failure
 volumes:
-  keyword_index_data: {}
+  keyword_index_data:
+    external: true
+    name: ${APPFLOWY_KEYWORD_INDEX_VOLUME}
   minio_data:
     external: true
     name: ${APPFLOWY_MINIO_VOLUME}

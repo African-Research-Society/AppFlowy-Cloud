@@ -64,9 +64,11 @@ images in the encrypted off-server rollback archive before replacing them.
 Compose mode. It uses reviewed, prebuilt image references, private database/object
 networking and explicit per-service credentials. Set the four `ARS_APPFLOWY_*_IMAGE`
 variables, `APPFLOWY_INGRESS_HOST` and the exact
-`APPFLOWY_POSTGRES_VOLUME` / `APPFLOWY_MINIO_VOLUME` names. Existing production
-volumes are `gwyoyg55y0vtcys6qrgrnj7a_postgres-auth-shim-data` and
-`gwyoyg55y0vtcys6qrgrnj7a_minio-data`. Rehearsal must use separate restored volumes.
+`APPFLOWY_POSTGRES_VOLUME`, `APPFLOWY_MINIO_VOLUME` and
+`APPFLOWY_KEYWORD_INDEX_VOLUME` names. Existing production volumes are
+`gwyoyg55y0vtcys6qrgrnj7a_postgres-auth-shim-data`,
+`gwyoyg55y0vtcys6qrgrnj7a_minio-data` and
+`gwyoyg55y0vtcys6qrgrnj7a_keyword-index-data`. Rehearsal must use separate volumes.
 Keep raw Compose enabled; normal parsing would distribute unrelated secrets to
 every service. Cached MinIO is deliberately never pulled; restore its archived
 image on a new host.

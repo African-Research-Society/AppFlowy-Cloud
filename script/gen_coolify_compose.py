@@ -186,6 +186,9 @@ def main() -> int:
     config["volumes"]["minio_data"] = {
         "external": True, "name": "${APPFLOWY_MINIO_VOLUME}"
     }
+    config["volumes"]["keyword_index_data"] = {
+        "external": True, "name": "${APPFLOWY_KEYWORD_INDEX_VOLUME}"
+    }
     (ROOT / "docker-compose.ars.yml").write_text(
         HEADER + yaml.safe_dump(config, sort_keys=True, width=1000)
     )
