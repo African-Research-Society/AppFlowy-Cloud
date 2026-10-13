@@ -181,10 +181,10 @@ def main() -> int:
         "egress": {},
     }
     config["volumes"]["postgres_auth_shim_data"] = {
-        "external": True, "name": "${APPFLOWY_POSTGRES_VOLUME:?Preserved or isolated restored volume}"
+        "external": True, "name": "${APPFLOWY_POSTGRES_VOLUME}"
     }
     config["volumes"]["minio_data"] = {
-        "external": True, "name": "${APPFLOWY_MINIO_VOLUME:?Preserved or isolated restored volume}"
+        "external": True, "name": "${APPFLOWY_MINIO_VOLUME}"
     }
     (ROOT / "docker-compose.ars.yml").write_text(
         HEADER + yaml.safe_dump(config, sort_keys=True, width=1000)

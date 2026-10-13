@@ -301,7 +301,7 @@ volumes:
   keyword_index_data: {}
   minio_data:
     external: true
-    name: ${APPFLOWY_MINIO_VOLUME:?Preserved or isolated restored volume}
+    name: ${APPFLOWY_MINIO_VOLUME}
   postgres_auth_shim_data:
     external: true
-    name: ${APPFLOWY_POSTGRES_VOLUME:?Preserved or isolated restored volume}
+    name: ${APPFLOWY_POSTGRES_VOLUME}
