@@ -44,3 +44,29 @@ invitation acceptance, membership denial, editing, token refresh/reconnect, and
 stream revocation. Stop Cloud workers and writes during the final data transfer.
 Verify the whole coordinated stack with Supabase destinations blocked before
 reopening writes. See Afrinexus's database runbook for retention and rollback gates.
+
+For the ARS ARM server, build the locked source natively with Rust 1.86 and the
+`ci` profile (optimized, without release LTO). The compiler image is
+`rust:1.86-bookworm@sha256:300ec56abce8cc9448ddea2172747d048ed902a3090e6b57babb2bf19f754081`.
+Install `protobuf-compiler`, `libprotobuf-dev`, `clang` and `lld`, then run
+`SQLX_OFFLINE=true CARGO_BUILD_JOBS=2 cargo build --locked --profile ci --bin appflowy_cloud`.
+Mount compiler caches and target output on the separate build disk and limit the
+compiler container to two CPUs and 7 GiB. Use a Git archive of the reviewed source;
+never mount deployment env files into the compiler.
+
+Copy only the compiled `appflowy_cloud` binary into an empty artifact directory.
+Build `docker/ars-runtime/Dockerfile` with that directory as its context and set
+`SOURCE_REVISION` to the exact source commit. Build Web with the full reviewed
+`APPFLOWY_WEB_REVISION` SHA, then build the ARS Nginx image. Preserve the original
+images in the encrypted off-server rollback archive before replacing them.
+
+`gen_coolify_compose.py` also writes `docker-compose.ars.yml` for Coolify's raw
+Compose mode. It uses reviewed, prebuilt image references, private database/object
+networking and explicit per-service credentials. Set the four `ARS_APPFLOWY_*_IMAGE`
+variables, `APPFLOWY_INGRESS_HOST`, the existing TLS file paths and the exact
+`APPFLOWY_POSTGRES_VOLUME` / `APPFLOWY_MINIO_VOLUME` names. Existing production
+volumes are `gwyoyg55y0vtcys6qrgrnj7a_postgres-auth-shim-data` and
+`gwyoyg55y0vtcys6qrgrnj7a_minio-data`. Rehearsal must use separate restored volumes.
+Keep raw Compose enabled; normal parsing would distribute unrelated secrets to
+every service. Cached MinIO is deliberately never pulled; restore its archived
+image on a new host.

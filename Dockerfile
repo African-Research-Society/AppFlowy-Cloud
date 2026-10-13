@@ -13,7 +13,7 @@ RUN cargo chef prepare --recipe-path recipe.json
 FROM chef as builder
 
 # Update package lists and install protobuf-compiler along with other build dependencies
-RUN apt update && apt install -y protobuf-compiler lld clang
+RUN apt update && apt install -y protobuf-compiler libprotobuf-dev lld clang
 
 # Specify a default value for FEATURES; it could be an empty string if no features are enabled by default
 ARG FEATURES=""

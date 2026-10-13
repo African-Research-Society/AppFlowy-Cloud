@@ -1,0 +1,310 @@
+# GENERATED FILE - DO NOT EDIT.
+#
+# docker-compose.yml + docker-compose.override.yml, flattened for Coolify,
+# which reads a single compose file per application. Regenerate with:
+#
+#     python3 script/gen_coolify_compose.py
+#
+# See doc/ARS_AUTH.md.
+networks:
+  data:
+    internal: true
+  default:
+    external: true
+    name: coolify
+  egress: {}
+services:
+  ai:
+    depends_on:
+      appflowy_cloud:
+        condition: service_healthy
+        required: true
+      postgres:
+        condition: service_healthy
+        required: true
+    environment:
+    - AI_SERVER_PORT=${AI_SERVER_PORT}
+    - OPENAI_API_KEY=${AI_OPENAI_API_KEY}
+    - DEFAULT_AI_MODEL=gpt-4.1-mini
+    - DEFAULT_AI_COMPLETION_MODEL=gpt-4.1-mini
+    - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+    - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+    - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION}
+    - APPFLOWY_S3_ACCESS_KEY=${APPFLOWY_S3_ACCESS_KEY}
+    - APPFLOWY_S3_SECRET_KEY=${APPFLOWY_S3_SECRET_KEY}
+    - APPFLOWY_S3_BUCKET=${APPFLOWY_S3_BUCKET}
+    - APPFLOWY_S3_REGION=${APPFLOWY_S3_REGION}
+    - AI_DATABASE_URL=${APPFLOWY_DATABASE_URL}
+    - AI_REDIS_URL=${APPFLOWY_REDIS_URI}
+    - AI_USE_MINIO=${APPFLOWY_S3_USE_MINIO}
+    - AI_MINIO_URL=${APPFLOWY_S3_MINIO_URL}
+    - AI_APPFLOWY_HOST=${APPFLOWY_BASE_URL}
+    - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 40s
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:5001/health
+      timeout: 10s
+    image: appflowyinc/appflowy_ai:${APPFLOWY_AI_VERSION:-latest}
+    networks:
+    - data
+    - egress
+    pull_policy: never
+    restart: on-failure
+  appflowy_cloud:
+    depends_on:
+      minio:
+        condition: service_healthy
+        required: true
+      postgres:
+        condition: service_healthy
+        required: true
+    environment:
+    - RUST_LOG=${RUST_LOG:-info}
+    - APPFLOWY_ENVIRONMENT=production
+    - APPFLOWY_DATABASE_URL=${APPFLOWY_DATABASE_URL}
+    - APPFLOWY_REDIS_URI=${APPFLOWY_REDIS_URI}
+    - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
+    - APPFLOWY_GOTRUE_BASE_URL=${ARS_AUTH_API_URL:?Required}
+    - APPFLOWY_S3_CREATE_BUCKET=${APPFLOWY_S3_CREATE_BUCKET}
+    - APPFLOWY_S3_USE_MINIO=${APPFLOWY_S3_USE_MINIO}
+    - APPFLOWY_S3_MINIO_URL=${APPFLOWY_S3_MINIO_URL}
+    - APPFLOWY_S3_ACCESS_KEY=${APPFLOWY_S3_ACCESS_KEY}
+    - APPFLOWY_S3_SECRET_KEY=${APPFLOWY_S3_SECRET_KEY}
+    - APPFLOWY_S3_BUCKET=${APPFLOWY_S3_BUCKET}
+    - APPFLOWY_S3_REGION=${APPFLOWY_S3_REGION}
+    - APPFLOWY_S3_PRESIGNED_URL_ENDPOINT=${APPFLOWY_S3_PRESIGNED_URL_ENDPOINT}
+    - APPFLOWY_MAILER_SMTP_HOST=${APPFLOWY_MAILER_SMTP_HOST}
+    - APPFLOWY_MAILER_SMTP_PORT=${APPFLOWY_MAILER_SMTP_PORT}
+    - APPFLOWY_MAILER_SMTP_USERNAME=${APPFLOWY_MAILER_SMTP_USERNAME}
+    - APPFLOWY_MAILER_SMTP_EMAIL=${APPFLOWY_MAILER_SMTP_EMAIL}
+    - APPFLOWY_MAILER_SMTP_PASSWORD=${APPFLOWY_MAILER_SMTP_PASSWORD}
+    - APPFLOWY_MAILER_SMTP_TLS_KIND=${APPFLOWY_MAILER_SMTP_TLS_KIND}
+    - APPFLOWY_ACCESS_CONTROL=${APPFLOWY_ACCESS_CONTROL}
+    - APPFLOWY_DATABASE_MAX_CONNECTIONS=${APPFLOWY_DATABASE_MAX_CONNECTIONS}
+    - AI_SERVER_HOST=${AI_SERVER_HOST}
+    - AI_SERVER_PORT=${AI_SERVER_PORT}
+    - AI_OPENAI_API_KEY=${AI_OPENAI_API_KEY}
+    - APPFLOWY_WEB_URL=${APPFLOWY_WEB_URL}
+    - APPFLOWY_BASE_URL=${APPFLOWY_BASE_URL}
+    - ASSEMBLYAI_API_KEY=${ASSEMBLYAI_API_KEY}
+    - ASSEMBLYAI_API_BASE=${ASSEMBLYAI_API_BASE}
+    - ASSEMBLYAI_STREAMING_API_BASE=${ASSEMBLYAI_STREAMING_API_BASE}
+    - APPFLOWY_SEARCH_SERVICE_URL=${APPFLOWY_SEARCH_SERVICE_URL:-http://appflowy_search:4002}
+    - APPFLOWY_SEARCH_REQUEST_TIMEOUT_SECS=${APPFLOWY_SEARCH_REQUEST_TIMEOUT_SECS:-10}
+    - AI_ENABLED=${AI_ENABLED:-true}
+    - SIGNUP_WHITELIST_ENABLED=${SIGNUP_WHITELIST_ENABLED:-false}
+    - GUEST_INVITES_REQUIRE_ADMIN_APPROVAL=${GUEST_INVITES_REQUIRE_ADMIN_APPROVAL:-false}
+    - ARS_MEMBERSHIP_API_URL=${ARS_INTERNAL_API_URL:?Required}/workspace-access
+    - ARS_INTERNAL_API_KEY=${ARS_INTERNAL_API_KEY:?Required}
+    - ARS_AUTH_ISSUER=${ARS_AUTH_ISSUER:?Required}
+    - ARS_WORKSPACE_OPERATOR_UUID=${ARS_WORKSPACE_OPERATOR_UUID:-}
+    healthcheck:
+      interval: 5s
+      retries: 12
+      test:
+      - CMD
+      - curl
+      - --fail
+      - http://127.0.0.1:8000/health
+      timeout: 5s
+    image: ${ARS_APPFLOWY_CLOUD_IMAGE:?Use the reviewed Cloud image}
+    networks:
+    - data
+    - egress
+    pull_policy: never
+    restart: on-failure
+  appflowy_search:
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: true
+    environment:
+    - RUST_LOG=${RUST_LOG:-info}
+    - APPFLOWY_SEARCH_HOST=${APPFLOWY_SEARCH_HOST:-[::]}
+    - APPFLOWY_SEARCH_PORT=${APPFLOWY_SEARCH_PORT:-4002}
+    - APPFLOWY_SEARCH_DATABASE_URL=${APPFLOWY_DATABASE_URL}
+    - APPFLOWY_SEARCH_REDIS_URL=${APPFLOWY_REDIS_URI}
+    - AI_OPENAI_API_KEY=${AI_OPENAI_API_KEY}
+    - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+    - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+    - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION}
+    - APPFLOWY_S3_USE_MINIO=${APPFLOWY_S3_USE_MINIO}
+    - APPFLOWY_S3_MINIO_URL=${APPFLOWY_S3_MINIO_URL}
+    - APPFLOWY_S3_ACCESS_KEY=${APPFLOWY_S3_ACCESS_KEY}
+    - APPFLOWY_S3_SECRET_KEY=${APPFLOWY_S3_SECRET_KEY}
+    - APPFLOWY_S3_BUCKET=${APPFLOWY_S3_BUCKET}
+    - APPFLOWY_S3_REGION=${APPFLOWY_S3_REGION}
+    - APPFLOWY_BACKGROUND_INDEXER_ENABLED=true
+    - APPFLOWY_INDEXER_DATABASE_ENABLED=${APPFLOWY_INDEXER_DATABASE_ENABLED:-false}
+    - APPFLOWY_KEYWORD_SEARCH_ENABLED=${APPFLOWY_KEYWORD_SEARCH_ENABLED:-true}
+    - APPFLOWY_KEYWORD_WORKER_ENABLED=true
+    - APPFLOWY_KEYWORD_INDEX_MAP_SIZE_BYTES=${APPFLOWY_KEYWORD_INDEX_MAP_SIZE_BYTES:-2147483648}
+    - APPFLOWY_KEYWORD_INDEX_DIR=${APPFLOWY_KEYWORD_INDEX_DIR:-/var/lib/appflowy/keyword_index}
+    - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_BRIDGE_SECRET:?Required}
+    healthcheck:
+      interval: 5s
+      retries: 12
+      start_period: 40s
+      test:
+      - CMD
+      - bash
+      - -ec
+      - 'exec 3<>/dev/tcp/127.0.0.1/$${APPFLOWY_SEARCH_PORT:-4002}
+
+        printf ''GET /health HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n'' >&3
+
+        read -r _ status _ <&3
+
+        [ "$$status" = 200 ]
+
+        '
+      timeout: 5s
+    image: appflowyinc/appflowy_search:${APPFLOWY_SEARCH_VERSION:-latest}
+    networks:
+    - data
+    - egress
+    pull_policy: never
+    restart: on-failure
+    volumes:
+    - keyword_index_data:/var/lib/appflowy/keyword_index
+  appflowy_web:
+    depends_on:
+      appflowy_cloud:
+        condition: service_healthy
+        required: true
+    environment:
+    - APPFLOWY_BASE_URL=${APPFLOWY_BASE_URL}
+    - APPFLOWY_WS_BASE_URL=${APPFLOWY_WEBSOCKET_BASE_URL}
+    - ARS_AUTH_ORIGIN=${ARS_AUTH_ORIGIN:?Required}
+    image: ${ARS_APPFLOWY_WEB_IMAGE:?Use the reviewed Web image}
+    networks:
+    - data
+    - default
+    pull_policy: never
+    restart: on-failure
+  appflowy_worker:
+    depends_on:
+      appflowy_cloud:
+        condition: service_healthy
+        required: true
+      postgres:
+        condition: service_healthy
+        required: true
+    environment:
+    - RUST_LOG=${RUST_LOG:-info}
+    - APPFLOWY_ENVIRONMENT=production
+    - APPFLOWY_WORKER_REDIS_URL=${APPFLOWY_WORKER_REDIS_URL:-redis://redis:6379}
+    - APPFLOWY_WORKER_ENVIRONMENT=production
+    - APPFLOWY_WORKER_DATABASE_URL=${APPFLOWY_WORKER_DATABASE_URL}
+    - APPFLOWY_WORKER_DATABASE_NAME=${APPFLOWY_WORKER_DATABASE_NAME}
+    - APPFLOWY_WORKER_IMPORT_TICK_INTERVAL=30
+    - APPFLOWY_S3_USE_MINIO=${APPFLOWY_S3_USE_MINIO}
+    - APPFLOWY_S3_MINIO_URL=${APPFLOWY_S3_MINIO_URL}
+    - APPFLOWY_S3_ACCESS_KEY=${APPFLOWY_S3_ACCESS_KEY}
+    - APPFLOWY_S3_SECRET_KEY=${APPFLOWY_S3_SECRET_KEY}
+    - APPFLOWY_S3_BUCKET=${APPFLOWY_S3_BUCKET}
+    - APPFLOWY_S3_REGION=${APPFLOWY_S3_REGION}
+    - APPFLOWY_MAILER_SMTP_HOST=${APPFLOWY_MAILER_SMTP_HOST}
+    - APPFLOWY_MAILER_SMTP_PORT=${APPFLOWY_MAILER_SMTP_PORT}
+    - APPFLOWY_MAILER_SMTP_USERNAME=${APPFLOWY_MAILER_SMTP_USERNAME}
+    - APPFLOWY_MAILER_SMTP_EMAIL=${APPFLOWY_MAILER_SMTP_EMAIL}
+    - APPFLOWY_MAILER_SMTP_PASSWORD=${APPFLOWY_MAILER_SMTP_PASSWORD}
+    - APPFLOWY_MAILER_SMTP_TLS_KIND=${APPFLOWY_MAILER_SMTP_TLS_KIND}
+    image: appflowyinc/appflowy_worker:${APPFLOWY_WORKER_VERSION:-latest}
+    networks:
+    - data
+    - egress
+    pull_policy: never
+    restart: on-failure
+  minio:
+    command: server /data --console-address ":9001"
+    environment:
+    - MINIO_BROWSER_REDIRECT_URL=${APPFLOWY_BASE_URL?:err}/minio
+    - MINIO_ROOT_USER=${APPFLOWY_S3_ACCESS_KEY:-minioadmin}
+    - MINIO_ROOT_PASSWORD=${APPFLOWY_S3_SECRET_KEY:-minioadmin}
+    healthcheck:
+      interval: 5s
+      retries: 12
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:9000/minio/health/live
+      timeout: 5s
+    image: quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    networks:
+    - data
+    pull_policy: never
+    restart: on-failure
+    volumes:
+    - minio_data:/data
+  nginx:
+    expose:
+    - '80'
+    image: ${ARS_APPFLOWY_NGINX_IMAGE:?Use the reviewed ingress image}
+    labels:
+    - traefik.enable=true
+    - traefik.docker.network=coolify
+    - traefik.http.routers.af-${COOLIFY_RESOURCE_UUID:?Required}.rule=Host(`${APPFLOWY_INGRESS_HOST:?Required}`)
+    - traefik.http.routers.af-${COOLIFY_RESOURCE_UUID}.entrypoints=https
+    - traefik.http.routers.af-${COOLIFY_RESOURCE_UUID}.tls.certresolver=letsencrypt
+    - traefik.http.services.af-${COOLIFY_RESOURCE_UUID}.loadbalancer.server.port=80
+    networks:
+    - data
+    - default
+    pull_policy: never
+    restart: on-failure
+    volumes:
+    - ${APPFLOWY_TLS_CERT_FILE:?Existing certificate file}:/etc/nginx/ssl/certificate.crt:ro
+    - ${APPFLOWY_TLS_KEY_FILE:?Existing private key file}:/etc/nginx/ssl/private_key.key:ro
+  postgres:
+    command:
+    - postgres
+    - -c
+    - port=${POSTGRES_PORT:-5432}
+    environment:
+    - POSTGRES_USER=${POSTGRES_USER:-postgres}
+    - POSTGRES_DB=${POSTGRES_DB:-postgres}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+    - POSTGRES_HOST=${POSTGRES_HOST:-postgres}
+    - PGPORT=${POSTGRES_PORT:-5432}
+    healthcheck:
+      interval: 5s
+      retries: 12
+      test:
+      - CMD
+      - pg_isready
+      - -U
+      - ${POSTGRES_USER}
+      - -d
+      - ${POSTGRES_DB}
+      - -p
+      - ${POSTGRES_PORT:-5432}
+      timeout: 5s
+    image: ${ARS_APPFLOWY_POSTGRES_IMAGE:?Retain the existing PostgreSQL shim image}
+    networks:
+    - data
+    pull_policy: never
+    restart: on-failure
+    volumes:
+    - postgres_auth_shim_data:/var/lib/postgresql/data
+  redis:
+    image: redis
+    networks:
+    - data
+    pull_policy: never
+    restart: on-failure
+volumes:
+  keyword_index_data: {}
+  minio_data:
+    external: true
+    name: ${APPFLOWY_MINIO_VOLUME:?Preserved or isolated restored volume}
+  postgres_auth_shim_data:
+    external: true
+    name: ${APPFLOWY_POSTGRES_VOLUME:?Preserved or isolated restored volume}

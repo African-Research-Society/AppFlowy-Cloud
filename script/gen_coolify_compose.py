@@ -146,6 +146,52 @@ def main() -> int:
         del config["volumes"][name]
 
     OUT.write_text(HEADER + yaml.safe_dump(config, sort_keys=True, width=1000))
+
+    # Raw deployment avoids Coolify injecting every application secret into every
+    # container. Images are built and reviewed before the maintenance window.
+    for name, svc in services.items():
+        svc.pop("build", None)
+        svc["networks"] = ["data", "egress"]
+        if name in ("postgres", "minio", "redis"):
+            svc["networks"] = ["data"]
+        if name in ("nginx", "appflowy_web"):
+            svc["networks"] = ["data", "default"]
+        svc["image"] = {
+            "appflowy_cloud": "${ARS_APPFLOWY_CLOUD_IMAGE:?Use the reviewed Cloud image}",
+            "appflowy_web": "${ARS_APPFLOWY_WEB_IMAGE:?Use the reviewed Web image}",
+            "nginx": "${ARS_APPFLOWY_NGINX_IMAGE:?Use the reviewed ingress image}",
+            "postgres": "${ARS_APPFLOWY_POSTGRES_IMAGE:?Retain the existing PostgreSQL shim image}",
+        }.get(name, svc["image"])
+        svc["pull_policy"] = "never"
+    nginx = services["nginx"]
+    nginx.pop("ports", None)
+    nginx["expose"] = ["80"]
+    nginx["volumes"] = [
+        "${APPFLOWY_TLS_CERT_FILE:?Existing certificate file}:/etc/nginx/ssl/certificate.crt:ro",
+        "${APPFLOWY_TLS_KEY_FILE:?Existing private key file}:/etc/nginx/ssl/private_key.key:ro",
+    ]
+    nginx["labels"] = [
+        "traefik.enable=true",
+        "traefik.docker.network=coolify",
+        "traefik.http.routers.af-${COOLIFY_RESOURCE_UUID:?Required}.rule=Host(`${APPFLOWY_INGRESS_HOST:?Required}`)",
+        "traefik.http.routers.af-${COOLIFY_RESOURCE_UUID}.entrypoints=https",
+        "traefik.http.routers.af-${COOLIFY_RESOURCE_UUID}.tls.certresolver=letsencrypt",
+        "traefik.http.services.af-${COOLIFY_RESOURCE_UUID}.loadbalancer.server.port=80",
+    ]
+    config["networks"] = {
+        "default": {"external": True, "name": "coolify"},
+        "data": {"internal": True},
+        "egress": {},
+    }
+    config["volumes"]["postgres_auth_shim_data"] = {
+        "external": True, "name": "${APPFLOWY_POSTGRES_VOLUME:?Preserved or isolated restored volume}"
+    }
+    config["volumes"]["minio_data"] = {
+        "external": True, "name": "${APPFLOWY_MINIO_VOLUME:?Preserved or isolated restored volume}"
+    }
+    (ROOT / "docker-compose.ars.yml").write_text(
+        HEADER + yaml.safe_dump(config, sort_keys=True, width=1000)
+    )
     print(f"wrote {OUT.relative_to(ROOT)} (dropped: {', '.join(sorted(dropped)) or 'none'})")
     return 0
 
