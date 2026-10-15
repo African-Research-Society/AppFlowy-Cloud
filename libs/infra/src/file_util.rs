@@ -102,6 +102,12 @@ impl Iterator for ChunkedBytesIterator<'_> {
 // Function to split input bytes into several chunks and return offsets
 pub fn split_into_chunks(data: &Bytes, chunk_size: usize) -> Vec<(usize, usize)> {
   let mut offsets = Vec::new();
+  if chunk_size == 0 {
+    if !data.is_empty() {
+      offsets.push((0, data.len()));
+    }
+    return offsets;
+  }
   let mut start = 0;
 
   while start < data.len() {
