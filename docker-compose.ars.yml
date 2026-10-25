@@ -55,7 +55,7 @@ services:
     - data
     - egress
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
   appflowy_cloud:
     depends_on:
       minio:
@@ -118,7 +118,7 @@ services:
     - data
     - egress
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
   appflowy_search:
     depends_on:
       postgres:
@@ -170,7 +170,7 @@ services:
     - data
     - egress
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - keyword_index_data:/var/lib/appflowy/keyword_index
   appflowy_web:
@@ -187,7 +187,7 @@ services:
     - data
     - default
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
   appflowy_worker:
     depends_on:
       appflowy_cloud:
@@ -221,7 +221,7 @@ services:
     - data
     - egress
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
   minio:
     command: server /data --console-address ":9001"
     environment:
@@ -241,7 +241,7 @@ services:
     networks:
     - data
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - minio_data:/data
   nginx:
@@ -259,7 +259,7 @@ services:
     - data
     - default
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
   postgres:
     command:
     - postgres
@@ -288,7 +288,7 @@ services:
     networks:
     - data
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - postgres_auth_shim_data:/var/lib/postgresql/data
   redis:
@@ -296,7 +296,7 @@ services:
     networks:
     - data
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
 volumes:
   keyword_index_data:
     external: true
@@ -307,3 +307,4 @@ volumes:
   postgres_auth_shim_data:
     external: true
     name: ${APPFLOWY_POSTGRES_VOLUME}
+
