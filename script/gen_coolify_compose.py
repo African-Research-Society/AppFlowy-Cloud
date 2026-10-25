@@ -163,6 +163,7 @@ def main() -> int:
             "postgres": "${ARS_APPFLOWY_POSTGRES_IMAGE:?Retain the existing PostgreSQL shim image}",
         }.get(name, svc["image"])
         svc["pull_policy"] = "never"
+        svc["restart"] = "unless-stopped"
     nginx = services["nginx"]
     nginx.pop("ports", None)
     nginx["expose"] = ["80"]
@@ -198,3 +199,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
