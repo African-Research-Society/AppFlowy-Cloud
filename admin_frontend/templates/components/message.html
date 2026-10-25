@@ -4,7 +4,7 @@
   function displayMessage(message, afColor) {
     var top_message_box = document.createElement("div");
     top_message_box.className = "message";
-    top_message_box.innerHTML = message;
+    top_message_box.textContent = message;
     top_message_box.style.display = "block";
     top_message_box.style.backgroundColor = afColor;
     document.body.appendChild(top_message_box);
@@ -22,16 +22,12 @@
 
   function displayHttpStatusAndPayload(response) {
     response.text().then((text) => {
-      displayFail(`
-      <b>${response.status}: ${response.statusText}</b>
-      <br>${text}`);
+      displayFail(response.status + ": " + response.statusText + "\n" + text);
     });
   }
 
   function displayHttpFail(statusCode, statusText, responseText) {
-    displayFail(`
-      <b>${statusCode}: ${statusText}</b>
-      <br>${responseText}`);
+    displayFail(statusCode + ": " + statusText + "\n" + responseText);
   }
 
   function displaySuccess(message) {
